@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Mega Menu - Construction Services</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --accent-hover: #2980b9;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --text-light: #ffffff;
+            --text-dark: #333333;
+            --overlay-dark: rgba(0, 0, 0, 0.7);
+            --card-hover: #f8f9fa;
+            --gradient-primary: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            --gradient-card: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.15);
+            --shadow-heavy: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            padding-top: 80px;
+        }
+        
+        /* Navigation Styles */
+        .navbar {
+            background: var(--gradient-primary);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 12px 0;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--text-light);
+            font-size: 1.5rem;
+        }
+        
+        .nav-link {
+            color: var(--text-light);
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 8px 15px !important;
+            border-radius: 4px;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--text-light);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        /* Mega Menu Styles */
+        .mega-dropdown {
+            position: static !important;
+        }
+        
+        .mega-dropdown-menu {
+            width: 100%;
+            padding: 30px;
+            box-shadow: var(--shadow-heavy);
+            border: none;
+            border-radius: 0 0 12px 12px;
+            margin-top: 0;
+            background-color: white;
+            display: none;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s, transform 0.3s;
+            left: 0;
+            right: 0;
+        }
+        
+        .mega-dropdown:hover .mega-dropdown-menu {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .mega-card-container {
+            background: var(--gradient-card);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+            margin-bottom: 20px;
+            position: relative;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .mega-card-container:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .mega-card-img {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            transition: transform 0.5s;
+        }
+        
+        .mega-card-container:hover .mega-card-img {
+            transform: scale(1.05);
+        }
+        
+        .mega-card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: var(--text-light);
+            padding: 20px 15px;
+        }
+        
+        .mega-card-title {
+            font-weight: 600;
+            margin: 0;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+        
+        .mega-card-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-top: 8px;
+            background-color: var(--accent-color);
+            padding: 6px 12px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        
+        .mega-card-link:hover {
+            background-color: var(--accent-hover);
+            transform: translateX(5px);
+        }
+        
+        .mega-card-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mega-card-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--success-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        /* Centered layout */
+        .mega-menu-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Section styling */
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        /* Demo content */
+        .demo-content {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            margin-top: 30px;
+        }
+        
+        .service-icon {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        /* Responsive adjustments */
+        /* Large screens (lg) - 4 cards per row */
+        @media (min-width: 992px) {
+            .mega-card-col {
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+        }
+        
+        /* Medium screens (md) - 3 cards per row */
+        @media (min-width: 768px) and (max-width: 991px) {
+            .mega-card-col {
+                flex: 0 0 33.333%;
+                max-width: 33.333%;
+            }
+            
+            .mega-card-img {
+                height: 160px;
+            }
+        }
+        
+        /* Small screens (sm) - 2 cards per row */
+        @media (min-width: 576px) and (max-width: 767px) {
+            .mega-card-col {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+            
+            .mega-card-img {
+                height: 150px;
+            }
+            
+            .mega-dropdown-menu {
+                padding: 20px;
+            }
+        }
+        
+        /* Extra small screens (xs) - 1 card per row */
+        @media (max-width: 575px) {
+            .mega-card-col {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            
+            .mega-card-img {
+                height: 140px;
+            }
+            
+            .mega-dropdown-menu {
+                padding: 15px;
+            }
+        }
+        
+        /* Animation for cards */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .mega-card-col {
+            animation: fadeInUp 0.5s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .mega-card-col:nth-child(1) { animation-delay: 0.1s; }
+        .mega-card-col:nth-child(2) { animation-delay: 0.15s; }
+        .mega-card-col:nth-child(3) { animation-delay: 0.2s; }
+        .mega-card-col:nth-child(4) { animation-delay: 0.25s; }
+        .mega-card-col:nth-child(5) { animation-delay: 0.3s; }
+        .mega-card-col:nth-child(6) { animation-delay: 0.35s; }
+        .mega-card-col:nth-child(7) { animation-delay: 0.4s; }
+        .mega-card-col:nth-child(8) { animation-delay: 0.45s; }
+        .mega-card-col:nth-child(9) { animation-delay: 0.5s; }
+        .mega-card-col:nth-child(10) { animation-delay: 0.55s; }
+        .mega-card-col:nth-child(11) { animation-delay: 0.6s; }
+        
+        /* Responsive indicator */
+        .responsive-indicator {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            z-index: 1000;
+        }
+        
+        @media (min-width: 992px) {
+            .responsive-indicator::after {
+                content: "Large (4 cards/row)";
+            }
+        }
+        
+        @media (min-width: 768px) and (max-width: 991px) {
+            .responsive-indicator::after {
+                content: "Medium (3 cards/row)";
+            }
+        }
+        
+        @media (min-width: 576px) and (max-width: 767px) {
+            .responsive-indicator::after {
+                content: "Small (2 cards/row)";
+            }
+        }
+        
+        @media (max-width: 575px) {
+            .responsive-indicator::after {
+                content: "X-Small (1 card/row)";
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-hard-hat me-2"></i>CONSTRUCTPRO
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#"><i class="fas fa-home me-1"></i> Home</a>
+                    </li>
+                    <li class="nav-item dropdown mega-dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button">
+                            <i class="fas fa-tools me-1"></i> Services
+                        </a>
+                        <div class="dropdown-menu mega-dropdown-menu" aria-labelledby="servicesDropdown">
+                            <div class="mega-menu-container">
+                                <div class="row g-4">
+                                    <!-- Civil Construction -->
+                                    <div class="mega-card-col">
+                                        <div class="mega-card-container">
+                                            <div class="mega-card-badge">Popular</div>
+                                            <div class="mega-card-icon">
+                                                <i class="fas fa-truck-pickup"></i>
+                                            </div>
+                                            <div class="mega-card-img" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
+                                                <div class="mega-card-overlay">
+                                                    <h5 class="mega-card-title">Civil Construction</h5>
+                                                    <a href="#" class="mega-card-link">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Structural Works -->
+                                    <div class="mega-card-col">
+                                        <div class="mega-card-container">
+                                            <div class="mega-card-badge">Featured</div>
+                                            <div class="mega-card-icon">
+                                                <i class="fas fa-building"></i>
+                                            </div>
+                                            <div class="mega-card-img" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
+                                                <div class="mega-card-overlay">
+                                                    <h5 class="mega-card-title">Structural Works</h5>
+                                                    <a href="#" class="mega-card-link">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Demolition & Site Preparation -->
+                                    <div class="mega-card-col">
+                                        <div class="mega-card-container">
+                                            <div class="mega-card-icon">
+                                                <i class="fas fa-hammer"></i>
+                                            </div>
+                                            <div class="mega-card-img" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
+                                                <div class="mega-card-overlay">
+                                                    <h5 class="mega-card-title">Demolition & Site Preparation</h5>
+                                                    <a href="#" class="mega-card-link">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Masonry & Carpentry -->
+                                    <div class="mega-card-col">
+                                        <div class="mega-card-container">
+                                            <div class="mega-card-badge">New</div>
+                                            <div class="mega-card-icon">
+                                                <i class="fas fa-ruler-combined"></i>
+                                            </div>
+                                            <div class="mega-card-img" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
+                                                <div class="mega-card-overlay">
+                                                    <h5 class="mega-card-title">Masonry & Carpentry</h5>
+                                                    <a href="#" class="mega-card-link">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Roofing Solutions -->
+                                    <div class="mega-card-col">
+                                        <div class="mega-card-container">
+                                            <div class="mega-card-icon">
+                                                <i class="fas fa-home"></i>
+                                            </div>
+                                            <div class="mega-card-img" style="background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
+                                                <div class="mega-card-overlay">
+                                                    <h5 class="mega-card-title">Roofing Solutions</h5>
+                                                    <a href="#" class="mega-card-link">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Plumbing & Electrical -->
+                                    <div class="mega-card-col">
+                                        <div class="mega-card-container">
+                                            <div class="mega-card-badge">Popular</div>
+                                            <div class="mega-card-icon">
+                                                <i class="fas fa-bolt"></i>
+                                            </div>
+                                            <div class="mega-card-img" style="background-image: url('https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
+                                                <div class="mega-card-overlay">
+                                                    <h5 class="mega-card-title">Plumbing & Electrical</h5>
+                                                    <a href="#" class="mega-card-link">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Flooring & Finishing -->
+                                    <div class="mega-card-col">
+                                        <div class="mega-card-container">
+                                            <div class="mega-card-icon">
+                                                <i class="fas fa-border-style"></i>
+                                            </div>
+                                            <div class="mega-card-img" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
+                                                <div class="mega-card-overlay">
+                                                    <h5 class="mega-card-title">Flooring & Finishing</h5>
+                                                    <a href="#" class="mega-card-link">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Interiors & Furnishings -->
+                                    <div class="mega-card-col">
+                                        <div class="mega-card-container">
+                                            <div class="mega-card-badge">Featured</div>
+                                            <div class="mega-card-icon">
+                                                <i class="fas fa-couch"></i>
+                                            </div>
+                                            <div class="mega-card-img" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
+                                                <div class="mega-card-overlay">
+                                                    <h5 class="mega-card-title">Interiors & Furnishings</h5>
+                                                    <a href="#" class="mega-card-link">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Exterior & Landscaping -->
+                                    <div class="mega-card-col">
+                                        <div class="mega-card-container">
+                                            <div class="mega-card-icon">
+                                                <i class="fas fa-tree"></i>
+                                            </div>
+                                            <div class="mega-card-img" style="background-image: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
+                                                <div class="mega-card-overlay">
+                                                    <h5 class="mega-card-title">Exterior & Landscaping</h5>
+                                                    <a href="#" class="mega-card-link">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Renovation & Remodeling -->
+                                    <div class="mega-card-col">
+                                        <div class="mega-card-container">
+                                            <div class="mega-card-badge">Popular</div>
+                                            <div class="mega-card-icon">
+                                                <i class="fas fa-paint-roller"></i>
+                                            </div>
+                                            <div class="mega-card-img" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
+                                                <div class="mega-card-overlay">
+                                                    <h5 class="mega-card-title">Renovation & Remodeling</h5>
+                                                    <a href="#" class="mega-card-link">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Specialized Works -->
+                                    <div class="mega-card-col">
+                                        <div class="mega-card-container">
+                                            <div class="mega-card-icon">
+                                                <i class="fas fa-tools"></i>
+                                            </div>
+                                            <div class="mega-card-img" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
+                                                <div class="mega-card-overlay">
+                                                    <h5 class="mega-card-title">Specialized Works</h5>
+                                                    <a href="#" class="mega-card-link">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-building me-1"></i> Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-info-circle me-1"></i> About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-phone me-1"></i> Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Responsive indicator -->
+    <div class="responsive-indicator"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
