@@ -293,7 +293,7 @@
                     <div class="about-content">
                         <!-- Section Title Start -->
                         <div class="section-title">
-                            <h2 class="text-anime" data-cursor="-opaque">Building Excellence Since 2015</h2>
+                            <h2 class="text-anime" data-cursor="-opaque">Building Excellence Since 2018</h2>
                             <p class="wow  " data-wow-delay="0.25s"> Epicar Construction has established itself as a
                                 premier construction company with a reputation for delivering exceptional quality,
                                 on-time project completion, and unparalleled client satisfaction. <br> Our team of
@@ -590,7 +590,7 @@
                                 without compromising quality.</p>
                         </div>
                         <div class="why-choose-counter">
-                            <h3><span class="counter">10</span>+</h3>
+                            <h3><span class="counter">7</span>+</h3>
                             <p>years experience</p>
                         </div>
                     </div>
@@ -1032,71 +1032,6 @@
     <!-- Main Custom js file -->
     <script src="js/index.js"></script>
 
-
-
-
-    <script>
-        // Mega Menu functionality
-        document.addEventListener('DOMContentLoaded', function () {
-            const servicesTrigger = document.getElementById('servicesTrigger');
-            const servicesNavItem = document.getElementById('servicesNavItem');
-            const megaMenu = document.getElementById('megaMenu');
-
-            let hoverTimer;
-            let isMenuOpen = false;
-
-            // Open mega menu
-            function openMegaMenu() {
-                clearTimeout(hoverTimer);
-                megaMenu.classList.add('active');
-                isMenuOpen = true;
-            }
-
-            // Close mega menu
-            function closeMegaMenuFunc() {
-                megaMenu.classList.remove('active');
-                isMenuOpen = false;
-            }
-
-            // Open on hover with delay
-            servicesNavItem.addEventListener('mouseenter', function () {
-                if (!isMenuOpen) {
-                    hoverTimer = setTimeout(openMegaMenu, 300); // 300ms delay
-                }
-            });
-
-            // Close on mouse leave with delay
-            servicesNavItem.addEventListener('mouseleave', function (e) {
-                // Check if mouse is leaving to outside the menu
-                if (!megaMenu.contains(e.relatedTarget)) {
-                    clearTimeout(hoverTimer);
-                    if (isMenuOpen) {
-                        hoverTimer = setTimeout(closeMegaMenuFunc, 500); // 500ms delay before closing
-                    }
-                }
-            });
-
-            // Keep menu open when hovering over it
-            megaMenu.addEventListener('mouseenter', function () {
-                clearTimeout(hoverTimer);
-            });
-
-            // Close when mouse leaves the menu
-            megaMenu.addEventListener('mouseleave', function (e) {
-                // Check if mouse is leaving to outside the nav item
-                if (!servicesNavItem.contains(e.relatedTarget)) {
-                    hoverTimer = setTimeout(closeMegaMenuFunc, 300); // 300ms delay before closing
-                }
-            });
-
-            // Close menu when clicking outside
-            document.addEventListener('click', function (e) {
-                if (isMenuOpen && !servicesNavItem.contains(e.target) && !megaMenu.contains(e.target)) {
-                    closeMegaMenuFunc();
-                }
-            });
-        });
-    </script>
 
 
 

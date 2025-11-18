@@ -3,978 +3,713 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ConstructPro - Modern Construction</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
+    <title>Construction Enquiry Form</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #FF6B00;
-            --primary-dark: #E55A00;
-            --secondary: #1A1A1A;
-            --light: #F8F9FA;
-            --dark: #121212;
-            --gray: #6C757D;
-            --light-gray: #E9ECEF;
+            --primary: #1a5276;
+            --primary-light: #2c7fb8;
+            --secondary: #e67e22;
+            --accent: #ff6b6b;
+            --dark: #2c3e50;
+            --light: #f8f9fa;
+            --gray: #95a5a6;
+            --success: #27ae60;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            font-family: 'Open Sans', sans-serif;
-            color: var(--secondary);
+            background-color: #f5f7fa;
+            color: var(--dark);
             line-height: 1.6;
-            overflow-x: hidden;
         }
         
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
         
-        /* Parallax Sections */
-        .parallax {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: relative;
-        }
-        
-        /* Navigation */
-        .navbar {
-            background-color: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-            padding: 15px 0;
-            transition: all 0.4s ease;
-        }
-        
-        .navbar.scrolled {
-            background-color: rgba(255, 255, 255, 0.98);
-            padding: 10px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .navbar-brand {
-            font-weight: 800;
-            font-size: 1.8rem;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-        }
-        
-        .navbar-brand i {
-            margin-right: 8px;
-            font-size: 1.5rem;
-        }
-        
-        .navbar-nav .nav-link {
-            font-weight: 600;
-            color: var(--secondary);
-            margin: 0 8px;
-            transition: color 0.3s;
-            position: relative;
-        }
-        
-        .navbar-nav .nav-link:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            bottom: 0;
-            left: 0;
-            transition: width 0.3s;
-        }
-        
-        .navbar-nav .nav-link:hover:after,
-        .navbar-nav .nav-link.active:after {
-            width: 100%;
-        }
-        
-        .navbar-nav .nav-link:hover,
-        .navbar-nav .nav-link.active {
-            color: var(--primary);
-        }
-        
-        /* Hero Section */
-        .hero-section {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg, rgba(26, 26, 26, 0.85) 0%, rgba(26, 26, 26, 0.7) 100%);
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
             color: white;
+            padding: 30px 0;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
         }
         
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
-            transform: scale(1.1);
-            transition: transform 0.5s ease-out;
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
         
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero-section h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            line-height: 1.1;
-        }
-        
-        .hero-section p {
+        .tagline {
             font-size: 1.2rem;
-            margin-bottom: 30px;
+            opacity: 0.9;
             max-width: 600px;
+            margin: 0 auto;
         }
         
-        .btn-primary {
-            background-color: var(--primary);
-            border: none;
-            padding: 12px 35px;
-            font-weight: 600;
-            border-radius: 4px;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .btn-primary:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--primary-dark);
-            transition: all 0.4s;
-            z-index: -1;
-        }
-        
-        .btn-primary:hover:before {
-            left: 0;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255, 107, 0, 0.3);
-        }
-        
-        /* Section Styling */
-        .section-padding {
-            padding: 100px 0;
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            max-width: 900px;
+            margin: 0 auto 50px;
         }
         
         .section-title {
-            position: relative;
-            margin-bottom: 50px;
-        }
-        
-        .section-title:after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 4px;
-            background-color: var(--primary);
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        /* About Section */
-        .about-section {
-            background-color: var(--light);
-        }
-        
-        .about-img {
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            transform: translateY(0);
-            transition: transform 0.5s;
-        }
-        
-        .about-img.parallax-element {
-            transform: translateY(30px);
-        }
-        
-        /* Services Section */
-        .service-card {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            padding: 40px 30px;
             text-align: center;
-            transition: all 0.4s;
-            margin-bottom: 30px;
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
+            margin-bottom: 40px;
         }
         
-        .service-card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 0;
-            background: var(--primary);
-            transition: all 0.4s;
-            z-index: -1;
-        }
-        
-        .service-card:hover:before {
-            height: 100%;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            color: white;
-        }
-        
-        .service-card:hover .service-icon,
-        .service-card:hover h4 {
-            color: white;
-        }
-        
-        .service-icon {
-            font-size: 3.5rem;
+        .section-title h3 {
             color: var(--primary);
-            margin-bottom: 20px;
-            transition: all 0.4s;
-        }
-        
-        .service-card h4 {
-            margin-bottom: 15px;
-            transition: all 0.4s;
-        }
-        
-        /* Projects Section */
-        .projects-section {
-            background-color: var(--dark);
-            color: white;
-        }
-        
-        .project-card {
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            height: 300px;
-        }
-        
-        .project-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .project-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
-            display: flex;
-            align-items: flex-end;
-            padding: 30px;
-            opacity: 0;
-            transition: all 0.4s;
-        }
-        
-        .project-card:hover .project-overlay {
-            opacity: 1;
-        }
-        
-        .project-card:hover .project-img {
-            transform: scale(1.1);
-        }
-        
-        /* Stats Section */
-        .stats-section {
-            background: linear-gradient(rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.9)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
-            background-attachment: fixed;
-            color: white;
-        }
-        
-        .stat-item {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        .stat-number {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: var(--primary);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
             margin-bottom: 10px;
         }
         
-        /* Testimonials Section */
-        .testimonial-card {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            padding: 30px;
-            margin-bottom: 30px;
+        .section-title h2 {
+            color: var(--dark);
+            font-size: 2.2rem;
             position: relative;
-        }
-        
-        .testimonial-card:before {
-            content: "";
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 4rem;
-            color: var(--primary);
-            opacity: 0.2;   
-            font-family: Georgia, serif;
-            line-height: 1;
-        }
-        
-        .testimonial-text {
-            font-style: italic;
+            display: inline-block;
             margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
         }
         
-        .client-info {
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
+        
+        .form-group {
+            padding: 0 15px;
+            margin-bottom: 25px;
+            width: 100%;
+        }
+        
+        .col-md-6 {
+            width: 50%;
+        }
+        
+        @media (max-width: 768px) {
+            .col-md-6 {
+                width: 100%;
+            }
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 3px rgba(44, 127, 184, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .help-block {
+            color: #e74c3c;
+            font-size: 14px;
+            margin-top: 5px;
+            display: block;
+        }
+        
+        .btn-default {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+        }
+        
+        .btn-default:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .subcategory-container {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+            display: none;
+        }
+        
+        .subcategory-title {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
+            gap: 10px;
         }
         
-        .client-img {
-            width: 60px;
-            height: 60px;
+        /* Modern Checkbox Styles */
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .checkbox-item {
+            position: relative;
+        }
+        
+        .checkbox-item input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+        
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid #e0e0e0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .checkbox-label:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-color: var(--primary-light);
+        }
+        
+        /* Modern Checkbox Designs */
+        /* Style 1: Classic with accent border */
+        .checkbox-item.style-1 input:checked + .checkbox-label {
+            border-color: var(--primary);
+            background: rgba(26, 82, 118, 0.05);
+        }
+        
+        .checkbox-item.style-1 .checkbox-label:before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            margin-right: 12px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .checkbox-item.style-1 input:checked + .checkbox-label:before {
+            background: var(--primary);
+            border-color: var(--primary);
+            content: '✓';
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        /* Style 2: Minimal with checkmark */
+        .checkbox-item.style-2 .checkbox-label:before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ddd;
             border-radius: 50%;
-            object-fit: cover;
-            margin-right: 15px;
+            margin-right: 12px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
         }
         
-        /* Contact Section */
-        .contact-section {
-            background-color: var(--light);
+        .checkbox-item.style-2 input:checked + .checkbox-label:before {
+            background: var(--secondary);
+            border-color: var(--secondary);
+            content: '✓';
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        /* Style 3: Filled background */
+        .checkbox-item.style-3 input:checked + .checkbox-label {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .checkbox-item.style-3 .checkbox-label:before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            margin-right: 12px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .checkbox-item.style-3 input:checked + .checkbox-label:before {
+            background: white;
+            border-color: white;
+            content: '✓';
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        /* Style 4: Gradient background */
+        .checkbox-item.style-4 input:checked + .checkbox-label {
+            background: linear-gradient(135deg, var(--primary-light), var(--secondary));
+            color: white;
+            border-color: transparent;
+        }
+        
+        .checkbox-item.style-4 .checkbox-label:before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            margin-right: 12px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .checkbox-item.style-4 input:checked + .checkbox-label:before {
+            background: white;
+            border-color: white;
+            content: '✓';
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        /* Style 5: Animated with shadow */
+        .checkbox-item.style-5 input:checked + .checkbox-label {
+            border-color: var(--primary);
+            box-shadow: 0 5px 15px rgba(26, 82, 118, 0.2);
+            animation: pulse 0.5s;
+        }
+        
+        .checkbox-item.style-5 .checkbox-label:before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            margin-right: 12px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .checkbox-item.style-5 input:checked + .checkbox-label:before {
+            background: var(--primary);
+            border-color: var(--primary);
+            content: '✓';
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--gray);
+            border-top: 1px solid #eee;
+            margin-top: 40px;
         }
         
         .contact-info {
-            background: var(--secondary);
-            color: white;
-            padding: 40px;
-            border-radius: 8px;
-            height: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
         }
         
         .contact-item {
             display: flex;
-            margin-bottom: 25px;
-        }
-        
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--primary);
-            border-radius: 50%;
-            display: flex;
             align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            flex-shrink: 0;
+            gap: 10px;
         }
         
-        /* Footer */
-        footer {
-            background-color: var(--dark);
+        .success-message {
+            display: none;
+            background: var(--success);
             color: white;
-            padding: 70px 0 20px;
-        }
-        
-        .footer-links h5 {
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        .footer-links ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .footer-links ul li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links ul li a {
-            color: #aaa;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-links ul li a:hover {
-            color: var(--primary);
-        }
-        
-        .social-icons a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
+            padding: 15px;
+            border-radius: 8px;
             text-align: center;
-            line-height: 40px;
-            margin-right: 10px;
-            color: white;
-            transition: all 0.3s;
+            margin-top: 20px;
         }
         
-        .social-icons a:hover {
-            background-color: var(--primary);
-            transform: translateY(-5px);
+        .required:after {
+            content: " *";
+            color: #e74c3c;
         }
         
-        .copyright {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
-            margin-top: 50px;
-            text-align: center;
-            color: #aaa;
+        .wow {
+            visibility: visible;
         }
         
-        /* Parallax Elements */
-        .parallax-element {
-            transition: transform 0.5s ease-out;
+        .fadeInUp {
+            animation-name: fadeInUp;
         }
         
-        /* Responsive Adjustments */
-        @media (max-width: 992px) {
-            .hero-section h1 {
-                font-size: 3rem;
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 40px, 0);
             }
-            
-            .section-padding {
-                padding: 80px 0;
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
             }
         }
         
-        @media (max-width: 768px) {
-            .hero-section h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-section p {
-                font-size: 1rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .parallax {
-                background-attachment: scroll;
-            }
+        .text-anime-style-3 {
+            position: relative;
+            overflow: hidden;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <header>
         <div class="container">
-            <a class="navbar-brand" href="#"><i class="fas fa-hard-hat"></i> ConstructPro</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#testimonials">Testimonials</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
+            <div class="logo">
+                <i class="fas fa-hard-hat"></i>
+                CONSTRUCTPRO
             </div>
+            <p class="tagline">Building your vision with precision and excellence</p>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero-section" id="home">
-        <div class="hero-bg parallax"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7">
-                    <div class="hero-content">
-                        <h1>Building The Future With Precision & Quality</h1>
-                        <p>We are a premier construction company with over 20 years of experience in delivering exceptional residential, commercial, and industrial projects.</p>
-                        <a href="#contact" class="btn btn-primary btn-lg">Get A Free Quote</a>
+    </header>
+    
+    <div class="container">
+        <div class="contact-form wow fadeInUp" data-wow-delay="0.25s">
+            <div class="section-title">
+                <h3 class="wow fadeInUp">contact us</h3>
+                <h2 class="text-anime-style-3">Get in touch with us</h2>
+            </div>
+             
+            <form id="contactForm" action="#" method="POST" data-toggle="validator">
+                <div class="row">
+                    <div class="form-group col-md-6 mb-4">
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Enter Your name" required="">
+                        <div class="help-block with-errors"></div>
+                    </div>
+        
+                    <div class="form-group col-md-6 mb-4">
+                        <input type="email" name="email" class="form-control" id="email" placeholder="Enter Your email" required="">
+                        <div class="help-block with-errors"></div>
+                    </div>
+        
+                    <div class="form-group col-md-6 mb-4">
+                        <input type="text" name="phone" class="form-control" id="phone" placeholder="Phone number" required="">
+                        <div class="help-block with-errors"></div>
+                    </div>
+        
+                    <div class="form-group col-md-6 mb-4">
+                        <input type="text" name="subject" class="form-control" id="subject" placeholder="Subject" required="">
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    
+                    <div class="form-group col-md-12 mb-4">
+                        <label for="service" class="required">Service Interested In</label>
+                        <select id="service" name="service" class="form-control" required>
+                            <option value="">Select a service</option>
+                            <option value="residential">Residential Construction</option>
+                            <option value="industrial">Industrial Construction</option>
+                            <option value="commercial">Commercial Construction</option>
+                            <option value="interior-exterior">Interior & Exterior Works</option>
+                            <option value="design">Architectural & Structural Design</option>
+                            <option value="fabrication">Fabrication Works</option>
+                            <option value="renovation">Renovation & Remodeling</option>
+                        </select>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    
+                    <!-- Dynamic Subcategories Container -->
+                    <div class="form-group col-md-12">
+                        <div id="subcategory-container" class="subcategory-container">
+                            <!-- Subcategories will be loaded here dynamically -->
+                        </div>
+                    </div>
+        
+                    <div class="form-group col-md-12 mb-5">
+                        <textarea name="msg" class="form-control" id="msg" rows="3" placeholder="Message" required=""></textarea>
+                        <div class="help-block with-errors"></div>
+                    </div>
+        
+                    <div class="col-md-12">
+                        <button type="submit" class="btn-default">
+                            <i class="fas fa-paper-plane"></i> Submit
+                        </button>
+                        <div id="msgSubmit" class="success-message"></div>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section-padding about-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <h2 class="section-title">About Our Company</h2>
-                    <p class="mb-4">ConstructPro has been a trusted name in the construction industry for over two decades. Our commitment to quality, safety, and client satisfaction has made us one of the most sought-after construction firms in the region.</p>
-                    <p class="mb-4">We specialize in residential, commercial, and industrial construction projects, delivering exceptional results on time and within budget.</p>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Licensed and insured contractors</li>
-                        <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Quality materials and craftsmanship</li>
-                        <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> On-time project completion</li>
-                        <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Competitive pricing</li>
-                        <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> 20+ years of experience</li>
-                    </ul>
+        
+        <footer>
+            <p>© 2023 ConstructPro. All rights reserved.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+91 98765 43210</span>
                 </div>
-                <div class="col-lg-6">
-                    <div class="about-img parallax-element">
-                        <img src="https://images.unsplash.com/photo-1503387769-00ec6efa5cff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Construction team" class="img-fluid">
-                    </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@constructpro.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>123 Construction Street, City, State 560001</span>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="section-padding">
-        <div class="container">
-            <h2 class="section-title text-center">Our Services</h2>
-            <p class="text-center mb-5">We offer a comprehensive range of construction services to meet all your building needs.</p>
-            
-            <div class="row">
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-home"></i>
-                        </div>
-                        <h4>Residential Construction</h4>
-                        <p>Custom home building, renovations, additions, and remodeling services tailored to your vision and lifestyle.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <h4>Commercial Construction</h4>
-                        <p>Office buildings, retail spaces, restaurants, and other commercial properties built to your specifications.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-industry"></i>
-                        </div>
-                        <h4>Industrial Construction</h4>
-                        <p>Warehouses, manufacturing facilities, and industrial complexes designed for efficiency and functionality.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-tools"></i>
-                        </div>
-                        <h4>Renovation & Remodeling</h4>
-                        <p>Transform your existing space with our expert renovation and remodeling services.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-drafting-compass"></i>
-                        </div>
-                        <h4>Architectural Design</h4>
-                        <p>Our in-house architects will bring your ideas to life with innovative and practical designs.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-hard-hat"></i>
-                        </div>
-                        <h4>Project Management</h4>
-                        <p>Comprehensive project management to ensure your construction project runs smoothly from start to finish.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section-padding projects-section">
-        <div class="container">
-            <h2 class="section-title text-center">Our Projects</h2>
-            <p class="text-center mb-5">Take a look at some of our recently completed projects.</p>
-            
-            <div class="row">
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Modern House" class="project-img">
-                        <div class="project-overlay">
-                            <div class="text-white">
-                                <h4>Modern Residence</h4>
-                                <p>Residential Construction</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Office Building" class="project-img">
-                        <div class="project-overlay">
-                            <div class="text-white">
-                                <h4>Corporate Office</h4>
-                                <p>Commercial Construction</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <img src="https://images.unsplash.com/photo-1541976590-713941681591?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Warehouse" class="project-img">
-                        <div class="project-overlay">
-                            <div class="text-white">
-                                <h4>Industrial Warehouse</h4>
-                                <p>Industrial Construction</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section section-padding parallax">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="250">0</div>
-                        <h5>Projects Completed</h5>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="150">0</div>
-                        <h5>Happy Clients</h5>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="20">0</div>
-                        <h5>Years Experience</h5>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="50">0</div>
-                        <h5>Expert Workers</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="section-padding bg-light">
-        <div class="container">
-            <h2 class="section-title text-center">What Our Clients Say</h2>
-            <p class="text-center mb-5">We take pride in the relationships we build with our clients.</p>
-            
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="testimonial-card">
-                        <div class="testimonial-text">
-                            "ConstructPro transformed our outdated kitchen into a modern, functional space that we absolutely love. Their attention to detail and professionalism was exceptional."
-                        </div>
-                        <div class="client-info">
-                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Client" class="client-img">
-                            <div>
-                                <h5>Sarah Johnson</h5>
-                                <p>Homeowner</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="testimonial-card">
-                        <div class="testimonial-text">
-                            "We hired ConstructPro for our office expansion project, and they delivered beyond our expectations. The project was completed on time and within budget. Highly recommended!"
-                        </div>
-                        <div class="client-info">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="client-img">
-                            <div>
-                                <h5>Michael Thompson</h5>
-                                <p>Business Owner</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="testimonial-card">
-                        <div class="testimonial-text">
-                            "From the initial design consultation to the final walkthrough, the ConstructPro team was professional, knowledgeable, and easy to work with. Our new home is everything we dreamed of."
-                        </div>
-                        <div class="client-info">
-                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client" class="client-img">
-                            <div>
-                                <h5>Jennifer Martinez</h5>
-                                <p>Homeowner</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section-padding contact-section">
-        <div class="container">
-            <h2 class="section-title text-center">Get In Touch</h2>
-            <p class="text-center mb-5">Ready to start your construction project? Contact us today for a free consultation.</p>
-            
-            <div class="row">
-                <div class="col-lg-8 mb-5 mb-lg-0">
-                    <form>
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <input type="text" class="form-control" placeholder="Your Name" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <input type="email" class="form-control" placeholder="Your Email" required>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Subject">
-                        </div>
-                        <div class="mb-3">
-                            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
-                        </div>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-lg-4">
-                    <div class="contact-info">
-                        <h4 class="mb-4">Contact Information</h4>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <h5>Address</h5>
-                                <p>123 Construction Ave, City, State 12345</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div>
-                                <h5>Phone</h5>
-                                <p>(555) 123-4567</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h5>Email</h5>
-                                <p>info@constructpro.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div>
-                                <h5>Working Hours</h5>
-                                <p>Mon-Fri: 8am-6pm</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                    <h3 class="mb-3">ConstructPro</h3>
-                    <p>Building excellence since 2003. We are committed to delivering high-quality construction services with integrity and professionalism.</p>
-                    <div class="social-icons mt-4">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-                    <div class="footer-links">
-                        <h5>Quick Links</h5>
-                        <ul>
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#services">Services</a></li>
-                            <li><a href="#projects">Projects</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <div class="footer-links">
-                        <h5>Services</h5>
-                        <ul>
-                            <li><a href="#">Residential Construction</a></li>
-                            <li><a href="#">Commercial Construction</a></li>
-                            <li><a href="#">Industrial Construction</a></li>
-                            <li><a href="#">Renovation & Remodeling</a></li>
-                            <li><a href="#">Project Management</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-links">
-                        <h5>Contact Info</h5>
-                        <ul>
-                            <li><i class="fas fa-map-marker-alt me-2"></i> 123 Construction Ave, City, State 12345</li>
-                            <li><i class="fas fa-phone me-2"></i> (555) 123-4567</li>
-                            <li><i class="fas fa-envelope me-2"></i> info@constructpro.com</li>
-                            <li><i class="fas fa-clock me-2"></i> Mon-Fri: 8am-6pm</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2023 ConstructPro. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
+        </footer>
+    </div>
+    
     <script>
-        // Navbar background change on scroll
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
+        // Service subcategories data
+        const serviceSubcategories = {
+            residential: [
+                "New house construction",
+                "Villas & independent homes",
+                "Renovation & remodeling",
+                "Interior works"
+            ],
+            industrial: [
+                "Industrial sheds",
+                "Warehouses",
+                "Factories",
+                "Godowns",
+                "Steel structural buildings"
+            ],
+            commercial: [
+                "Office buildings",
+                "Shops & showrooms",
+                "Industrial sheds",
+                "Retail and warehouse spaces"
+            ],
+            "interior-exterior": [
+                "False ceiling",
+                "Wardrobes",
+                "Wall décor",
+                "Lighting solutions",
+                "Exterior elevation",
+                "Compound walls",
+                "Gate works",
+                "Landscaping",
+                "Exterior cladding"
+            ],
+            design: [
+                "2D/3D planning",
+                "Structural engineering",
+                "Elevation design",
+                "Approval drawings"
+            ],
+            fabrication: [
+                "Steel / Iron framing",
+                "Shed construction & roofing",
+                "Steel doors, windows, grills",
+                "Metal staircases & railings",
+                "Industrial structural fabrication",
+                "Fiber roofing and metal truss works"
+            ],
+            renovation: [
+                "Renovate damaged buildings",
+                "Redesign old houses"
+            ]
+        };
+        
+        // Service icons
+        const serviceIcons = {
+            residential: "fas fa-home",
+            industrial: "fas fa-industry",
+            commercial: "fas fa-building",
+            "interior-exterior": "fas fa-paint-roller",
+            design: "fas fa-drafting-compass",
+            fabrication: "fas fa-tools",
+            renovation: "fas fa-hammer"
+        };
+        
+        // Service titles
+        const serviceTitles = {
+            residential: "Residential Construction Services",
+            industrial: "Industrial Construction Services",
+            commercial: "Commercial Construction Services",
+            "interior-exterior": "Interior & Exterior Works",
+            design: "Architectural & Structural Design",
+            fabrication: "Fabrication Works",
+            renovation: "Renovation & Remodeling"
+        };
+        
+        // Checkbox styles for different services
+        const checkboxStyles = {
+            residential: "style-1",
+            industrial: "style-2",
+            commercial: "style-3",
+            "interior-exterior": "style-4",
+            design: "style-5",
+            fabrication: "style-1",
+            renovation: "style-2"
+        };
+        
+        // Handle service selection change
+        document.getElementById('service').addEventListener('change', function() {
+            const selectedService = this.value;
+            const subcategoryContainer = document.getElementById('subcategory-container');
+            
+            // Clear previous content
+            subcategoryContainer.innerHTML = '';
+            
+            if (selectedService && serviceSubcategories[selectedService]) {
+                // Show the container
+                subcategoryContainer.style.display = 'block';
+                
+                // Create title
+                const title = document.createElement('h4');
+                title.className = 'subcategory-title';
+                title.innerHTML = `<i class="${serviceIcons[selectedService]}"></i> ${serviceTitles[selectedService]}`;
+                subcategoryContainer.appendChild(title);
+                
+                // Create checkbox group
+                const checkboxGroup = document.createElement('div');
+                checkboxGroup.className = 'checkbox-group';
+                
+                // Add checkboxes for each subcategory
+                serviceSubcategories[selectedService].forEach(subcategory => {
+                    const checkboxItem = document.createElement('div');
+                    checkboxItem.className = `checkbox-item ${checkboxStyles[selectedService]}`;
+                    
+                    const checkboxId = `sub-${subcategory.replace(/\s+/g, '-').toLowerCase()}`;
+                    
+                    checkboxItem.innerHTML = `
+                        <input type="checkbox" id="${checkboxId}" name="subcategories" value="${subcategory}">
+                        <label for="${checkboxId}" class="checkbox-label">
+                            ${subcategory}
+                        </label>
+                    `;
+                    
+                    checkboxGroup.appendChild(checkboxItem);
+                });
+                
+                subcategoryContainer.appendChild(checkboxGroup);
             } else {
-                navbar.classList.remove('scrolled');
+                // Hide the container if no service is selected
+                subcategoryContainer.style.display = 'none';
             }
         });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 70,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Parallax effect for hero background
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const heroBg = document.querySelector('.hero-bg');
-            heroBg.style.transform = `scale(1.1) translateY(${scrolled * 0.5}px)`;
-        });
-
-        // Parallax effect for elements
-        const parallaxElements = document.querySelectorAll('.parallax-element');
         
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            parallaxElements.forEach(element => {
-                const rate = scrolled * -0.5;
-                element.style.transform = `translateY(${rate}px)`;
+            // In a real application, you would send the form data to a server here
+            // For this example, we'll just show the success message
+            
+            const successMessage = document.getElementById('msgSubmit');
+            successMessage.textContent = "Thank you for your enquiry! We'll contact you shortly.";
+            successMessage.style.display = 'block';
+            
+            // Scroll to the success message
+            successMessage.scrollIntoView({ behavior: 'smooth' });
+            
+            // Reset the form after 5 seconds
+            setTimeout(function() {
+                document.getElementById('contactForm').reset();
+                document.getElementById('subcategory-container').style.display = 'none';
+                successMessage.style.display = 'none';
+            }, 5000);
+        });
+        
+        // Add animation on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.wow');
+            animatedElements.forEach(el => {
+                el.style.animation = 'fadeInUp 0.8s ease forwards';
             });
         });
-
-        // Counter animation for stats
-        function animateCounter() {
-            const counters = document.querySelectorAll('.stat-number');
-            const speed = 200;
-            
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-count');
-                const count = +counter.innerText;
-                const increment = target / speed;
-                
-                if(count < target) {
-                    counter.innerText = Math.ceil(count + increment);
-                    setTimeout(animateCounter, 1);
-                } else {
-                    counter.innerText = target;
-                }
-            });
-        }
-
-        // Initialize counter when stats section is in view
-        const statsSection = document.querySelector('.stats-section');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting) {
-                    animateCounter();
-                    observer.unobserve(entry.target);
-                }
-            });
-        });
-
-        observer.observe(statsSection);
     </script>
 </body>
 </html>
