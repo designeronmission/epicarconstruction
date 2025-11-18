@@ -1,556 +1,760 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Mega Menu - Construction Services</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --accent-color: #3498db;
-            --accent-hover: #2980b9;
-            --success-color: #27ae60;
-            --warning-color: #f39c12;
-            --text-light: #ffffff;
-            --text-dark: #333333;
-            --overlay-dark: rgba(0, 0, 0, 0.7);
-            --card-hover: #f8f9fa;
-            --gradient-primary: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-            --gradient-card: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-            --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.08);
-            --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.15);
-            --shadow-heavy: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f9fa;
-            padding-top: 80px;
-        }
-        
-        /* Navigation Styles */
-        .navbar {
-            background: var(--gradient-primary);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 12px 0;
-        }
-        
-        .navbar-brand {
-            font-weight: 700;
-            color: var(--text-light);
-            font-size: 1.5rem;
-        }
-        
-        .nav-link {
-            color: var(--text-light);
-            font-weight: 500;
-            transition: color 0.3s;
-            padding: 8px 15px !important;
-            border-radius: 4px;
-        }
-        
-        .nav-link:hover, .nav-link.active {
-            color: var(--text-light);
-            background-color: rgba(255, 255, 255, 0.15);
-        }
-        
-        /* Mega Menu Styles */
-        .mega-dropdown {
-            position: static !important;
-        }
-        
-        .mega-dropdown-menu {
-            width: 100%;
-            padding: 30px;
-            box-shadow: var(--shadow-heavy);
-            border: none;
-            border-radius: 0 0 12px 12px;
-            margin-top: 0;
-            background-color: white;
-            display: none;
-            opacity: 0;
-            transform: translateY(-10px);
-            transition: opacity 0.3s, transform 0.3s;
-            left: 0;
-            right: 0;
-        }
-        
-        .mega-dropdown:hover .mega-dropdown-menu {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .mega-card-container {
-            background: var(--gradient-card);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow-light);
-            transition: transform 0.3s, box-shadow 0.3s;
-            height: 100%;
-            margin-bottom: 20px;
-            position: relative;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-        
-        .mega-card-container:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-medium);
-        }
-        
-        .mega-card-img {
-            height: 180px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            transition: transform 0.5s;
-        }
-        
-        .mega-card-container:hover .mega-card-img {
-            transform: scale(1.05);
-        }
-        
-        .mega-card-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-            color: var(--text-light);
-            padding: 20px 15px;
-        }
-        
-        .mega-card-title {
-            font-weight: 600;
-            margin: 0;
-            font-size: 1.1rem;
-            line-height: 1.3;
-        }
-        
-        .mega-card-link {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            display: inline-block;
-            margin-top: 8px;
-            background-color: var(--accent-color);
-            padding: 6px 12px;
-            border-radius: 20px;
-            transition: all 0.3s;
-        }
-        
-        .mega-card-link:hover {
-            background-color: var(--accent-hover);
-            transform: translateX(5px);
-        }
-        
-        .mega-card-icon {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(255, 255, 255, 0.9);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-color);
-            font-size: 1.2rem;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .mega-card-badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: var(--success-color);
-            color: white;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-        
-        /* Centered layout */
-        .mega-menu-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        /* Section styling */
-        .section-title {
-            color: var(--primary-color);
-            margin-bottom: 30px;
-            font-weight: 700;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background-color: var(--accent-color);
-        }
-        
-        /* Demo content */
-        .demo-content {
-            background-color: white;
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-            margin-top: 30px;
-        }
-        
-        .service-icon {
-            font-size: 2rem;
-            color: var(--accent-color);
-            margin-bottom: 15px;
-        }
-        
-        /* Responsive adjustments */
-        /* Large screens (lg) - 4 cards per row */
-        @media (min-width: 992px) {
-            .mega-card-col {
-                flex: 0 0 25%;
-                max-width: 25%;
-            }
-        }
-        
-        /* Medium screens (md) - 3 cards per row */
-        @media (min-width: 768px) and (max-width: 991px) {
-            .mega-card-col {
-                flex: 0 0 33.333%;
-                max-width: 33.333%;
-            }
-            
-            .mega-card-img {
-                height: 160px;
-            }
-        }
-        
-        /* Small screens (sm) - 2 cards per row */
-        @media (min-width: 576px) and (max-width: 767px) {
-            .mega-card-col {
-                flex: 0 0 50%;
-                max-width: 50%;
-            }
-            
-            .mega-card-img {
-                height: 150px;
-            }
-            
-            .mega-dropdown-menu {
-                padding: 20px;
-            }
-        }
-        
-        /* Extra small screens (xs) - 1 card per row */
-        @media (max-width: 575px) {
-            .mega-card-col {
-                flex: 0 0 100%;
-                max-width: 100%;
-            }
-            
-            .mega-card-img {
-                height: 140px;
-            }
-            
-            .mega-dropdown-menu {
-                padding: 15px;
-            }
-        }
-        
-        /* Animation for cards */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .mega-card-col {
-            animation: fadeInUp 0.5s ease-out forwards;
-            opacity: 0;
-        }
-        
-        .mega-card-col:nth-child(1) { animation-delay: 0.1s; }
-        .mega-card-col:nth-child(2) { animation-delay: 0.15s; }
-        .mega-card-col:nth-child(3) { animation-delay: 0.2s; }
-        .mega-card-col:nth-child(4) { animation-delay: 0.25s; }
-        .mega-card-col:nth-child(5) { animation-delay: 0.3s; }
-        .mega-card-col:nth-child(6) { animation-delay: 0.35s; }
-        .mega-card-col:nth-child(7) { animation-delay: 0.4s; }
-        .mega-card-col:nth-child(8) { animation-delay: 0.45s; }
-        .mega-card-col:nth-child(9) { animation-delay: 0.5s; }
-        .mega-card-col:nth-child(10) { animation-delay: 0.55s; }
-        .mega-card-col:nth-child(11) { animation-delay: 0.6s; }
-        
-        /* Responsive indicator */
-        .responsive-indicator {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--primary-color);
-            color: white;
-            padding: 8px 12px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            z-index: 1000;
-        }
-        
-        @media (min-width: 992px) {
-            .responsive-indicator::after {
-                content: "Large (4 cards/row)";
-            }
-        }
-        
-        @media (min-width: 768px) and (max-width: 991px) {
-            .responsive-indicator::after {
-                content: "Medium (3 cards/row)";
-            }
-        }
-        
-        @media (min-width: 576px) and (max-width: 767px) {
-            .responsive-indicator::after {
-                content: "Small (2 cards/row)";
-            }
-        }
-        
-        @media (max-width: 575px) {
-            .responsive-indicator::after {
-                content: "X-Small (1 card/row)";
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ConstructPro | Modern Construction Services</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #0f3b27;
+      --secondary-color: #2a7452;
+      --accent-color: #4caf7d;
+      --white-color: #e9f7ec;
+      --dark-color: #0a291c;
+      --gradient: linear-gradient(135deg, #0f3b27 0%, #2a7452 100%);
+      --card-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      --hover-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body { 
+      background: #f8fbf9; 
+      font-family: 'Inter', sans-serif;
+      color: #333;
+      overflow-x: hidden;
+    }
+    
+    /* Navigation Styles */
+    .navbar {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 15px 0;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      position: relative;
+      z-index: 1000;
+    }
+    
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: var(--primary-color) !important;
+      display: flex;
+      align-items: center;
+    }
+    
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      background: var(--gradient);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+      color: white;
+    }
+    
+    .navbar-nav .nav-link {
+      color: var(--primary-color);
+      font-weight: 500;
+      padding: 10px 20px !important;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .navbar-nav .nav-link:hover {
+      background: var(--white-color);
+      transform: translateY(-2px);
+    }
+    
+    /* Services menu item with hover effect */
+    .nav-item.services-trigger {
+      position: relative;
+    }
+    
+    .nav-item.services-trigger .nav-link {
+      cursor: pointer;
+    }
+    
+    /* Mega Menu Styles */
+    .mega-menu {
+     position: absolute;
+   top: 128%;
+    right: -541px;
+    width: 1329px;
+    background: #fff;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    border-radius: 0 0 24px 24px;
+    padding: 40px 0;
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+    }
+    
+    .mega-menu.active {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .mega-menu::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient);
+    }
+    
+    .mega-left-box {
+      background: var(--gradient);
+      color: #fff;
+      border-radius: 20px;
+      padding: 40px;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .mega-left-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100px;
+      height: 100px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      transform: translate(30px, -30px);
+    }
+    
+    .mega-left-box::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 80px;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      transform: translate(-20px, 20px);
+    }
+    
+    .mega-left-box h2 {
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .mega-left-box h2 em {
+      font-style: normal;
+      color: #a8e6c3;
+    }
+    
+    .mega-left-box p {
+      opacity: 0.9;
+      margin-bottom: 25px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .mega-left-box button {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      padding: 12px 25px;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 1;
+      backdrop-filter: blur(5px);
+    }
+    
+    .mega-left-box button:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+    }
+    
+    .menu-section-title {
+      font-weight: 700;
+      margin-bottom: 25px;
+      color: var(--primary-color);
+      font-size: 1.3rem;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--white-color);
+      display: flex;
+      align-items: center;
+    }
+    
+    .menu-section-title::before {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 20px;
+      background: var(--accent-color);
+      border-radius: 3px;
+      margin-right: 10px;
+    }
+    
+    .service-category {
+      margin-bottom: 30px;
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      transition: all 0.3s ease;
+      border: 1px solid #f0f0f0;
+    }
+    
+    .service-category:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--card-shadow);
+    }
+    
+    .service-category h6 {
+      color: var(--primary-color);
+      font-weight: 600;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      font-size: 1.1rem;
+    }
+    
+    .service-category h6 i {
+      margin-right: 10px;
+      color: var(--accent-color);
+      font-size: 1.2rem;
+      width: 30px;
+      height: 30px;
+      background: var(--white-color);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .service-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    
+    .service-list li {
+      padding: 10px 0;
+      color: #555;
+      transition: all 0.2s ease;
+      padding-left: 25px;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    
+    .service-list li:hover {
+      color: var(--primary-color);
+      transform: translateX(5px);
+    }
+    
+    .service-list li:before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background: var(--accent-color);
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    
+    /* Hero Section */
+    .hero-section {
+      background: var(--gradient);
+      color: white;
+      padding: 120px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 300px;
+      height: 300px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      transform: translate(100px, -100px);
+    }
+    
+    .hero-section::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 200px;
+      height: 200px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      transform: translate(-50px, 50px);
+    }
+    
+    .hero-section h1 {
+      font-weight: 700;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .section-title {
+      color: var(--primary-color);
+      font-weight: 700;
+      margin-bottom: 50px;
+      text-align: center;
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--accent-color);
+      border-radius: 2px;
+    }
+    
+    /* Modern Grid Layout */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 25px;
+    }
+    
+    .service-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 25px;
+      box-shadow: var(--card-shadow);
+      transition: all 0.3s ease;
+      border: 1px solid #f0f0f0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .service-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--hover-shadow);
+    }
+    
+    .service-card-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--white-color);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: var(--primary-color);
+    }
+    
+    .service-card h5 {
+      color: var(--primary-color);
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    
+    .service-card p {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+    
+    .service-card .btn {
+      background: transparent;
+      color: var(--primary-color);
+      border: 1px solid var(--white-color);
+      border-radius: 8px;
+      padding: 8px 15px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .service-card .btn:hover {
+      background: var(--white-color);
+      border-color: var(--accent-color);
+    }
+    
+    /* Animation for menu items */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .mega-menu .service-category {
+      animation: fadeInUp 0.5s ease forwards;
+      opacity: 0;
+    }
+    
+    .mega-menu .service-category:nth-child(1) { animation-delay: 0.1s; }
+    .mega-menu .service-category:nth-child(2) { animation-delay: 0.2s; }
+    .mega-menu .service-category:nth-child(3) { animation-delay: 0.3s; }
+    .mega-menu .service-category:nth-child(4) { animation-delay: 0.4s; }
+    .mega-menu .service-category:nth-child(5) { animation-delay: 0.5s; }
+    
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+      .mega-menu {
+        padding: 30px 20px;
+      }
+      
+      .mega-left-box {
+        margin-bottom: 30px;
+      }
+    }
+    
+    /* Content Section */
+    .content-section {
+      padding: 80px 0;
+    }
+    
+    .feature-box {
+      background: #fff;
+      border-radius: 16px;
+      padding: 30px;
+      height: 100%;
+      box-shadow: var(--card-shadow);
+      transition: all 0.3s ease;
+      border: 1px solid #f0f0f0;
+    }
+    
+    .feature-box:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--hover-shadow);
+    }
+    
+    .feature-icon {
+      width: 70px;
+      height: 70px;
+      background: var(--white-color);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 30px;
+      color: var(--primary-color);
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <i class="fas fa-hard-hat me-2"></i>CONSTRUCTPRO
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#"><i class="fas fa-home me-1"></i> Home</a>
-                    </li>
-                    <li class="nav-item dropdown mega-dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button">
-                            <i class="fas fa-tools me-1"></i> Services
-                        </a>
-                        <div class="dropdown-menu mega-dropdown-menu" aria-labelledby="servicesDropdown">
-                            <div class="mega-menu-container">
-                                <div class="row g-4">
-                                    <!-- Civil Construction -->
-                                    <div class="mega-card-col">
-                                        <div class="mega-card-container">
-                                            <div class="mega-card-badge">Popular</div>
-                                            <div class="mega-card-icon">
-                                                <i class="fas fa-truck-pickup"></i>
-                                            </div>
-                                            <div class="mega-card-img" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
-                                                <div class="mega-card-overlay">
-                                                    <h5 class="mega-card-title">Civil Construction</h5>
-                                                    <a href="#" class="mega-card-link">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Structural Works -->
-                                    <div class="mega-card-col">
-                                        <div class="mega-card-container">
-                                            <div class="mega-card-badge">Featured</div>
-                                            <div class="mega-card-icon">
-                                                <i class="fas fa-building"></i>
-                                            </div>
-                                            <div class="mega-card-img" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
-                                                <div class="mega-card-overlay">
-                                                    <h5 class="mega-card-title">Structural Works</h5>
-                                                    <a href="#" class="mega-card-link">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Demolition & Site Preparation -->
-                                    <div class="mega-card-col">
-                                        <div class="mega-card-container">
-                                            <div class="mega-card-icon">
-                                                <i class="fas fa-hammer"></i>
-                                            </div>
-                                            <div class="mega-card-img" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
-                                                <div class="mega-card-overlay">
-                                                    <h5 class="mega-card-title">Demolition & Site Preparation</h5>
-                                                    <a href="#" class="mega-card-link">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Masonry & Carpentry -->
-                                    <div class="mega-card-col">
-                                        <div class="mega-card-container">
-                                            <div class="mega-card-badge">New</div>
-                                            <div class="mega-card-icon">
-                                                <i class="fas fa-ruler-combined"></i>
-                                            </div>
-                                            <div class="mega-card-img" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
-                                                <div class="mega-card-overlay">
-                                                    <h5 class="mega-card-title">Masonry & Carpentry</h5>
-                                                    <a href="#" class="mega-card-link">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Roofing Solutions -->
-                                    <div class="mega-card-col">
-                                        <div class="mega-card-container">
-                                            <div class="mega-card-icon">
-                                                <i class="fas fa-home"></i>
-                                            </div>
-                                            <div class="mega-card-img" style="background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
-                                                <div class="mega-card-overlay">
-                                                    <h5 class="mega-card-title">Roofing Solutions</h5>
-                                                    <a href="#" class="mega-card-link">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Plumbing & Electrical -->
-                                    <div class="mega-card-col">
-                                        <div class="mega-card-container">
-                                            <div class="mega-card-badge">Popular</div>
-                                            <div class="mega-card-icon">
-                                                <i class="fas fa-bolt"></i>
-                                            </div>
-                                            <div class="mega-card-img" style="background-image: url('https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
-                                                <div class="mega-card-overlay">
-                                                    <h5 class="mega-card-title">Plumbing & Electrical</h5>
-                                                    <a href="#" class="mega-card-link">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Flooring & Finishing -->
-                                    <div class="mega-card-col">
-                                        <div class="mega-card-container">
-                                            <div class="mega-card-icon">
-                                                <i class="fas fa-border-style"></i>
-                                            </div>
-                                            <div class="mega-card-img" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
-                                                <div class="mega-card-overlay">
-                                                    <h5 class="mega-card-title">Flooring & Finishing</h5>
-                                                    <a href="#" class="mega-card-link">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Interiors & Furnishings -->
-                                    <div class="mega-card-col">
-                                        <div class="mega-card-container">
-                                            <div class="mega-card-badge">Featured</div>
-                                            <div class="mega-card-icon">
-                                                <i class="fas fa-couch"></i>
-                                            </div>
-                                            <div class="mega-card-img" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
-                                                <div class="mega-card-overlay">
-                                                    <h5 class="mega-card-title">Interiors & Furnishings</h5>
-                                                    <a href="#" class="mega-card-link">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Exterior & Landscaping -->
-                                    <div class="mega-card-col">
-                                        <div class="mega-card-container">
-                                            <div class="mega-card-icon">
-                                                <i class="fas fa-tree"></i>
-                                            </div>
-                                            <div class="mega-card-img" style="background-image: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
-                                                <div class="mega-card-overlay">
-                                                    <h5 class="mega-card-title">Exterior & Landscaping</h5>
-                                                    <a href="#" class="mega-card-link">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Renovation & Remodeling -->
-                                    <div class="mega-card-col">
-                                        <div class="mega-card-container">
-                                            <div class="mega-card-badge">Popular</div>
-                                            <div class="mega-card-icon">
-                                                <i class="fas fa-paint-roller"></i>
-                                            </div>
-                                            <div class="mega-card-img" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
-                                                <div class="mega-card-overlay">
-                                                    <h5 class="mega-card-title">Renovation & Remodeling</h5>
-                                                    <a href="#" class="mega-card-link">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Specialized Works -->
-                                    <div class="mega-card-col">
-                                        <div class="mega-card-container">
-                                            <div class="mega-card-icon">
-                                                <i class="fas fa-tools"></i>
-                                            </div>
-                                            <div class="mega-card-img" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
-                                                <div class="mega-card-overlay">
-                                                    <h5 class="mega-card-title">Specialized Works</h5>
-                                                    <a href="#" class="mega-card-link">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-building me-1"></i> Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-info-circle me-1"></i> About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-phone me-1"></i> Contact</a>
-                    </li>
-                </ul>
-            </div>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <div class="brand-logo">
+          <i class="fas fa-hard-hat"></i>
         </div>
-    </nav>
+        ConstructPro
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item services-trigger dropdown" id="servicesNavItem">
+            <a class="nav-link dropdown-toggle" href="#" role="button" id="servicesTrigger">Services</a>
+            <!-- Mega Menu -->
+            <div class="mega-menu" id="megaMenu">
+              <div class="container">
+                <div class="row g-5">
+                  
+                  <!-- Left Section -->
+                  <div class="col-lg-4">
+                    <div class="mega-left-box">
+                      <h2>Building Your Dreams<br>With <em>Precision & Quality.</em></h2>
+                      <p>We provide comprehensive construction solutions with 20+ years of expertise in residential and commercial projects.</p>
+                      <button>Get Free Consultation</button>
+                    </div>
+                    
+                  </div>
 
-    <!-- Responsive indicator -->
-    <div class="responsive-indicator"></div>
+                  <!-- Middle Section -->
+                  <div class="col-lg-4">
+              <!--       <h5 class="menu-section-title">Construction Services</h5> -->
+                    
+                    <div class="service-category">
+                      <h6><i class="fas fa-home"></i> Residential Construction</h6>
+                      <ul class="service-list">
+                        <li>New house construction</li>
+                        <li>Villas & independent homes</li>
+                        <li>Renovation & remodeling</li>
+                        <li>Interior works</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="service-category">
+                      <h6><i class="fas fa-building"></i> Commercial Construction</h6>
+                      <ul class="service-list">
+                        <li>Office buildings</li>
+                        <li>Shops & showrooms</li>
+                        <li>Industrial sheds</li>
+                        <li>Retail and warehouse spaces</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="service-category">
+                      <h6><i class="fas fa-drafting-compass"></i> Architectural & Structural Design</h6>
+                      <ul class="service-list">
+                        <li>2D/3D planning</li>
+                        <li>Structural engineering</li>
+                        <li>Elevation design</li>
+                        <li>Approval drawings</li>
+                      </ul>
+                    </div>
+                    
+                  </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+                  <!-- Right Section -->
+                  <div class="col-lg-4">
+                    
+                    <div class="service-category">
+                      <h6><i class="fas fa-tasks"></i> Project Management Services</h6>
+                      <ul class="service-list">
+                        <li>Cost estimation</li>
+                        <li>Material procurement</li>
+                        <li>On-site supervision</li>
+                        <li>Work schedule planning</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="service-category">
+                      <h6><i class="fas fa-tools"></i> Renovation & Maintenance</h6>
+                      <ul class="service-list">
+                        <li>Building repair</li>
+                        <li>Waterproofing</li>
+                        <li>Painting & flooring works</li>
+                        <li>Plumbing & electrical revamp</li>
+                      </ul>
+                    </div>
+                    
+
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h1 class="display-4 fw-bold">Professional Construction Services</h1>
+          <p class="lead mb-4">From residential homes to commercial complexes, we build your vision with precision and quality</p>
+          <button class="btn btn-light btn-lg px-4 py-2 fw-bold" style="color: var(--primary-color);">Explore Our Services</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Preview -->
+  <section class="content-section">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-12">
+          <h2 class="section-title">Our Construction Services</h2>
+          <p class="text-center mb-5">Hover over "Services" in the navigation to explore our complete offerings</p>
+        </div>
+        
+        <div class="col-12">
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-card-icon">
+                <i class="fas fa-home"></i>
+              </div>
+              <h5>Residential Construction</h5>
+              <p>Custom homes, villas, and residential projects built to your specifications with quality materials.</p>
+              <button class="btn">Learn More</button>
+            </div>
+            
+            <div class="service-card">
+              <div class="service-card-icon">
+                <i class="fas fa-building"></i>
+              </div>
+              <h5>Commercial Construction</h5>
+              <p>Office spaces, retail locations, and industrial facilities designed for functionality and efficiency.</p>
+              <button class="btn">Learn More</button>
+            </div>
+            
+            <div class="service-card">
+              <div class="service-card-icon">
+                <i class="fas fa-drafting-compass"></i>
+              </div>
+              <h5>Architectural Design</h5>
+              <p>Innovative 2D/3D designs and structural engineering solutions for your construction projects.</p>
+              <button class="btn">Learn More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Features Section -->
+      <div class="row mt-5">
+        <div class="col-12">
+          <h2 class="section-title">Why Choose ConstructPro</h2>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="feature-box text-center">
+            <div class="feature-icon mx-auto">
+              <i class="fas fa-award"></i>
+            </div>
+            <h4>Quality Assurance</h4>
+            <p>We maintain the highest standards in materials and workmanship for lasting results.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="feature-box text-center">
+            <div class="feature-icon mx-auto">
+              <i class="fas fa-clock"></i>
+            </div>
+            <h4>On-Time Delivery</h4>
+            <p>Our projects are completed within agreed timelines without compromising quality.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="feature-box text-center">
+            <div class="feature-icon mx-auto">
+              <i class="fas fa-hand-holding-usd"></i>
+            </div>
+            <h4>Cost Effective</h4>
+            <p>We provide competitive pricing while ensuring the best value for your investment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Mega Menu functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const servicesTrigger = document.getElementById('servicesTrigger');
+      const servicesNavItem = document.getElementById('servicesNavItem');
+      const megaMenu = document.getElementById('megaMenu');
+      
+      let hoverTimer;
+      let isMenuOpen = false;
+      
+      // Open mega menu
+      function openMegaMenu() {
+        clearTimeout(hoverTimer);
+        megaMenu.classList.add('active');
+        isMenuOpen = true;
+      }
+      
+      // Close mega menu
+      function closeMegaMenuFunc() {
+        megaMenu.classList.remove('active');
+        isMenuOpen = false;
+      }
+      
+      // Open on hover with delay
+      servicesNavItem.addEventListener('mouseenter', function() {
+        if (!isMenuOpen) {
+          hoverTimer = setTimeout(openMegaMenu, 300); // 300ms delay
+        }
+      });
+      
+      // Close on mouse leave with delay
+      servicesNavItem.addEventListener('mouseleave', function(e) {
+        // Check if mouse is leaving to outside the menu
+        if (!megaMenu.contains(e.relatedTarget)) {
+          clearTimeout(hoverTimer);
+          if (isMenuOpen) {
+            hoverTimer = setTimeout(closeMegaMenuFunc, 500); // 500ms delay before closing
+          }
+        }
+      });
+      
+      // Keep menu open when hovering over it
+      megaMenu.addEventListener('mouseenter', function() {
+        clearTimeout(hoverTimer);
+      });
+      
+      // Close when mouse leaves the menu
+      megaMenu.addEventListener('mouseleave', function(e) {
+        // Check if mouse is leaving to outside the nav item
+        if (!servicesNavItem.contains(e.relatedTarget)) {
+          hoverTimer = setTimeout(closeMegaMenuFunc, 300); // 300ms delay before closing
+        }
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener('click', function(e) {
+        if (isMenuOpen && !servicesNavItem.contains(e.target) && !megaMenu.contains(e.target)) {
+          closeMegaMenuFunc();
+        }
+      });
+    });
+  </script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

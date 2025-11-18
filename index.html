@@ -1,59 +1,230 @@
 <!DOCTYPE html>
 <html lang="zxx">
+
 <head>
-	<!-- Meta -->
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="keywords" content="">
-	<meta name="author" content=" Epicar Construction">
-	<!-- Page Title -->
-	<title> Epicar Construction</title>
-	<!-- Favicon Icon -->
-	<link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/fav-icon.png">
-	<!-- Google Fonts Css-->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content=" Epicar Construction">
+    <!-- Page Title -->
+    <title> Epicar Construction</title>
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/fav-icon.png">
+    <!-- Google Fonts Css-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-	<!-- Bootstrap Css -->
-	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-	<!-- SlickNav Css -->
-	<link href="css/slicknav.min.css" rel="stylesheet">
-	<!-- Swiper Css -->
-	<link rel="stylesheet" href="css/swiper-bundle.min.css">
-	<!-- Font Awesome Icon Css-->
-	<link href="css/all.css" rel="stylesheet" media="screen">
-	<!-- Animated Css -->
-	<link href="css/animate.css" rel="stylesheet">
-	<!-- Magnific Popup Core Css File -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
-	<!-- Mouse Cursor Css File -->
-	<link rel="stylesheet" href="css/mousecursor.css">
-	<!-- Main Custom Css -->
-	<link href="css/custom.css" rel="stylesheet" media="screen">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Manrope:wght@200..800&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap Css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- SlickNav Css -->
+    <link href="css/slicknav.min.css" rel="stylesheet">
+    <!-- Swiper Css -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <!-- Font Awesome Icon Css-->
+    <link href="css/all.css" rel="stylesheet" media="screen">
+    <!-- Animated Css -->
+    <link href="css/animate.css" rel="stylesheet">
+    <!-- Magnific Popup Core Css File -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- Mouse Cursor Css File -->
+    <link rel="stylesheet" href="css/mousecursor.css">
+    <!-- Main Custom Css -->
+    <link href="css/custom.css" rel="stylesheet" media="screen">
 </head>
+
 <body>
 
     <!-- Header Start -->
-	<header class="main-header container">
-		<div class="header-sticky">
-			<nav class="navbar navbar-expand-lg">
-				<div class="container-fluid">
-					<!-- Logo Start -->
-					<a class="navbar-brand" href="./"><img src="assets/images/logo/logo-new.png" alt="Logo"></a>
-					<!-- Logo End -->
+    <header class="main-header">
+        <div class="container">
+        <div class="header-sticky">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <!-- Logo Start -->
+                    <a class="navbar-brand" href="./"><img src="assets/images/logo/logo-new.png" alt="Logo"></a>
+                    <!-- Logo End -->
 
-					<!-- Main Menu Start -->
-					<div class="collapse navbar-collapse main-menu">
+                    <!-- Main Menu Start -->
+                    <div class="collapse navbar-collapse main-menu">
                         <div class="nav-menu-wrapper">
                             <ul class="navbar-nav mr-auto" id="menu">
-                                <li class="nav-item"><a class="nav-link" href="./">Home</a></li>                                
+                                <li class="nav-item"><a class="nav-link" href="./">Home</a></li>
                                 <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                                <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+
+                                <li class="nav-item services-trigger dropdown" id="servicesNavItem">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                                        id="servicesTrigger">Services</a>
+                                    <!-- Mega Menu -->
+                                    <div class="mega-menu" id="megaMenu">
+                                        <div class="container">
+                                            <div class="row g-5">
+
+                                                <!-- Left Section -->
+                                                <div class="col-lg-3">
+                                                    <div class="mega-left-box">
+                                                        <h2>Building Your Dreams<br>With <em>Precision & Quality.</em>
+                                                        </h2>
+                                                        <p>We provide comprehensive construction solutions with 7+
+                                                            years of expertise in residential and commercial projects.
+                                                        </p>
+                                                        <button>Get Free Consultation</button>
+                                                    </div>
+
+                                                </div>
+
+
+
+
+                                                <!-- Middle Section -->
+                                                <div class="col-lg-3">
+                                                    <div class="service-category">
+                                                        <h6><i class="fas fa-home"></i> Residential Construction</h6>
+
+                                                        <div class="point-mega">
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i> New
+                                                                house
+                                                                construction</p>
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i> Villas
+                                                                &
+                                                                independent homes</p>
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i>
+                                                                Renovation &
+                                                                remodeling</p>
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i>
+                                                                Interior
+                                                                works</p>
+                                                        </div>
+
+
+                                                    </div>
+
+                                                    <div class="service-category">
+                                                        <h6><i class="fas fa-drafting-compass"></i> Interior & Exterior Works</h6>
+                                                        <div class="point-mega">
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i> false ceiling</p>
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i> wardrobes</p>
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i> wall décor</p>
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i>lighting solutions</p>
+                                        
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i>Exterior elevation</p>
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i>compound walls</p>
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i>gate works</p>
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i>landscaping</p>
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i>exterior cladding</p>
+
+
+                                                        </div>
+                                                    </div>  
+                                                  
+
+                                                </div>
+
+                                                <!-- Right Section -->
+                                                <div class="col-lg-3">
+
+                                                    <div class="service-category">
+                                                        <h6><i class="fas fa-tasks"></i> Industrial Construction
+                                                        </h6>
+                                                        <div class="point-mega">
+                                                            <p><i
+                                                                    class="fa-solid fa-hand-point-right me-2"></i>construct
+                                                                industrial sheds</p>
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i>
+                                                                warehouses</p>
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i>
+                                                                factories</p>
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i> godowns
+                                                            </p>
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i> steel
+                                                                structural buildings</p>
+                                                        </div>
+                                                    </div>
+                                                               <div class="service-category">
+                                                        <h6><i class="fas fa-drafting-compass"></i> Architectural &
+                                                            Structural Design</h6>
+                                                        <div class="point-mega">
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i> 2D/3D
+                                                                planning</p>
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i>
+                                                                Structural
+                                                                engineering</p>
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i>
+                                                                Elevation
+                                                                design</p>
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i>
+                                                                Approval
+                                                                drawings</p>
+                                                        </div>
+                                                    </div>
+
+
+
+   
+
+                                                
+
+                                                </div>
+
+                                                                                                <!-- Right Section -->
+                                                <div class="col-lg-3">
+
+                                                      <div class="service-category">
+                                                        <h6><i class="fas fa-building"></i> Commercial Construction</h6>
+
+                                                        <div class="point-mega">
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i> Office
+                                                                buildings</p>
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i> Shops &
+                                                                showrooms</p>
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i>
+                                                                Industrial
+                                                                sheds</p>
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i> Retail
+                                                                and
+                                                                warehouse spaces</p>
+                                                        </div>
+                                                    </div>
+
+                                                    
+                                              
+                                                    
+
+
+                                                    <div class="service-category">
+                                                        <h6><i class="fas fa-drafting-compass"></i> Fabrication Works </h6>
+                                                        <div class="point-mega">
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i> Steel / Iron framing</p>
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i> Shed construction & roofing</p>
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i> Steel doors, windows, grills</p>
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i>Metal staircases & railings</p>
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i>Industrial structural fabrication</p>
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i>Fiber roofing and metal truss works</p>
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i>Renovation & Remodeling</p>
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i>Renovate damaged buildings</p>
+                                                            <p><i class="fa-solid fa-hand-point-right me-2"></i>Redesign old houses</p>
+
+
+                                                        </div>
+                                                    </div> 
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+
+
                                 <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
                                 <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                                <li class="nav-item highlighted-menu"><a class="nav-link" href="contact.html">Contact Us</a></li>                               
+                                <li class="nav-item highlighted-menu"><a class="nav-link" href="contact.html">Contact
+                                        Us</a></li>
                             </ul>
                         </div>
                         <!-- Let’s Start Button Start -->
@@ -61,31 +232,36 @@
                             <a href="contact.html" class="btn-default cta-contact">Contact Us</a>
                         </div>
                         <!-- Let’s Start Button End -->
-					</div>
-					<!-- Main Menu End -->
-					<div class="navbar-toggle"></div>
-				</div>
-			</nav>
-			<div class="responsive-menu"></div>
-		</div>
-	</header>
-	<!-- Header End -->
+                    </div>
+                    <!-- Main Menu End -->
+                    <div class="navbar-toggle"></div>
+                </div>
+            </nav>
+            <div class="responsive-menu"></div>
+        </div>
+        </div>
+    </header>
+    <!-- Header End -->
 
     <!-- Hero Section Start -->
-	<div class="hero bg-section parallaxie ">
-		<div class="container">
+    <div class="hero bg-section parallaxie ">
+        <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <!-- Hero Content Start -->
                     <div class="hero-content">
                         <div class="section-title">
-                           <!--  <h3 class="wow color-head">welcome to  Epicar Construction</h3> -->
-                            <h1 class="text-anime" data-cursor="-opaque">Building Your Vision with Precision and Excellence</h1>
-                            <p class="wow  " data-wow-delay="0.25s"> Epicar Construction delivers premium construction services with over 10 years of expertise in civil works, structural construction, renovation, and specialized building solutions.</p>
+                            <!--  <h3 class="wow color-head">welcome to  Epicar Construction</h3> -->
+                            <h1 class="text-anime" data-cursor="-opaque">Building Your Vision with Precision and
+                                Excellence</h1>
+                            <p class="wow  " data-wow-delay="0.25s"> Epicar Construction delivers premium construction
+                                services with over 10 years of expertise in civil works, structural construction,
+                                renovation, and specialized building solutions.</p>
                         </div>
 
                         <div class="hero-content-body wow  " data-wow-delay="0.5s">
-                            <a href="#" class="btn-default">Enquiry Now <span class="l-4"><i class="fa-solid fa-arrow-right"></i></span></a>
+                            <a href="#" class="btn-default">Enquiry Now <span class="l-4"><i
+                                        class="fa-solid fa-arrow-right"></i></span></a>
                             <a href="#" class="btn-default btn-highlighted">view Projects</a>
                         </div>
                     </div>
@@ -93,8 +269,8 @@
                 </div>
             </div>
         </div>
-	</div>
-	<!-- Hero Section End -->
+    </div>
+    <!-- Hero Section End -->
 
     <!-- About Section Start -->
     <div class="about-us">
@@ -118,7 +294,12 @@
                         <!-- Section Title Start -->
                         <div class="section-title">
                             <h2 class="text-anime" data-cursor="-opaque">Building Excellence Since 2015</h2>
-                            <p class="wow  " data-wow-delay="0.25s"> Epicar Construction has established itself as a premier construction company with a reputation for delivering exceptional quality, on-time project completion, and unparalleled client satisfaction. <br> Our team of experienced professionals combines technical expertise with innovative construction methodologies to bring your vision to life while ensuring structural integrity, aesthetic appeal, and long-term value.</p>
+                            <p class="wow  " data-wow-delay="0.25s"> Epicar Construction has established itself as a
+                                premier construction company with a reputation for delivering exceptional quality,
+                                on-time project completion, and unparalleled client satisfaction. <br> Our team of
+                                experienced professionals combines technical expertise with innovative construction
+                                methodologies to bring your vision to life while ensuring structural integrity,
+                                aesthetic appeal, and long-term value.</p>
                         </div>
                         <!-- Section Title End -->
 
@@ -156,120 +337,159 @@
                         <!--Section Title Start-->
                         <div class="section-title">
                             <h2 class="text-anime" data-cursor="-opaque">Our construction services</h2>
-                            <p class="wow" data-wow-delay="0.25s">Comprehensive building solutions tailored to meet your specific requirements and exceed expectations.</p>
+                            <p class="wow" data-wow-delay="0.25s">Comprehensive building solutions tailored to meet your
+                                specific requirements and exceed expectations.</p>
                         </div>
                         <!--Section Title End-->
                     </div>
                 </div>
-        
+
                 <div class="row">
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-3 col-md-6">
                         <!-- Service Item Start -->
                         <div class="service-item wow  " data-wow-delay="0.25s">
                             <!-- Service Image Start -->
                             <div class="service-image" data-cursor-text="View">
                                 <a href="#">
-                                    <figure>                                
-                                        <img src="assets/images/home/img-1.jpg" alt="">
+                                    <figure>
+                                        <img src="assets/images/home/Residential Construction.jpg" alt="">
                                     </figure>
-                                </a>                            
+                                </a>
                             </div>
                             <!--Service Image End-->
-    
+
                             <!-- Service Body Start -->
                             <div class="service-body">
                                 <!-- Service Body Title Start -->
                                 <div class="service-body-title">
-                                    <h3>Civil Construction</h3>
+                                    <h3>Residential Construction</h3>
                                 </div>
                                 <!-- Service Body Title End -->
-    
+
                                 <!-- Service Content Start -->
                                 <div class="service-content">
-                                    <p>Complete civil engineering and construction services including site development, earthworks, and infrastructure projects with precision engineering.</p>
+                                    <p>We specialize in building high-quality homes designed for comfort, durability,
+                                        and modern living.</p>
                                     <div class="service-content-footer">
                                         <a href="#" class="readmore-btn">Learn more</a>
                                     </div>
-                                </div>   
-                                <!-- Service Content End -->      
+                                </div>
+                                <!-- Service Content End -->
 
                             </div>
                             <!-- Service Body End -->
                         </div>
                         <!-- Service Item End -->
                     </div>
-    
-                    <div class="col-lg-4 col-md-6">
+
+                    <div class="col-lg-3 col-md-6">
                         <!-- Service Item Start -->
                         <div class="service-item wow  " data-wow-delay="0.5s">
                             <!-- Service Image Start -->
                             <div class="service-image" data-cursor-text="View">
                                 <a href="#">
-                                    <figure>                                
+                                    <figure>
                                         <img src="assets/images/home/img-4.png" alt="">
                                     </figure>
-                                </a>                            
+                                </a>
                             </div>
                             <!-- Service Image End -->
-    
+
                             <!-- Service Body Start -->
                             <div class="service-body">
                                 <!-- Service Body Title Start -->
                                 <div class="service-body-title">
-                                    <h3>Demolition & Site Preparation</h3>
+                                    <h3>Commercial Construction </h3>
                                 </div>
                                 <!-- Service Body Title End -->
-    
+
                                 <!-- Service Content Start -->
                                 <div class="service-content">
-                                    <p>Begin your construction project with confidence. Our demolition and site preparation services cover everything from structure removal to ground leveling, debris clearance, and safety management.</p>
+                                    <p>We deliver comprehensive commercial construction services designed to meet the
+                                        demands of modern businesses.</p>
                                     <div class="service-content-footer">
                                         <a href="#" class="readmore-btn">Learn more</a>
                                     </div>
-                                </div>   
-                                <!-- Service Content End -->                         
+                                </div>
+                                <!-- Service Content End -->
                             </div>
                             <!-- Service Body End -->
                         </div>
                         <!-- Service Item End -->
                     </div>
-    
-                    <div class="col-lg-4 col-md-6">
+
+                    <div class="col-lg-3 col-md-6">
                         <!-- Service Item Start -->
                         <div class="service-item wow  " data-wow-delay="0.75s">
                             <!-- Service Image Start -->
                             <div class="service-image" data-cursor-text="View">
                                 <a href="#">
-                                    <figure>                                
-                                        <img src="assets/images/home/land  plot.jpg" alt="">
+                                    <figure>
+                                        <img src="assets/images/home/Architectural & Structural Design.jpg" alt="">
                                     </figure>
-                                </a>                            
+                                </a>
                             </div>
                             <!-- Service Image End -->
-    
+
                             <!-- Service Body Start -->
                             <div class="service-body">
                                 <!-- Service Body Title Start -->
                                 <div class="service-body-title">
-                                    <h3>Land Buy or Sell</h3>
+                                    <h3>Architectural & Structural Design</h3>
                                 </div>
                                 <!-- Service Body Title End -->
-    
+
                                 <!-- Service Content Start -->
                                 <div class="service-content">
-                                    <p>we help you navigate the land buying and selling process with ease—ensuring you get the best deal, every time.</p>
+                                    <p>Our design experts combine visionary architecture with strong structural
+                                        engineering to create spaces that inspire and endure.</p>
                                     <div class="service-content-footer">
                                         <a href="#" class="readmore-btn">Learn more</a>
                                     </div>
-                                </div>   
-                                <!-- Service Content End -->                         
+                                </div>
+                                <!-- Service Content End -->
                             </div>
                             <!-- Service Body End -->
                         </div>
                         <!-- Service Item End -->
                     </div>
-    
-        
+
+                    <div class="col-lg-3 col-md-6">
+                        <!-- Service Item Start -->
+                        <div class="service-item wow  " data-wow-delay="0.75s">
+                            <!-- Service Image Start -->
+                            <div class="service-image" data-cursor-text="View">
+                                <a href="#">
+                                    <figure>
+                                        <img src="assets/images/home/Renovation & Maintenance.jpg" alt="">
+                                    </figure>
+                                </a>
+                            </div>
+                            <!-- Service Image End -->
+
+                            <!-- Service Body Start -->
+                            <div class="service-body">
+                                <!-- Service Body Title Start -->
+                                <div class="service-body-title">
+                                    <h3>Renovation & Maintenance</h3>
+                                </div>
+                                <!-- Service Body Title End -->
+
+                                <!-- Service Content Start -->
+                                <div class="service-content">
+                                    <p>We offer comprehensive renovation and maintenance services designed to enhance
+                                        the beauty, functionality, and longevity of your property.</p>
+                                    <div class="service-content-footer">
+                                        <a href="#" class="readmore-btn">Learn more</a>
+                                    </div>
+                                </div>
+                                <!-- Service Content End -->
+                            </div>
+                            <!-- Service Body End -->
+                        </div>
+                        <!-- Service Item End -->
+                    </div>
+
                     <!-- Services Footer Btn Start -->
                     <div class="service-footer-btn wow  " data-wow-delay="1.25s">
                         <a href="#" class="btn-default">view all services</a>
@@ -290,8 +510,10 @@
                 <div class="col-lg-12">
                     <!-- Section Title Start -->
                     <div class="section-title">
-                        <h2 class="text-anime" data-cursor="-opaque">Why  Epicar Construction stands apart</h2>
-                        <p class="wow  " data-wow-delay="0.25s">Developed in close collaboration with our partners and clients, combines industry knowledge, decades of experience, ingenuity and adaptability to deliver excellence to our clients.</p>
+                        <h2 class="text-anime" data-cursor="-opaque">Why Epicar Construction stands apart</h2>
+                        <p class="wow  " data-wow-delay="0.25s">Developed in close collaboration with our partners and
+                            clients, combines industry knowledge, decades of experience, ingenuity and adaptability to
+                            deliver excellence to our clients.</p>
                     </div>
                     <!-- Section Title End -->
                 </div>
@@ -306,7 +528,8 @@
                         </div>
                         <div class="why-choose-content">
                             <h3>comprehensive expertise</h3>
-                            <p>From civil construction to specialized works, we offer end-to-end solutions that cover every aspect of your construction project.</p>
+                            <p>From civil construction to specialized works, we offer end-to-end solutions that cover
+                                every aspect of your construction project.</p>
                         </div>
                         <div class="why-choose-counter">
                             <h3><span class="counter">8 0</span>+</h3>
@@ -328,13 +551,14 @@
 
                 <div class="col-lg-4 col-md-6">
                     <!-- Why Choose Item Start -->
-                    <div class="why-choose-item wow  "  data-wow-delay="0.25s">
+                    <div class="why-choose-item wow  " data-wow-delay="0.25s">
                         <div class="icon-box">
                             <img src="images/icon-why-choose-2.svg" alt="">
                         </div>
                         <div class="why-choose-content">
                             <h3>quality craftsmanship</h3>
-                            <p>Our commitment to quality is evident in every detail, from structural integrity to finishing touches that exceed expectations.</p>
+                            <p>Our commitment to quality is evident in every detail, from structural integrity to
+                                finishing touches that exceed expectations.</p>
                         </div>
                         <div class="why-choose-counter">
                             <h3><span class="counter">98</span>%</h3>
@@ -362,7 +586,8 @@
                         </div>
                         <div class="why-choose-content">
                             <h3>timely project delivery</h3>
-                            <p>We understand the importance of deadlines and consistently deliver projects on time without compromising quality.</p>
+                            <p>We understand the importance of deadlines and consistently deliver projects on time
+                                without compromising quality.</p>
                         </div>
                         <div class="why-choose-counter">
                             <h3><span class="counter">10</span>+</h3>
@@ -387,10 +612,6 @@
     <!-- Why Choose Us Section End -->
 
 
-
-
-
-
     <!-- project Section Start -->
     <div class="why-choose-us">
         <div class="container">
@@ -398,95 +619,103 @@
                 <div class="col-lg-12">
                     <!-- Section Title Start -->
                     <div class="section-title">
-                        <h2 class="text-anime" data-cursor="-opaque">Why  Epicar Construction stands apart</h2>
-                        <p class="wow  " data-wow-delay="0.25s">Developed in close collaboration with our partners and clients, combines industry knowledge, decades of experience, ingenuity and adaptability to deliver excellence to our clients.</p>
+                        <h2 class="text-anime" data-cursor="-opaque">Engineering Brilliance in Action</h2>
+                        <p class="wow  " data-wow-delay="0.25s">We have successfully completed residential and
+                            commercial works across Tamil Nadu, delivering durable and aesthetic results. Every project
+                            reflects our commitment to craftsmanship and engineering excellence..</p>
                     </div>
                     <!-- Section Title End -->
                 </div>
             </div>
 
-    <div class="container-fluid">
-        <div class="slider-container">
+            <div class="container-fluid">
+                <div class="slider-container">
 
-            <div class="main-slider">
-                <div class="slide active">
-                    <img src="assets/images/home/img-1.jpg" alt="Modern Web Application">
-                    <div class="slide-content">
-                      <!--   <h3>Modern Web Application</h3>
-                        <p>A responsive web app with cutting-edge design and functionality</p> -->
+                    <div class="main-slider">
+                        <div class="slide active">
+                            <img src="assets/images/works/Residential Construction.jpg" alt="Residential Construction">
+                            <div class="slide-content">
+                                <h3 class="color-white">Residential Construction</h3>
+                                <p>We deliver high-quality residential construction with a focus on durability, modern
+                                    design, and client comfort.</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="assets/images/works/commercial Construction.jpg" alt="Commercial Construction">
+                            <div class="slide-content">
+                                <h3 class="color-white">Commercial Construction</h3>
+                                <p>Our commercial construction services are designed to support business growth with
+                                    functional, efficient, and aesthetically strong structures.</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="assets/images/works/Architectural & Structural Design.jpg"
+                                alt="Architectural & Structural Design">
+                            <div class="slide-content">
+                                <h3 class="color-white">Architectural & Structural Design</h3>
+                                <p>We provide innovative architectural and structural design solutions tailored to your
+                                    project’s goals.</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="assets/images/works/Renovation & Maintenance.jpg" alt="Renovation & Maintenance">
+                            <div class="slide-content">
+                                <h3 class="color-white">Renovation & Maintenance</h3>
+                                <p>Whether upgrading an existing space or preserving its condition, our renovation and
+                                    maintenance services enhance value and extend the life of your property</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="assets/images/works/On-site supervision.jpg" alt="On-Site Supervision">
+                            <div class="slide-content">
+                                <h3 class="color-white">On-Site Supervision</h3>
+                                <p>Our on-site supervision ensures every stage of your project is executed with
+                                    precision.</p>
+                            </div>
+                        </div>
+
+                        <div class="slider-controls">
+                            <button class="control-btn prev-btn">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="control-btn next-btn">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <div class="thumbnails-container">
+                            <div class="thumbnail active">
+                                <img src="assets/images/works/Residential Construction.jpg" alt="Thumb 1">
+                                <div class="thumbnail-overlay"></div>
+                            </div>
+                            <div class="thumbnail">
+                                <img src="assets/images/works/commercial Construction.jpg" alt="Thumb 2">
+                                <div class="thumbnail-overlay"></div>
+                            </div>
+                            <div class="thumbnail">
+                                <img src="assets/images/works/Architectural & Structural Design.jpg" alt="Thumb 3">
+                                <div class="thumbnail-overlay"></div>
+                            </div>
+                            <div class="thumbnail">
+                                <img src="assets/images/works/Renovation & Maintenance.jpg" alt="Thumb 4">
+                                <div class="thumbnail-overlay"></div>
+                            </div>
+                            <div class="thumbnail">
+                                <img src="assets/images/works/On-site supervision.jpg" alt="Thumb 5">
+                                <div class="thumbnail-overlay"></div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="slide">
-                    <img src="assets/images/home/img-2.jpg" alt="E-commerce Platform">
-                    <div class="slide-content">
-                     <!--    <h3>E-commerce Platform</h3>
-                        <p>Complete online shopping solution with secure payment integration</p> -->
-                    </div>
-                </div>
-                <div class="slide">
-                    <img src="assets/images/home/img-3.jpg" alt="Mobile App Development">
-                    <div class="slide-content">
-                      <!--   <h3>Mobile App Development</h3>
-                        <p>Cross-platform mobile application with intuitive user interface</p> -->
-                    </div>
-                </div>
-                <div class="slide">
-                    <img src="assets/images/home/img-4.png" alt="Dashboard Design">
-                    <div class="slide-content">
-                       <!--  <h3>Dashboard Design</h3>
-                        <p>Analytics dashboard with real-time data visualization</p> -->
-                    </div>
-                </div>
-                <div class="slide">
-                    <img src="assets/images/home/img-1.jpg" alt="Brand Identity">
-                    <div class="slide-content">
-                       <!--  <h3>Brand Identity</h3>
-                        <p>Complete brand identity package including logo and marketing materials</p> -->
-                    </div>
-                </div>
-                
-                <div class="slider-controls">
-                    <button class="control-btn prev-btn">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="control-btn next-btn">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-                
-                <div class="thumbnails-container">
-                    <div class="thumbnail active">
-                        <img src="assets/images/home/img-1.jpg" alt="Thumb 1">
-                        <div class="thumbnail-overlay"></div>
-                    </div>
-                    <div class="thumbnail">
-                        <img src="assets/images/home/img-2.jpg" alt="Thumb 2">
-                        <div class="thumbnail-overlay"></div>
-                    </div>
-                    <div class="thumbnail">
-                        <img src="assets/images/home/img-3.jpg" alt="Thumb 3">
-                        <div class="thumbnail-overlay"></div>
-                    </div>
-                    <div class="thumbnail">
-                        <img src="assets/images/home/img-4.png" alt="Thumb 4">
-                        <div class="thumbnail-overlay"></div>
-                    </div>
-                    <div class="thumbnail">
-                        <img src="assets/images/home/img-1.jpg" alt="Thumb 5">
-                        <div class="thumbnail-overlay"></div>
+
+                    <div class="slider-indicators">
+                        <div class="indicator active"></div>
+                        <div class="indicator"></div>
+                        <div class="indicator"></div>
+                        <div class="indicator"></div>
+                        <div class="indicator"></div>
                     </div>
                 </div>
             </div>
-            
-            <div class="slider-indicators">
-                <div class="indicator active"></div>
-                <div class="indicator"></div>
-                <div class="indicator"></div>
-                <div class="indicator"></div>
-                <div class="indicator"></div>
-            </div>
-        </div>
-    </div>
 
 
         </div>
@@ -499,6 +728,155 @@
 
 
 
+    <!-- Our FAQs Section Start -->
+    <div class="our-faqs">
+        <div class="container">
+            <div class="row section-row">
+                <div class="col-lg-12">
+                    <!-- Section Title Start -->
+                    <div class="section-title">
+                        <h2 class="text-anime" data-cursor="-opaque">Got questions? we've got answers</h2>
+                        <p class="wow  " data-wow-delay="0.25s">We specialize in a wide range of construction services,
+                            including residential, commercial, and industrial projects.</p>
+                    </div>
+                    <!-- Section Title End -->
+                </div>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <!-- Our FAQs Images Start -->
+                    <div class="our-faqs-images">
+                        <div class="row align-items-end">
+                            <div class="col-md-6 col-6">
+                                <!-- FAQs Img Start -->
+                                <div class="faqs-img-1">
+                                    <figure class="image-anime reveal">
+                                        <img src="assets/images/home/img-1.jpg" alt="">
+                                    </figure>
+                                </div>
+                                <!-- FAQs Img End -->
+                            </div>
+                            <div class="col-md-6 col-6">
+                                <!-- FAQs Img Start -->
+                                <div class="faqs-img-2">
+                                    <figure class="image-anime reveal">
+                                        <img src="assets/images/home/img-2.jpg" alt="">
+                                    </figure>
+                                </div>
+                                <!-- FAQs Img End -->
+                            </div>
+                        </div>
+
+                        <div class="row align-items-start">
+                            <div class="col-md-6 col-6">
+                                <!-- FAQs Img Start -->
+                                <div class="faqs-img-1">
+                                    <figure class="image-anime reveal">
+                                        <img src="assets/images/home/img-3.jpg" alt="">
+                                    </figure>
+                                </div>
+                                <!-- FAQs Img End -->
+                            </div>
+                            <div class="col-md-6 col-6">
+                                <!-- FAQs Img Start -->
+                                <div class="faqs-img-2">
+                                    <figure class="image-anime reveal">
+                                        <img src="assets/images/home/img-4.png" alt="">
+                                    </figure>
+                                </div>
+                                <!-- FAQs Img End -->
+                            </div>
+                        </div>
+
+                        <div class="our-faqs-bulitup">
+                            <img src="images/icon-faq-bulitup.svg" alt="">
+                        </div>
+                    </div>
+                    <!-- Our FAQs Images End -->
+                </div>
+
+                <div class="col-lg-7">
+                    <!-- FAQ Accordion Start -->
+                    <div class="faq-accordion" id="accordion">
+                        <!-- FAQ Item Start -->
+                        <div class="accordion-item wow  " data-wow-delay="0.25s">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Do you offer a free, no obligation quotation?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                data-bs-parent="#accordion">
+                                <div class="accordion-body">
+                                    <p>Our post-construction services gives you peace of mind knowing that we are still
+                                        here for you even after.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FAQ Item End -->
+
+                        <!-- FAQ Item Start -->
+                        <div class="accordion-item wow  " data-wow-delay="0.5s">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    What services do you offer?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#accordion">
+                                <div class="accordion-body">
+                                    <p>Our post-construction services gives you peace of mind knowing that we are still
+                                        here for you even after.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FAQ Item End -->
+
+                        <!-- FAQ Item Start -->
+                        <div class="accordion-item wow  " data-wow-delay="0.75s">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    What types of projects do you specialize in?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#accordion">
+                                <div class="accordion-body">
+                                    <p>Our post-construction services gives you peace of mind knowing that we are still
+                                        here for you even after.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FAQ Item End -->
+
+                        <!-- FAQ Item Start -->
+                        <div class="accordion-item wow  " data-wow-delay="1s">
+                            <h2 class="accordion-header" id="headingfour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
+                                    How do I start a project with your company?
+                                </button>
+                            </h2>
+                            <div id="collapsefour" class="accordion-collapse collapse" aria-labelledby="headingfour"
+                                data-bs-parent="#accordion">
+                                <div class="accordion-body">
+                                    <p>Our post-construction services gives you peace of mind knowing that we are still
+                                        here for you even after.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FAQ Item End -->
+                    </div>
+                    <!-- FAQ Accordion End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Our FAQs Section End -->
 
 
 
@@ -510,9 +888,11 @@
 
 
 
-    
 
-       <!-- Footer Start 
+
+
+
+    <!-- Footer Start 
 	<footer class="main-footer">
         <div class="container">
             <div class="row">
@@ -649,7 +1029,77 @@
     <!-- Main Custom js file -->
     <script src="js/function.js"></script>
 
-        <!-- Main Custom js file -->
+    <!-- Main Custom js file -->
     <script src="js/index.js"></script>
+
+
+
+
+    <script>
+        // Mega Menu functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const servicesTrigger = document.getElementById('servicesTrigger');
+            const servicesNavItem = document.getElementById('servicesNavItem');
+            const megaMenu = document.getElementById('megaMenu');
+
+            let hoverTimer;
+            let isMenuOpen = false;
+
+            // Open mega menu
+            function openMegaMenu() {
+                clearTimeout(hoverTimer);
+                megaMenu.classList.add('active');
+                isMenuOpen = true;
+            }
+
+            // Close mega menu
+            function closeMegaMenuFunc() {
+                megaMenu.classList.remove('active');
+                isMenuOpen = false;
+            }
+
+            // Open on hover with delay
+            servicesNavItem.addEventListener('mouseenter', function () {
+                if (!isMenuOpen) {
+                    hoverTimer = setTimeout(openMegaMenu, 300); // 300ms delay
+                }
+            });
+
+            // Close on mouse leave with delay
+            servicesNavItem.addEventListener('mouseleave', function (e) {
+                // Check if mouse is leaving to outside the menu
+                if (!megaMenu.contains(e.relatedTarget)) {
+                    clearTimeout(hoverTimer);
+                    if (isMenuOpen) {
+                        hoverTimer = setTimeout(closeMegaMenuFunc, 500); // 500ms delay before closing
+                    }
+                }
+            });
+
+            // Keep menu open when hovering over it
+            megaMenu.addEventListener('mouseenter', function () {
+                clearTimeout(hoverTimer);
+            });
+
+            // Close when mouse leaves the menu
+            megaMenu.addEventListener('mouseleave', function (e) {
+                // Check if mouse is leaving to outside the nav item
+                if (!servicesNavItem.contains(e.relatedTarget)) {
+                    hoverTimer = setTimeout(closeMegaMenuFunc, 300); // 300ms delay before closing
+                }
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function (e) {
+                if (isMenuOpen && !servicesNavItem.contains(e.target) && !megaMenu.contains(e.target)) {
+                    closeMegaMenuFunc();
+                }
+            });
+        });
+    </script>
+
+
+
 </body>
+
 </html>
