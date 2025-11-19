@@ -3271,6 +3271,7 @@ header.main-header .header-sticky.active {
 	background: aliceblue;
 	text-align: center;
 	border-radius: 5px;
+	cursor: pointer;
 }
 
 
