@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Epicarconstruction Testimonials</title>
+    <title>Epicarconstruction - Vastu Plan Services</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
     <style>
         * {
             margin: 0;
@@ -13,490 +12,453 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
-        body {
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
+
+        :root {
+            --primary: #8B4513;
+            --primary-light: #a85e2d;
+            --secondary: #2c3e50;
+            --accent: #e67e22;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --text: #495057;
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+
+        .vastu-services {
+            padding: 100px 5%;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            position: relative;
+            overflow: hidden;
         }
-        
-        .section-row {
-            margin-bottom: 60px;
-        }
-        
-        .section-title {
+
+        .section-header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 80px;
         }
-        
-        .section-title h3 {
-            text-transform: uppercase;
-            color: #f58634;
-            font-size: 18px;
+
+        .section-subtitle {
+            color: var(--primary);
+            font-size: 1.1rem;
+            font-weight: 600;
             letter-spacing: 2px;
-            margin-bottom: 10px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(139, 69, 19, 0.1);
+            border-radius: 30px;
         }
-        
-        .section-title h2 {
-            font-size: 42px;
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--secondary);
             margin-bottom: 20px;
-            color: #1a1a1a;
             position: relative;
             display: inline-block;
         }
-        
-        .section-title h2::after {
+
+        .section-title::after {
             content: '';
             position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background-color: #f58634;
+            background: var(--primary);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
         }
-        
-        .section-title p {
+
+        .section-description {
             max-width: 700px;
-            margin: 0 auto;
-            color: #666;
-            font-size: 18px;
+            margin: 40px auto 0;
+            color: var(--text);
+            font-size: 1.2rem;
+            line-height: 1.7;
         }
-        
-        .testimonial-slider {
-            padding: 30px 0;
-        }
-        
-        .swiper {
-            width: 100%;
-            height: 100%;
-            padding: 20px 10px 50px;
-        }
-        
-        .swiper-slide {
-            background: #fff;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            padding: 30px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .swiper-slide:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-        }
-        
-        .testimonial-item {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-        
-        .testimonial-header {
-            margin-bottom: 25px;
-        }
-        
-        .testimonial-rating {
-            color: #ffc107;
-            margin-bottom: 15px;
-            font-size: 18px;
-        }
-        
-        .testimonial-content p {
-            font-style: italic;
-            color: #555;
-            line-height: 1.8;
-            position: relative;
-        }
-        
-        .testimonial-content p::before {
-            content: "\201C";
-            font-size: 60px;
-            color: #f58634;
-            position: absolute;
-            left: -15px;
-            top: -25px;
-            opacity: 0.3;
-            font-family: Georgia, serif;
-        }
-        
-        .testimonial-body {
+
+        /* Service Items - Zigzag Layout */
+        .service-item {
             display: flex;
             align-items: center;
-            margin-top: auto;
+            margin-bottom: 120px;
+            position: relative;
         }
-        
-        .author-image {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-right: 15px;
-            border: 3px solid #f58634;
+
+        .service-item:nth-child(even) {
+            flex-direction: row-reverse;
         }
-        
-        .author-image img {
+
+        .service-content {
+            flex: 1;
+            padding: 40px;
+            z-index: 2;
+        }
+
+        .service-image {
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-image img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transition: all 0.5s ease;
         }
-        
-        .author-content h3 {
-            font-size: 18px;
-            margin-bottom: 5px;
-            color: #1a1a1a;
-            text-transform: capitalize;
+
+        .service-item:hover .service-image img {
+            transform: scale(1.03);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
         }
-        
-        .author-content p {
-            color: #f58634;
-            font-size: 14px;
-            text-transform: capitalize;
+
+        .service-number {
+            position: absolute;
+            font-size: 8rem;
+            font-weight: 900;
+            color: rgba(139, 69, 19, 0.08);
+            z-index: 0;
         }
-        
-        .swiper-pagination {
-            bottom: 0 !important;
+
+        .service-item:nth-child(odd) .service-number {
+            right: 5%;
+            top: -40px;
         }
-        
-        .swiper-pagination-bullet {
-            width: 12px;
-            height: 12px;
-            background-color: #ddd;
-            opacity: 1;
+
+        .service-item:nth-child(even) .service-number {
+            left: 5%;
+            top: -40px;
         }
-        
-        .swiper-pagination-bullet-active {
-            background-color: #f58634;
-        }
-        
-        /* Animation classes */
-        .wow {
-            visibility: hidden;
-        }
-        
-        .fadeInUp {
-            animation-name: fadeInUp;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translate3d(0, 40px, 0);
-            }
-            to {
-                opacity: 1;
-                transform: translate3d(0, 0, 0);
-            }
-        }
-        
-        .text-anime-style-3 {
+
+        .service-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 20px;
             position: relative;
             display: inline-block;
         }
-        
-        /* Responsive styles */
-        @media (max-width: 768px) {
-            .section-title h2 {
-                font-size: 32px;
-            }
-            
-            .section-title p {
-                font-size: 16px;
-            }
-            
-            .swiper-slide {
-                padding: 20px;
-            }
+
+        .service-title::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+            bottom: -10px;
+            left: 0;
+            border-radius: 2px;
         }
-        
-        @media (max-width: 576px) {
-            .testimonial-body {
+
+        .service-item:nth-child(even) .service-title::after {
+            left: auto;
+            right: 0;
+        }
+
+        .service-description {
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .service-features li {
+            padding: 10px 0;
+            color: var(--text);
+            position: relative;
+            padding-left: 35px;
+            font-size: 1.05rem;
+        }
+
+        .service-features li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            width: 25px;
+            height: 25px;
+            background: rgba(139, 69, 19, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 14px 30px;
+            background: var(--primary);
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.2);
+        }
+
+        .service-btn i {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .service-btn:hover {
+            background: transparent;
+            color: var(--primary);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .service-btn:hover i {
+            transform: translateX(5px);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(45deg, var(--secondary), #1a2530);
+            border-radius: 20px;
+            padding: 70px 50px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            margin-top: 50px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            top: -150px;
+            right: -150px;
+        }
+
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            bottom: -100px;
+            left: -100px;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .cta-description {
+            max-width: 700px;
+            margin: 0 auto 35px;
+            font-size: 1.2rem;
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 18px 40px;
+            background: var(--accent);
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent);
+            box-shadow: 0 10px 20px rgba(230, 126, 34, 0.3);
+        }
+
+        .cta-btn i {
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background: transparent;
+            color: var(--accent);
+            box-shadow: 0 10px 25px rgba(230, 126, 34, 0.4);
+        }
+
+        .cta-btn:hover i {
+            transform: translateX(8px);
+        }
+
+        /* Decorative Elements */
+        .decoration {
+            position: absolute;
+            z-index: 0;
+        }
+
+        .decoration-1 {
+            width: 150px;
+            height: 150px;
+            border: 15px solid rgba(139, 69, 19, 0.1);
+            border-radius: 50%;
+            top: 10%;
+            left: 5%;
+        }
+
+        .decoration-2 {
+            width: 100px;
+            height: 100px;
+            background: rgba(44, 62, 80, 0.05);
+            border-radius: 20px;
+            bottom: 10%;
+            right: 5%;
+            transform: rotate(45deg);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .service-item, .service-item:nth-child(even) {
                 flex-direction: column;
                 text-align: center;
             }
             
-            .author-image {
-                margin-right: 0;
-                margin-bottom: 15px;
+            .service-content, .service-image {
+                width: 100%;
+            }
+            
+            .service-title::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .service-item:nth-child(even) .service-title::after {
+                left: 50%;
+                right: auto;
+                transform: translateX(-50%);
+            }
+            
+            .service-number {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .service-title {
+                font-size: 1.8rem;
+            }
+            
+            .cta-section {
+                padding: 50px 30px;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+            
+            .decoration {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Our Testimonial Start -->
-    <div class="our-testimonial">
-        <div class="container">
-            <div class="row section-row">
-                <div class="col-lg-12">
-                    <!-- Section Title Start -->
-                    <div class="section-title">
-                        <h3 class="wow fadeInUp">testimonials</h3>
-                        <h2 class="text-anime-style-3">What our Tamil Nadu clients are saying</h2>
-                        <p class="wow fadeInUp" data-wow-delay="0.25s">Epicarconstruction has been serving Tamil Nadu with excellence in construction services for over a decade, delivering quality projects across the state.</p>
-                    </div>
-                    <!-- Section Title End -->
+    <section class="vastu-services">
+        <div class="decoration decoration-1"></div>
+        <div class="decoration decoration-2"></div>
+        
+        <div class="section-header">
+            <p class="section-subtitle">Vastu Compliant Designs</p>
+            <h2 class="section-title">Transform Your Space with Harmony</h2>
+            <p class="section-description">We combine ancient Vastu wisdom with modern design technology to create spaces that promote positivity, prosperity, and well-being.</p>
+        </div>
+        
+        <div class="services-container">
+            <!-- Service 1 -->
+            <div class="service-item">
+                <div class="service-content">
+                    <span class="service-number">01</span>
+                    <h3 class="service-title">3D Vastu Plans</h3>
+                    <p class="service-description">Experience your future space in immersive 3D with Vastu-compliant designs that balance aesthetics and positive energy flow. Our detailed 3D models help you visualize the perfect harmony between design and spiritual well-being.</p>
+                    <ul class="service-features">
+                        <li>Immersive 3D visualization</li>
+                        <li>Vastu-compliant room placement</li>
+                        <li>Energy flow optimization</li>
+                        <li>Material & color suggestions</li>
+                        <li>Virtual walkthrough experience</li>
+                    </ul>
+                    <a href="#" class="service-btn">View 3D Samples <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1548611635-b6e7827d7d4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="3D Vastu Plan">
                 </div>
             </div>
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <!-- Testimonial Slider Start -->
-                    <div class="testimonial-slider">
-                        <div class="swiper">
-                            <div class="swiper-wrapper">
-                                <!-- Testimonial Slide Start -->
-                                <div class="swiper-slide">
-                                    <div class="testimonial-item">
-                                        <div class="testimonial-header">
-                                            <div class="testimonial-rating">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <div class="testimonial-content">
-                                                <p>Epicarconstruction built our dream home in Coimbatore. Their attention to detail in New House Construction was exceptional. They completed the project on time and within our budget. Highly recommended for anyone looking to build a quality home in Tamil Nadu!</p>									
-                                            </div>
-                                        </div>
-                                        <div class="testimonial-body">
-                                            <div class="author-image">
-                                                <figure>
-                                                    <img src="https://i.pravatar.cc/150?img=32" alt="Rajesh Kumar">
-                                                </figure>
-                                            </div>            
-                                            <div class="author-content">
-                                                <h3>Rajesh Kumar</h3>
-                                                <p>Coimbatore</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Testimonial Slide End -->
-
-                                <!-- Testimonial Slide Start -->
-                                <div class="swiper-slide">
-                                    <div class="testimonial-item">
-                                        <div class="testimonial-header">
-                                            <div class="testimonial-rating">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <div class="testimonial-content">
-                                                <p>We hired Epicarconstruction for Villa construction in Ooty. Their 3D Elevation Design service helped us visualize our project before construction. The team was professional, and the quality of work exceeded our expectations. Truly a class apart in villa construction!</p>									
-                                            </div>
-                                        </div>
-                                        <div class="testimonial-body">
-                                            <div class="author-image">
-                                                <figure>
-                                                    <img src="https://i.pravatar.cc/150?img=49" alt="Priya Venkatesh">
-                                                </figure>
-                                            </div>            
-                                            <div class="author-content">
-                                                <h3>Priya Venkatesh</h3>
-                                                <p>Ooty</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Testimonial Slide End -->
-
-                                <!-- Testimonial Slide Start -->
-                                <div class="swiper-slide">
-                                    <div class="testimonial-item">
-                                        <div class="testimonial-header">
-                                            <div class="testimonial-rating">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <div class="testimonial-content">
-                                                <p>Epicarconstruction transformed our outdated Chennai apartment with their Renovation & Remodeling services. The False Ceiling work and Interior Works have given our home a completely new look. The team was respectful of our space and completed the work with minimal disruption.</p>									
-                                            </div>
-                                        </div>
-                                        <div class="testimonial-body">
-                                            <div class="author-image">
-                                                <figure>
-                                                    <img src="https://i.pravatar.cc/150?img=8" alt="Arun Subramanian">
-                                                </figure>
-                                            </div>            
-                                            <div class="author-content">
-                                                <h3>Arun Subramanian</h3>
-                                                <p>Chennai</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Testimonial Slide End -->
-
-                                <!-- Testimonial Slide Start -->
-                                <div class="swiper-slide">
-                                    <div class="testimonial-item">
-                                        <div class="testimonial-header">
-                                            <div class="testimonial-rating">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <div class="testimonial-content">
-                                                <p>We needed a Steel Structural Building for our factory in Tirupur. Epicarconstruction delivered a robust structure that met all our industrial requirements. Their expertise in Steel Structural Buildings is commendable. The project was completed ahead of schedule with no compromise on quality.</p>									
-                                            </div>
-                                        </div>
-                                        <div class="testimonial-body">
-                                            <div class="author-image">
-                                                <figure>
-                                                    <img src="https://i.pravatar.cc/150?img=28" alt="Deepa Ranganathan">
-                                                </figure>
-                                            </div>            
-                                            <div class="author-content">
-                                                <h3>Deepa Ranganathan</h3>
-                                                <p>Tirupur</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Testimonial Slide End -->
-
-                                <!-- Testimonial Slide Start -->
-                                <div class="swiper-slide">
-                                    <div class="testimonial-item">
-                                        <div class="testimonial-header">
-                                            <div class="testimonial-rating">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <div class="testimonial-content">
-                                                <p>Epicarconstruction built our Independent Home in Madurai with beautiful 3D Elevation Design. The False Ceiling work in our living area is particularly stunning. They understood our vision and executed it perfectly. We're proud to have such a beautiful home that stands out in our neighborhood.</p>									
-                                            </div>
-                                        </div>
-                                        <div class="testimonial-body">
-                                            <div class="author-image">
-                                                <figure>
-                                                    <img src="https://i.pravatar.cc/150?img=13" alt="Karthik Balaji">
-                                                </figure>
-                                            </div>            
-                                            <div class="author-content">
-                                                <h3>Karthik Balaji</h3>
-                                                <p>Madurai</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Testimonial Slide End -->
-                            </div>
-                            <div class="swiper-pagination"></div>
-                        </div>
-                    </div>
-                    <!-- Testimonial Slider End -->
+            
+            <!-- Service 2 -->
+            <div class="service-item">
+                <div class="service-content">
+                    <span class="service-number">02</span>
+                    <h3 class="service-title">2D Vastu Plans</h3>
+                    <p class="service-description">Detailed 2D floor plans incorporating Vastu principles for optimal space utilization and positive energy distribution. Our precision-engineered blueprints ensure every element aligns with Vastu guidelines for prosperity.</p>
+                    <ul class="service-features">
+                        <li>Detailed floor plans with measurements</li>
+                        <li>Vastu direction analysis</li>
+                        <li>Furniture placement guidance</li>
+                        <li>Construction-ready blueprints</li>
+                        <li>Custom modifications available</li>
+                    </ul>
+                    <a href="#" class="service-btn">View 2D Samples <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1158&q=80" alt="2D Vastu Plan">
+                </div>
+            </div>
+            
+            <!-- Service 3 -->
+            <div class="service-item">
+                <div class="service-content">
+                    <span class="service-number">03</span>
+                    <h3 class="service-title">Vastu Consultation</h3>
+                    <p class="service-description">Expert Vastu consultation for existing or planned spaces to enhance positivity and correct energy imbalances. Our certified Vastu experts provide personalized solutions tailored to your specific needs.</p>
+                    <ul class="service-features">
+                        <li>Site evaluation & energy analysis</li>
+                        <li>Personalized remedial solutions</li>
+                        <li>Follow-up support & guidance</li>
+                        <li>Both residential & commercial spaces</li>
+                        <li>Online & in-person consultations</li>
+                    </ul>
+                    <a href="#" class="service-btn">Book Consultation <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1100&q=80" alt="Vastu Consultation">
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Our Testimonial End -->
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script>
-        // Initialize Swiper
-        const swiper = new Swiper('.swiper', {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            breakpoints: {
-                768: {
-                    slidesPerView: 2,
-                },
-                1024: {
-                    slidesPerView: 3,
-                }
-            }
-        });
-
-        // Simple animation implementation
-        document.addEventListener('DOMContentLoaded', function() {
-            const wowElements = document.querySelectorAll('.wow');
-            
-            function checkScroll() {
-                wowElements.forEach(element => {
-                    const elementTop = element.getBoundingClientRect().top;
-                    const windowHeight = window.innerHeight;
-                    
-                    if (elementTop < windowHeight - 100) {
-                        element.style.visibility = 'visible';
-                        element.style.animation = 'fadeInUp 1s forwards';
-                        
-                        if (element.classList.contains('fadeInUp')) {
-                            const delay = element.getAttribute('data-wow-delay');
-                            if (delay) {
-                                element.style.animationDelay = delay;
-                            }
-                        }
-                    }
-                });
-            }
-            
-            // Initial check
-            checkScroll();
-            
-            // Check on scroll
-            window.addEventListener('scroll', checkScroll);
-        });
-    </script>
+        
+        <div class="cta-section">
+            <div class="cta-content">
+                <h3 class="cta-title">Ready to Transform Your Space?</h3>
+                <p class="cta-description">Let us help you create a harmonious living or working environment that promotes health, wealth, and happiness through scientifically applied Vastu principles.</p>
+                <a href="#" class="cta-btn">Get Your Custom Vastu Plan <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
-
-
-
-<!-- Cta Box Section Start -->
-<div class="cta-box">
-    <div class="container">
-        <div class="row align-items-center">
-                        <div class="col-lg-6 col-md-4">
-                <!-- Cta Box Image Start -->
-                <div class="cta-box-image">
-                    <figure>
-                        <img src="assets/images/home/cta-box-img.png" alt="Epicarconstruction Building Project">
-                    </figure>
-                </div>
-                <!-- Cta Box Image End -->
-            </div>
-
-            <div class="col-lg-6 col-md-8">
-                <!-- Section Title Start -->
-                <div class="section-title">
-                    <h2 class="" data-cursor="-opaque">Let's build your dream project together!</h2>
-                    <p class="wow fadeInUp">Transform your vision into reality with Epicarconstruction's expertise in residential, commercial, and industrial construction across Tamil Nadu.</p>
-                </div>
-                <!-- Section Title End -->
-
-                <!-- Section Btn Start -->
-                <div class="section-btn " data-wow-delay="0.25s">
-                    <a href="#" class="btn-default btn-large">get free consultation</a>
-                </div>
-                <!-- Section Btn End -->
-            </div>
-
-
-        </div>
-    </div>
-</div>
-<!-- Cta Box Section End -->

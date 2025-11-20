@@ -1,1083 +1,724 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zxx">
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Residential Construction Services | Epicarconstruction</title>
-    <meta name="description" content="Professional residential construction services including new home building, villa construction, renovation, remodeling, and interior works by Epicarconstruction.">
-    <meta name="keywords" content="residential construction, home builders, villa construction, house renovation, remodeling services, interior works">
-    <meta name="author" content="Epicarconstruction">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Residential Construction Services | Epicarconstruction">
-    <meta property="og:description" content="Professional residential construction services including new home building, villa construction, renovation, remodeling, and interior works.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.epicarconstruction.com/residential-construction">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.epicarconstruction.com/residential-construction">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    
-    <!-- Google Fonts -->
+    <title>New House Construction Enquiry | Epicar Construction</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/fav-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Manrope:wght@200..800&display=swap"
+        rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/slicknav.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link href="css/all.css" rel="stylesheet" media="screen">
+    <link href="css/animate.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/mousecursor.css">
+    <link href="css/custom.css" rel="stylesheet" media="screen">
     <style>
-        /* Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        .enquiry-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/images/home/new-house-construction.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            color: white;
+            text-align: center;
         }
         
-        :root {
-            --primary: #1a365d;
-            --secondary: #d4af37;
-            --accent: #e53e3e;
-            --light: #f7fafc;
-            --dark: #2d3748;
-            --gray: #718096;
-            --transition: all 0.3s ease;
+        .enquiry-form-section {
+            padding: 80px 0;
+            background-color: #f9f9f9;
         }
         
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            background-color: #fff;
-            overflow-x: hidden;
+        .enquiry-form-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-top: -100px;
+            position: relative;
+            z-index: 2;
         }
         
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'DM Serif Display', serif;
-            font-weight: 600;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-            color: var(--primary);
+        .form-step {
+            display: none;
         }
         
-        h1 {
-            font-size: 3.5rem;
-        }
-        
-        h2 {
-            font-size: 2.5rem;
-        }
-        
-        h3 {
-            font-size: 1.8rem;
-        }
-        
-        p {
-            margin-bottom: 1.5rem;
-            color: var(--gray);
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition);
-        }
-        
-        ul {
-            list-style: none;
-        }
-        
-        img {
-            max-width: 100%;
-            height: auto;
+        .form-step.active {
             display: block;
         }
         
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .section-padding {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title h2 {
+        .form-progress {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
             position: relative;
-            display: inline-block;
-            margin-bottom: 15px;
         }
         
-        .section-title h2:after {
+        .form-progress:before {
             content: '';
             position: absolute;
-            bottom: -10px;
+            top: 15px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #e9ecef;
+            z-index: 1;
+        }
+        
+        .progress-step {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+            font-weight: bold;
+            color: #6c757d;
+        }
+        
+        .progress-step.active {
+            background: #0d6efd;
+            color: white;
+        }
+        
+        .progress-step.completed {
+            background: #198754;
+            color: white;
+        }
+        
+        .progress-label {
+            position: absolute;
+            top: 40px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--secondary);
+            white-space: nowrap;
+            font-size: 14px;
+            color: #6c757d;
         }
         
-        .section-title p {
-            max-width: 700px;
-            margin: 0 auto;
+        .progress-step.active .progress-label {
+            color: #0d6efd;
+            font-weight: bold;
         }
         
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            text-align: center;
-        }
-        
-        .btn:hover {
-            background-color: var(--secondary);
-            color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .btn-secondary {
-            background-color: var(--secondary);
-            color: var(--primary);
-        }
-        
-        .btn-secondary:hover {
-            background-color: var(--primary);
-            color: white;
-        }
-        
-        /* Header Styles */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .header-container {
+        .form-navigation {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
+            margin-top: 30px;
         }
         
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-        
-        .logo span {
-            color: var(--secondary);
-        }
-        
-        nav ul {
-            display: flex;
-        }
-        
-        nav ul li {
-            margin-left: 30px;
-        }
-        
-        nav ul li a {
-            font-weight: 500;
-            position: relative;
-        }
-        
-        nav ul li a:after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--secondary);
-            transition: var(--transition);
-        }
-        
-        nav ul li a:hover:after {
-            width: 100%;
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--primary);
-            cursor: pointer;
-        }
-        
-        /* Hero Section */
-        .service-hero {
-            background: linear-gradient(rgba(26, 54, 93, 0.8), rgba(26, 54, 93, 0.9)), url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 180px 0 100px;
-            text-align: center;
-        }
-        
-        .service-hero h1 {
-            color: white;
-            font-size: 3.5rem;
+        .form-group {
             margin-bottom: 20px;
         }
         
-        .service-hero p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-        
-        .breadcrumb {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 30px;
-        }
-        
-        .breadcrumb a {
-            color: rgba(255, 255, 255, 0.8);
-        }
-        
-        .breadcrumb a:hover {
-            color: var(--secondary);
-        }
-        
-        .breadcrumb span {
-            margin: 0 10px;
-            color: rgba(255, 255, 255, 0.6);
-        }
-        
-        /* Service Overview */
-        .service-overview {
-            background-color: var(--light);
-        }
-        
-        .overview-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-        
-        .overview-text h2 {
-            margin-bottom: 20px;
-        }
-        
-        .overview-features {
-            margin: 30px 0;
-        }
-        
-        .overview-features li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        
-        .overview-features li i {
-            color: var(--secondary);
-            margin-right: 10px;
-        }
-        
-        .overview-img {
-            position: relative;
-        }
-        
-        .overview-img img {
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Service Details */
-        .service-details {
-            background-color: white;
-        }
-        
-        .service-tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 40px;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        
-        .tab-btn {
-            background: none;
-            border: none;
-            padding: 15px 25px;
-            font-size: 1rem;
+        .form-label {
             font-weight: 600;
-            color: var(--gray);
-            cursor: pointer;
-            transition: var(--transition);
-            position: relative;
+            margin-bottom: 8px;
+            color: #333;
         }
         
-        .tab-btn:after {
-            content: '';
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background-color: var(--secondary);
-            transition: var(--transition);
+        .form-control, .form-select {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.3s;
         }
         
-        .tab-btn.active {
-            color: var(--primary);
+        .form-control:focus, .form-select:focus {
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
         }
         
-        .tab-btn.active:after {
-            width: 100%;
-        }
-        
-        .tab-btn:hover {
-            color: var(--primary);
-        }
-        
-        .tab-content {
-            display: none;
-        }
-        
-        .tab-content.active {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .service-detail-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: start;
-        }
-        
-        .detail-content h3 {
-            margin-bottom: 20px;
-        }
-        
-        .detail-features {
-            margin: 20px 0;
-        }
-        
-        .detail-features li {
+        .checkbox-group {
             display: flex;
-            align-items: center;
-            margin-bottom: 12px;
-        }
-        
-        .detail-features li i {
-            color: var(--secondary);
-            margin-right: 10px;
-        }
-        
-        .detail-img {
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .detail-img img {
-            width: 100%;
-            height: auto;
-        }
-        
-        /* Process Section */
-        .process {
-            background-color: var(--light);
-        }
-        
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        
-        .process-step {
-            background-color: white;
-            border-radius: 8px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-        }
-        
-        .process-step:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background-color: var(--secondary);
-            color: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0 auto 20px;
-        }
-        
-        .process-step h3 {
-            margin-bottom: 15px;
-        }
-        
-        /* CTA Section */
-        .service-cta {
-            background: linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.9)), url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 100px 0;
-        }
-        
-        .service-cta h2 {
-            color: white;
-            margin-bottom: 20px;
-        }
-        
-        .service-cta p {
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-        
-        /* FAQ Section */
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .faq-item {
-            margin-bottom: 15px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-        }
-        
-        .faq-question {
-            background-color: white;
-            padding: 20px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-        }
-        
-        .faq-question i {
-            transition: var(--transition);
-        }
-        
-        .faq-answer {
-            padding: 0 20px;
-            max-height: 0;
-            overflow: hidden;
-            transition: var(--transition);
-            background-color: var(--light);
-        }
-        
-        .faq-item.active .faq-answer {
-            padding: 20px;
-            max-height: 500px;
-        }
-        
-        .faq-item.active .faq-question i {
-            transform: rotate(180deg);
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--primary);
-            color: white;
-            padding: 80px 0 0;
-        }
-        
-        .footer-container {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 40px;
-        }
-        
-        .footer-about p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 20px;
-        }
-        
-        .social-links {
-            display: flex;
+            flex-wrap: wrap;
             gap: 15px;
         }
         
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            transition: var(--transition);
-        }
-        
-        .social-links a:hover {
-            background-color: var(--secondary);
-            color: var(--primary);
-        }
-        
-        .footer-links h3 {
-            color: white;
-            margin-bottom: 25px;
-            font-size: 1.3rem;
-        }
-        
-        .footer-links ul li {
+        .checkbox-item {
+            flex: 0 0 calc(33.333% - 10px);
             margin-bottom: 10px;
         }
         
-        .footer-links ul li a {
-            color: rgba(255, 255, 255, 0.7);
-            transition: var(--transition);
+        .form-check-input {
+            margin-right: 8px;
         }
         
-        .footer-links ul li a:hover {
-            color: var(--secondary);
-            padding-left: 5px;
+        .budget-slider {
+            margin: 20px 0;
         }
         
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 20px 0;
-            margin-top: 60px;
+        .budget-value {
+            font-weight: bold;
+            color: #0d6efd;
+            font-size: 18px;
             text-align: center;
-            color: rgba(255, 255, 255, 0.7);
+            margin-top: 10px;
         }
         
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            h1 {
-                font-size: 2.8rem;
-            }
-            
-            h2 {
-                font-size: 2.2rem;
-            }
-            
-            .overview-content,
-            .service-detail-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-container {
-                grid-template-columns: 1fr 1fr;
-            }
+        .form-section-title {
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            color: #333;
+        }
+        
+        .benefits-list {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        
+        .benefits-list h4 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .benefits-list ul {
+            padding-left: 20px;
+        }
+        
+        .benefits-list li {
+            margin-bottom: 10px;
+        }
+        
+        .thank-you-message {
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        .thank-you-message i {
+            font-size: 60px;
+            color: #198754;
+            margin-bottom: 20px;
         }
         
         @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
+            .checkbox-item {
+                flex: 0 0 100%;
             }
             
-            nav {
-                position: fixed;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background-color: white;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-                padding: 20px;
-                transform: translateY(-100%);
-                opacity: 0;
-                visibility: hidden;
-                transition: var(--transition);
+            .enquiry-form-container {
+                padding: 25px;
+                margin-top: -50px;
             }
             
-            nav.active {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
-            }
-            
-            nav ul {
-                flex-direction: column;
-            }
-            
-            nav ul li {
-                margin: 0 0 15px 0;
-            }
-            
-            .service-tabs {
-                flex-wrap: wrap;
-            }
-            
-            .tab-btn {
-                flex: 1 0 50%;
-            }
-            
-            .process-steps {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-container {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .section-padding {
-                padding: 60px 0;
-            }
-            
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            h2 {
-                font-size: 1.8rem;
-            }
-            
-            .tab-btn {
-                flex: 1 0 100%;
+            .progress-label {
+                font-size: 12px;
             }
         }
     </style>
 </head>
+
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <a href="index.html" class="logo">Epicar<span>construction</span></a>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+
+    <!-- Header Start -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-sticky">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <!-- Logo Start -->
+                        <a class="navbar-brand" href="./"><img src="assets/images/logo/logo-nobg.png" alt="Logo"></a>
+                        <!-- Logo End -->
+
+                        <!-- Main Menu Start -->
+                        <div class="collapse navbar-collapse main-menu">
+                            <div class="nav-menu-wrapper">
+                                <ul class="navbar-nav mr-auto" id="menu">
+                                    <li class="nav-item"><a class="nav-link" href="./">Home</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                                    <li class="nav-item services-trigger dropdown" id="servicesNavItem"><a class="nav-link dropdown-toggle" href="#" role="button" id="servicesTrigger">Services</a>
+                                        <!-- Mega Menu would go here -->
+                                    </li>
+                                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                                    <li class="nav-item highlighted-menu"><a class="nav-link active" href="contact.html">Contact Us</a></li>
+                                </ul>
+                            </div>
+                            <!-- Let's Start Button Start -->
+                            <div class="header-btn d-inline-flex">
+                                <a href="contact.html" class="btn-default cta-contact">Contact Us</a>
+                            </div>
+                            <!-- Let's Start Button End -->
+                        </div>
+                        <!-- Main Menu End -->
+
+                        <div class="navbar-toggle"></div>
+                    </div>
+                </nav>
+                <div class="responsive-menu"></div>
+            </div>
         </div>
     </header>
+    <!-- Header End -->
 
-    <!-- Hero Section -->
-    <section class="service-hero">
+    <!-- Enquiry Hero Section -->
+    <section class="enquiry-hero">
         <div class="container">
-            <div class="breadcrumb">
-                <a href="index.html">Home</a>
-                <span>/</span>
-                <a href="services.html">Services</a>
-                <span>/</span>
-                <a href="#">Residential Construction</a>
-            </div>
-            <h1>Residential Construction Services</h1>
-            <p>Building dream homes with precision, quality craftsmanship, and attention to detail. From new construction to renovations, we bring your vision to life.</p>
-            <a href="#contact" class="btn btn-secondary">Get Free Consultation</a>
-        </div>
-    </section>
-
-    <!-- Service Overview -->
-    <section class="service-overview section-padding">
-        <div class="container">
-            <div class="overview-content">
-                <div class="overview-text">
-                    <h2>Comprehensive Residential Construction Solutions</h2>
-                    <p>At Epicarconstruction, we specialize in creating exceptional living spaces that combine functionality, aesthetics, and lasting quality. Our residential construction services cover every aspect of home building and improvement.</p>
-                    <p>With over 15 years of experience in residential construction, we have the expertise to handle projects of all sizes and complexities, ensuring each home we build meets the highest standards of craftsmanship and design.</p>
-                    <ul class="overview-features">
-                        <li><i class="fas fa-check-circle"></i> Custom home design and construction</li>
-                        <li><i class="fas fa-check-circle"></i> Premium villa and independent home projects</li>
-                        <li><i class="fas fa-check-circle"></i> Complete renovation and remodeling services</li>
-                        <li><i class="fas fa-check-circle"></i> Interior design and finishing works</li>
-                        <li><i class="fas fa-check-circle"></i> Quality materials and sustainable practices</li>
-                    </ul>
-                    <a href="#contact" class="btn">Start Your Project</a>
-                </div>
-                <div class="overview-img">
-                    <img src="https://images.unsplash.com/photo-1600585154340-ffff5c5d6d0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Residential Construction">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h1 class="wow fadeInDown">Start Your Dream Home Journey</h1>
+                    <p class="lead wow fadeInUp" data-wow-delay="0.3s">Fill out the form below and our construction experts will contact you to discuss your new house project</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Service Details -->
-    <section class="service-details section-padding">
+    <!-- Enquiry Form Section -->
+    <section class="enquiry-form-section">
         <div class="container">
-            <div class="section-title">
-                <h2>Our Residential Services</h2>
-                <p>Explore our comprehensive range of residential construction services tailored to meet your specific needs and preferences.</p>
-            </div>
-            
-            <div class="service-tabs">
-                <button class="tab-btn active" data-tab="new-construction">New House Construction</button>
-                <button class="tab-btn" data-tab="villas">Villas & Independent Homes</button>
-                <button class="tab-btn" data-tab="renovation">Renovation & Remodeling</button>
-                <button class="tab-btn" data-tab="interior">Interior Works</button>
-            </div>
-            
-            <div class="tab-content active" id="new-construction">
-                <div class="service-detail-grid">
-                    <div class="detail-content">
-                        <h3>Custom New House Construction</h3>
-                        <p>We specialize in building custom homes from the ground up, working closely with you to design and construct a residence that perfectly matches your lifestyle, preferences, and budget.</p>
-                        <p>Our comprehensive new construction services include site evaluation, architectural design, foundation work, structural construction, and final finishes.</p>
-                        <ul class="detail-features">
-                            <li><i class="fas fa-check"></i> Custom architectural design and planning</li>
-                            <li><i class="fas fa-check"></i> Site preparation and foundation work</li>
-                            <li><i class="fas fa-check"></i> Structural framing and construction</li>
-                            <li><i class="fas fa-check"></i> Roofing and exterior finishing</li>
-                            <li><i class="fas fa-check"></i> Plumbing, electrical, and HVAC systems</li>
-                            <li><i class="fas fa-check"></i> Interior finishing and custom features</li>
-                            <li><i class="fas fa-check"></i> Landscaping and exterior amenities</li>
-                            <li><i class="fas fa-check"></i> Final inspection and quality assurance</li>
-                        </ul>
-                        <a href="#contact" class="btn">Get Quote for New Construction</a>
-                    </div>
-                    <div class="detail-img">
-                        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="New House Construction">
-                    </div>
-                </div>
-            </div>
-            
-            <div class="tab-content" id="villas">
-                <div class="service-detail-grid">
-                    <div class="detail-content">
-                        <h3>Luxury Villas & Independent Homes</h3>
-                        <p>Create your dream luxury residence with our specialized villa and independent home construction services. We focus on premium materials, sophisticated designs, and exceptional craftsmanship.</p>
-                        <p>Our villa projects incorporate modern amenities, sustainable features, and personalized touches that reflect your unique style and preferences.</p>
-                        <ul class="detail-features">
-                            <li><i class="fas fa-check"></i> Luxury villa design and architecture</li>
-                            <li><i class="fas fa-check"></i> High-end materials and finishes</li>
-                            <li><i class="fas fa-check"></i> Custom features and amenities</li>
-                            <li><i class="fas fa-check"></i> Smart home technology integration</li>
-                            <li><i class="fas fa-check"></i> Energy-efficient and sustainable design</li>
-                            <li><i class="fas fa-check"></i> Landscaping and outdoor living spaces</li>
-                            <li><i class="fas fa-check"></i> Pool and recreational facilities</li>
-                            <li><i class="fas fa-check"></i> Security and privacy features</li>
-                        </ul>
-                        <a href="#contact" class="btn">Discuss Villa Project</a>
-                    </div>
-                    <div class="detail-img">
-                        <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Villa Construction">
-                    </div>
-                </div>
-            </div>
-            
-            <div class="tab-content" id="renovation">
-                <div class="service-detail-grid">
-                    <div class="detail-content">
-                        <h3>Home Renovation & Remodeling</h3>
-                        <p>Transform your existing space with our comprehensive renovation and remodeling services. Whether you're updating a single room or undertaking a whole-house transformation, we deliver exceptional results.</p>
-                        <p>Our renovation experts work with you to reimagine your space, improve functionality, and enhance aesthetics while maintaining structural integrity.</p>
-                        <ul class="detail-features">
-                            <li><i class="fas fa-check"></i> Kitchen and bathroom renovations</li>
-                            <li><i class="fas fa-check"></i> Room additions and expansions</li>
-                            <li><i class="fas fa-check"></i> Structural modifications</li>
-                            <li><i class="fas fa-check"></i> Floor plan reconfiguration</li>
-                            <li><i class="fas fa-check"></i> Exterior remodeling and upgrades</li>
-                            <li><i class="fas fa-check"></i> Window and door replacement</li>
-                            <li><i class="fas fa-check"></i> Energy efficiency improvements</li>
-                            <li><i class="fas fa-check"></i> Aging-in-place modifications</li>
-                        </ul>
-                        <a href="#contact" class="btn">Plan Your Renovation</a>
-                    </div>
-                    <div class="detail-img">
-                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Home Renovation">
-                    </div>
-                </div>
-            </div>
-            
-            <div class="tab-content" id="interior">
-                <div class="service-detail-grid">
-                    <div class="detail-content">
-                        <h3>Interior Design & Finishing Works</h3>
-                        <p>Complete your residential project with our expert interior works services. We handle everything from basic finishing to custom interior design, creating spaces that are both beautiful and functional.</p>
-                        <p>Our interior specialists work with you to select materials, colors, and finishes that reflect your personal style while ensuring durability and practicality.</p>
-                        <ul class="detail-features">
-                            <li><i class="fas fa-check"></i> Custom cabinetry and built-ins</li>
-                            <li><i class="fas fa-check"></i> Flooring installation and finishing</li>
-                            <li><i class="fas fa-check"></i> Wall treatments and painting</li>
-                            <li><i class="fas fa-check"></i> Lighting design and installation</li>
-                            <li><i class="fas fa-check"></i> Custom millwork and trim</li>
-                            <li><i class="fas fa-check"></i> Bathroom and kitchen fittings</li>
-                            <li><i class="fas fa-check"></i> Closet and storage solutions</li>
-                            <li><i class="fas fa-check"></i> Final decorative elements</li>
-                        </ul>
-                        <a href="#contact" class="btn">Discuss Interior Works</a>
-                    </div>
-                    <div class="detail-img">
-                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Interior Works">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="enquiry-form-container">
+                        <!-- Progress Bar -->
+                        <div class="form-progress">
+                            <div class="progress-step active" id="step1-indicator">
+                                <span>1</span>
+                                <div class="progress-label">Personal Info</div>
+                            </div>
+                            <div class="progress-step" id="step2-indicator">
+                                <span>2</span>
+                                <div class="progress-label">Project Details</div>
+                            </div>
+                            <div class="progress-step" id="step3-indicator">
+                                <span>3</span>
+                                <div class="progress-label">Requirements</div>
+                            </div>
+                            <div class="progress-step" id="step4-indicator">
+                                <span>4</span>
+                                <div class="progress-label">Review & Submit</div>
+                            </div>
+                        </div>
+
+                        <!-- Multi-Step Form -->
+                        <form id="new-house-enquiry-form">
+                            <!-- Step 1: Personal Information -->
+                            <div class="form-step active" id="step1">
+                                <h3 class="form-section-title">Personal Information</h3>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="fullName" class="form-label">Full Name *</label>
+                                            <input type="text" class="form-control" id="fullName" name="fullName" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="email" class="form-label">Email Address *</label>
+                                            <input type="email" class="form-control" id="email" name="email" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="phone" class="form-label">Phone Number *</label>
+                                            <input type="tel" class="form-control" id="phone" name="phone" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="location" class="form-label">City / Location *</label>
+                                            <input type="text" class="form-control" id="location" name="location" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-navigation">
+                                    <button type="button" class="btn btn-secondary" disabled>Previous</button>
+                                    <button type="button" class="btn btn-primary next-step" data-next="step2">Next</button>
+                                </div>
+                            </div>
+
+                            <!-- Step 2: Project Details -->
+                            <div class="form-step" id="step2">
+                                <h3 class="form-section-title">Project Details</h3>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="plotSize" class="form-label">Plot Size (in sq.ft) *</label>
+                                            <input type="number" class="form-control" id="plotSize" name="plotSize" min="500" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="builtUpArea" class="form-label">Built-up Area (in sq.ft) *</label>
+                                            <input type="number" class="form-control" id="builtUpArea" name="builtUpArea" min="500" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="floors" class="form-label">Number of Floors *</label>
+                                            <select class="form-select" id="floors" name="floors" required>
+                                                <option value="" selected disabled>Select</option>
+                                                <option value="1">Ground Floor Only</option>
+                                                <option value="2">Ground + 1 Floor</option>
+                                                <option value="3">Ground + 2 Floors</option>
+                                                <option value="4">Ground + 3 Floors</option>
+                                                <option value="5">More than 4 Floors</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="propertyType" class="form-label">Property Type *</label>
+                                            <select class="form-select" id="propertyType" name="propertyType" required>
+                                                <option value="" selected disabled>Select</option>
+                                                <option value="independent">Independent House</option>
+                                                <option value="villa">Villa</option>
+                                                <option value="duplex">Duplex</option>
+                                                <option value="row-house">Row House</option>
+                                                <option value="apartment">Apartment Unit</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Do you already own the land? *</label>
+                                    <div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="landOwnership" id="landYes" value="yes" required>
+                                            <label class="form-check-label" for="landYes">Yes</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="landOwnership" id="landNo" value="no">
+                                            <label class="form-check-label" for="landNo">No</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="landOwnership" id="landPlanning" value="planning">
+                                            <label class="form-check-label" for="landPlanning">Planning to buy</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-navigation">
+                                    <button type="button" class="btn btn-secondary prev-step" data-prev="step1">Previous</button>
+                                    <button type="button" class="btn btn-primary next-step" data-next="step3">Next</button>
+                                </div>
+                            </div>
+
+                            <!-- Step 3: Requirements & Preferences -->
+                            <div class="form-step" id="step3">
+                                <h3 class="form-section-title">Requirements & Preferences</h3>
+                                <div class="form-group">
+                                    <label class="form-label">What services are you interested in? *</label>
+                                    <div class="checkbox-group">
+                                        <div class="checkbox-item form-check">
+                                            <input class="form-check-input" type="checkbox" id="serviceDesign" name="services" value="design">
+                                            <label class="form-check-label" for="serviceDesign">Architectural Design</label>
+                                        </div>
+                                        <div class="checkbox-item form-check">
+                                            <input class="form-check-input" type="checkbox" id="serviceConstruction" name="services" value="construction" checked>
+                                            <label class="form-check-label" for="serviceConstruction">Full Construction</label>
+                                        </div>
+                                        <div class="checkbox-item form-check">
+                                            <input class="form-check-input" type="checkbox" id="serviceInterior" name="services" value="interior">
+                                            <label class="form-check-label" for="serviceInterior">Interior Work</label>
+                                        </div>
+                                        <div class="checkbox-item form-check">
+                                            <input class="form-check-input" type="checkbox" id="serviceVastu" name="services" value="vastu">
+                                            <label class="form-check-label" for="serviceVastu">Vastu Consultation</label>
+                                        </div>
+                                        <div class="checkbox-item form-check">
+                                            <input class="form-check-input" type="checkbox" id="serviceApprovals" name="services" value="approvals">
+                                            <label class="form-check-label" for="serviceApprovals">Approvals & Permits</label>
+                                        </div>
+                                        <div class="checkbox-item form-check">
+                                            <input class="form-check-input" type="checkbox" id="serviceRenovation" name="services" value="renovation">
+                                            <label class="form-check-label" for="serviceRenovation">Renovation</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="timeline" class="form-label">Expected Timeline *</label>
+                                    <select class="form-select" id="timeline" name="timeline" required>
+                                        <option value="" selected disabled>Select</option>
+                                        <option value="immediate">Immediately (within 1 month)</option>
+                                        <option value="1-3">1-3 months</option>
+                                        <option value="3-6">3-6 months</option>
+                                        <option value="6-12">6-12 months</option>
+                                        <option value="12+">More than 1 year</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="budget" class="form-label">Estimated Budget (in INR) *</label>
+                                    <input type="range" class="form-range budget-slider" id="budget" name="budget" min="10" max="500" step="10" value="50">
+                                    <div class="budget-value" id="budgetValue">₹ 50 Lakhs</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="additionalInfo" class="form-label">Additional Information or Specific Requirements</label>
+                                    <textarea class="form-control" id="additionalInfo" name="additionalInfo" rows="4" placeholder="Tell us about any specific requirements, preferences, or questions you have..."></textarea>
+                                </div>
+                                <div class="form-navigation">
+                                    <button type="button" class="btn btn-secondary prev-step" data-prev="step2">Previous</button>
+                                    <button type="button" class="btn btn-primary next-step" data-next="step4">Next</button>
+                                </div>
+                            </div>
+
+                            <!-- Step 4: Review & Submit -->
+                            <div class="form-step" id="step4">
+                                <h3 class="form-section-title">Review Your Information</h3>
+                                <div class="review-section">
+                                    <h5>Personal Information</h5>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <p><strong>Name:</strong> <span id="review-name"></span></p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p><strong>Email:</strong> <span id="review-email"></span></p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p><strong>Phone:</strong> <span id="review-phone"></span></p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p><strong>Location:</strong> <span id="review-location"></span></p>
+                                        </div>
+                                    </div>
+                                    
+                                    <h5>Project Details</h5>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <p><strong>Plot Size:</strong> <span id="review-plotSize"></span> sq.ft</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p><strong>Built-up Area:</strong> <span id="review-builtUpArea"></span> sq.ft</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p><strong>Floors:</strong> <span id="review-floors"></span></p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p><strong>Property Type:</strong> <span id="review-propertyType"></span></p>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <p><strong>Land Ownership:</strong> <span id="review-landOwnership"></span></p>
+                                        </div>
+                                    </div>
+                                    
+                                    <h5>Requirements</h5>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <p><strong>Services Needed:</strong> <span id="review-services"></span></p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p><strong>Timeline:</strong> <span id="review-timeline"></span></p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p><strong>Budget:</strong> <span id="review-budget"></span></p>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <p><strong>Additional Info:</strong> <span id="review-additionalInfo"></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                                        <label class="form-check-label" for="agreeTerms">
+                                            I agree to the <a href="#" target="_blank">Terms & Conditions</a> and <a href="#" target="_blank">Privacy Policy</a> *
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-navigation">
+                                    <button type="button" class="btn btn-secondary prev-step" data-prev="step3">Previous</button>
+                                    <button type="submit" class="btn btn-success">Submit Enquiry</button>
+                                </div>
+                            </div>
+
+                            <!-- Thank You Message (Hidden by default) -->
+                            <div class="thank-you-message" id="thankYouMessage" style="display: none;">
+                                <i class="fas fa-check-circle"></i>
+                                <h3>Thank You for Your Enquiry!</h3>
+                                <p>We have received your information and one of our construction experts will contact you within 24 hours to discuss your new house project.</p>
+                                <p>In the meantime, you can <a href="projects.html">browse our completed projects</a> or <a href="contact.html">contact us directly</a> if you have any urgent questions.</p>
+                                <a href="./" class="btn btn-primary mt-3">Back to Homepage</a>
+                            </div>
+                        </form>
+                        
+                        <!-- Benefits Section -->
+                        <div class="benefits-list">
+                            <h4>Why Choose Epicar Construction for Your New Home?</h4>
+                            <ul>
+                                <li><strong>7+ Years of Experience</strong> in residential construction</li>
+                                <li><strong>Custom Design Solutions</strong> tailored to your needs</li>
+                                <li><strong>Quality Materials</strong> and construction techniques</li>
+                                <li><strong>Timely Project Completion</strong> with regular updates</li>
+                                <li><strong>Transparent Pricing</strong> with no hidden costs</li>
+                                <li><strong>Post-Construction Support</strong> and warranty</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Process Section -->
-    <section class="process section-padding">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Residential Construction Process</h2>
-                <p>We follow a systematic approach to ensure your residential project is completed efficiently, on time, and to the highest standards.</p>
-            </div>
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h3>Consultation & Planning</h3>
-                    <p>We begin with a detailed consultation to understand your vision, requirements, and budget, followed by comprehensive project planning.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h3>Design & Development</h3>
-                    <p>Our architects and designers create detailed plans and 3D visualizations, refining the design until it perfectly matches your vision.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h3>Approval & Permitting</h3>
-                    <p>We handle all necessary permits and approvals, ensuring compliance with local building codes and regulations.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <h3>Construction & Execution</h3>
-                    <p>Our skilled team executes the construction with precision, maintaining regular communication and quality control throughout.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">5</div>
-                    <h3>Finishing & Detailing</h3>
-                    <p>We apply the final finishes and details, ensuring every aspect of your home meets our high standards of craftsmanship.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">6</div>
-                    <h3>Final Inspection & Handover</h3>
-                    <p>We conduct thorough inspections and walkthroughs before handing over your completed home, along with warranty documentation.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="service-cta section-padding">
-        <div class="container">
-            <h2>Ready to Build Your Dream Home?</h2>
-            <p>Contact Epicarconstruction today for a free consultation and quote. Let's discuss your residential construction project and bring your vision to life.</p>
-            <a href="#contact" class="btn btn-secondary">Start Your Project Today</a>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq section-padding">
-        <div class="container">
-            <div class="section-title">
-                <h2>Frequently Asked Questions</h2>
-                <p>Find answers to common questions about our residential construction services.</p>
-            </div>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>How long does a typical residential construction project take?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>The timeline for residential construction projects varies based on size, complexity, and specific requirements. A standard single-family home typically takes 6-12 months from planning to completion. Custom luxury homes or larger projects may require 12-18 months. We provide a detailed project timeline during the planning phase and maintain regular updates throughout construction.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Do you provide design services or work with architects?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes, we offer comprehensive design-build services with our in-house architectural team. We can also collaborate with your chosen architect to ensure seamless integration between design and construction. Our design services include conceptual planning, detailed architectural drawings, 3D visualizations, and interior design coordination.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>What is included in your residential construction pricing?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Our pricing is transparent and comprehensive, covering all aspects of the construction process. This includes site preparation, foundation work, structural construction, roofing, exterior finishes, plumbing, electrical, HVAC systems, interior finishes, and basic landscaping. We provide detailed breakdowns and work with you to select materials and finishes that align with your budget while maintaining quality standards.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Do you offer warranties on your residential construction work?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes, we provide comprehensive warranties on all our residential construction projects. This includes a 10-year structural warranty, 2-year workmanship warranty, and manufacturer warranties on all installed materials and systems. We believe in standing behind our work and ensuring long-term satisfaction for our clients.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Can you work with my existing architectural plans?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Absolutely. We regularly work with clients who have existing architectural plans. Our team will review the plans, provide value engineering suggestions if needed, and ensure they comply with local building codes. We can also make modifications or enhancements based on your preferences and our construction expertise.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-about">
-                    <a href="index.html" class="logo">Epicar<span>construction</span></a>
-                    <p>Epicarconstruction delivers comprehensive construction solutions with a commitment to quality, innovation, and client satisfaction. From concept to completion, we build with precision and care.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <h3>Our Services</h3>
-                    <ul>
-                        <li><a href="#">Residential Construction</a></li>
-                        <li><a href="#">Commercial Construction</a></li>
-                        <li><a href="#">Renovation Services</a></li>
-                        <li><a href="#">Interior Works</a></li>
-                        <li><a href="#">Structural Works</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h3>Contact Info</h3>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Construction Avenue</li>
-                        <li><i class="fas fa-phone-alt"></i> +1 (555) 123-4567</li>
-                        <li><i class="fas fa-envelope"></i> info@epicarconstruction.com</li>
-                        <li><i class="fas fa-clock"></i> Mon-Fri: 8AM-6PM</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 Epicarconstruction. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
-
+    <!-- Scripts -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/wow.js"></script>
     <script>
-        // Mobile Menu Toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            document.querySelector('nav').classList.toggle('active');
-        });
-
-        // Service Tabs
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        const tabContents = document.querySelectorAll('.tab-content');
-        
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons and contents
-                tabBtns.forEach(b => b.classList.remove('active'));
-                tabContents.forEach(c => c.classList.remove('active'));
-                
-                // Add active class to clicked button
-                btn.classList.add('active');
-                
-                // Show corresponding content
-                const tabId = btn.getAttribute('data-tab');
-                document.getElementById(tabId).classList.add('active');
-            });
-        });
-
-        // FAQ Accordion
-        const faqItems = document.querySelectorAll('.faq-item');
-        
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
+        $(document).ready(function() {
+            // Initialize WOW.js for animations
+            new WOW().init();
             
-            question.addEventListener('click', () => {
-                // Close all other items
-                faqItems.forEach(otherItem => {
-                    if (otherItem !== item) {
-                        otherItem.classList.remove('active');
+            // Budget slider value display
+            $('#budget').on('input', function() {
+                const value = $(this).val();
+                $('#budgetValue').text('₹ ' + value + ' Lakhs');
+            });
+            
+            // Form navigation
+            $('.next-step').click(function() {
+                const currentStep = $(this).closest('.form-step');
+                const nextStepId = $(this).data('next');
+                
+                // Validate current step before proceeding
+                if (validateStep(currentStep.attr('id'))) {
+                    currentStep.removeClass('active');
+                    $('#' + nextStepId).addClass('active');
+                    updateProgress(nextStepId);
+                    
+                    // If moving to review step, populate review fields
+                    if (nextStepId === 'step4') {
+                        populateReviewFields();
+                    }
+                }
+            });
+            
+            $('.prev-step').click(function() {
+                const currentStep = $(this).closest('.form-step');
+                const prevStepId = $(this).data('prev');
+                
+                currentStep.removeClass('active');
+                $('#' + prevStepId).addClass('active');
+                updateProgress(prevStepId);
+            });
+            
+            // Form submission
+            $('#new-house-enquiry-form').on('submit', function(e) {
+                e.preventDefault();
+                
+                if (validateStep('step4')) {
+                    // In a real application, you would send the form data to your server here
+                    // For demonstration, we'll just show the thank you message
+                    
+                    $('.form-step').removeClass('active');
+                    $('#thankYouMessage').show();
+                    
+                    // You could also send the data via AJAX here
+                    /*
+                    $.ajax({
+                        url: 'process-enquiry.php',
+                        method: 'POST',
+                        data: $(this).serialize(),
+                        success: function(response) {
+                            $('.form-step').removeClass('active');
+                            $('#thankYouMessage').show();
+                        },
+                        error: function() {
+                            alert('There was an error submitting your form. Please try again.');
+                        }
+                    });
+                    */
+                }
+            });
+            
+            // Update progress indicator
+            function updateProgress(activeStep) {
+                $('.progress-step').removeClass('active completed');
+                
+                if (activeStep === 'step1') {
+                    $('#step1-indicator').addClass('active');
+                } else if (activeStep === 'step2') {
+                    $('#step1-indicator').addClass('completed');
+                    $('#step2-indicator').addClass('active');
+                } else if (activeStep === 'step3') {
+                    $('#step1-indicator, #step2-indicator').addClass('completed');
+                    $('#step3-indicator').addClass('active');
+                } else if (activeStep === 'step4') {
+                    $('#step1-indicator, #step2-indicator, #step3-indicator').addClass('completed');
+                    $('#step4-indicator').addClass('active');
+                }
+            }
+            
+            // Validate form step
+            function validateStep(stepId) {
+                let isValid = true;
+                const step = $('#' + stepId);
+                
+                // Check all required fields in this step
+                step.find('input[required], select[required]').each(function() {
+                    if (!$(this).val()) {
+                        $(this).addClass('is-invalid');
+                        isValid = false;
+                    } else {
+                        $(this).removeClass('is-invalid');
                     }
                 });
                 
-                // Toggle current item
-                item.classList.toggle('active');
-            });
-        });
-
-        // Smooth Scrolling for Anchor Links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    // Close mobile menu if open
-                    document.querySelector('nav').classList.remove('active');
-                    
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
+                // Special validation for checkboxes in step 3
+                if (stepId === 'step3') {
+                    const servicesChecked = step.find('input[name="services"]:checked').length;
+                    if (servicesChecked === 0) {
+                        step.find('.checkbox-group').addClass('is-invalid');
+                        isValid = false;
+                    } else {
+                        step.find('.checkbox-group').removeClass('is-invalid');
+                    }
                 }
-            });
-        });
-
-        // Header Background on Scroll
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-                header.style.backdropFilter = 'blur(10px)';
-            } else {
-                header.style.backgroundColor = 'white';
-                header.style.backdropFilter = 'none';
+                
+                // Special validation for agreement in step 4
+                if (stepId === 'step4') {
+                    if (!$('#agreeTerms').is(':checked')) {
+                        $('#agreeTerms').addClass('is-invalid');
+                        isValid = false;
+                    } else {
+                        $('#agreeTerms').removeClass('is-invalid');
+                    }
+                }
+                
+                return isValid;
+            }
+            
+            // Populate review fields
+            function populateReviewFields() {
+                $('#review-name').text($('#fullName').val());
+                $('#review-email').text($('#email').val());
+                $('#review-phone').text($('#phone').val());
+                $('#review-location').text($('#location').val());
+                $('#review-plotSize').text($('#plotSize').val());
+                $('#review-builtUpArea').text($('#builtUpArea').val());
+                $('#review-floors').text($('#floors option:selected').text());
+                $('#review-propertyType').text($('#propertyType option:selected').text());
+                $('#review-landOwnership').text($('input[name="landOwnership"]:checked').next('label').text());
+                
+                // Services
+                const services = [];
+                $('input[name="services"]:checked').each(function() {
+                    services.push($(this).next('label').text());
+                });
+                $('#review-services').text(services.join(', '));
+                
+                $('#review-timeline').text($('#timeline option:selected').text());
+                $('#review-budget').text('₹ ' + $('#budget').val() + ' Lakhs');
+                $('#review-additionalInfo').text($('#additionalInfo').val() || 'None provided');
             }
         });
     </script>
 </body>
+
 </html>

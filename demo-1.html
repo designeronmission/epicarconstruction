@@ -3,951 +3,770 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Project Showcase</title>
+    <title>EpicarConstruction - Building Dreams from Empty Land</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #1a1a1a;
-            --accent-color: #ff6b35;
-            --divider-color: #e0e0e0;
-            --light-bg: #f8f9fa;
-            --dark-bg: #121212;
-            --text-light: #ffffff;
-            --text-dark: #333333;
-            --card-bg: #ffffff;
-            --gradient: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            --primary: #1a365d;
+            --secondary: #e2a93b;
+            --accent: #2d3748;
+            --light: #f8f9fa;
+            --dark: #1a202c;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
         }
         
         body {
-            background-color: var(--light-bg);
-            color: var(--text-dark);
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark);
+            overflow-x: hidden;
             line-height: 1.6;
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        
-        .page-project {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title h2 {
-            font-size: 42px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title h2:after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--gradient);
-            border-radius: 2px;
-        }
-        
-        .section-title p {
-            color: #666;
-            max-width: 600px;
-            margin: 20px auto 0;
-            font-size: 18px;
-        }
-        
-        /* Tab Styles */
-        .tab-project {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 50px;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        .tab-project-btn {
-            background: transparent;
-            border: 2px solid var(--divider-color);
-            padding: 12px 30px;
-            margin: 0 5px;
-            font-size: 16px;
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
             font-weight: 600;
-            color: var(--primary-color);
-            cursor: pointer;
-            position: relative;
-            transition: all 0.3s ease;
-            border-radius: 50px;
-            overflow: hidden;
-            z-index: 1;
         }
         
-        .tab-project-btn:before {
-            content: '';
+        /* Parallax Sections */
+        .parallax-section {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .parallax-bg {
             position: absolute;
             top: 0;
             left: 0;
-            width: 0%;
+            width: 100%;
+            height: 120%;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            z-index: -2;
+            transform: translateZ(0);
+        }
+        
+        .parallax-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
             height: 100%;
-            background: var(--gradient);
-            transition: all 0.3s ease;
+            background: rgba(26, 54, 93, 0.7);
             z-index: -1;
         }
         
-        .tab-project-btn:hover {
+        .parallax-content {
+            text-align: center;
             color: white;
-            border-color: transparent;
-        }
-        
-        .tab-project-btn:hover:before {
-            width: 100%;
-        }
-        
-        .tab-project-btn.active {
-            color: white;
-            border-color: transparent;
-        }
-        
-        .tab-project-btn.active:before {
-            width: 100%;
-        }
-        
-        .tab-content {
-            display: none;
-            animation: fadeIn 0.5s ease;
-        }
-        
-        .tab-content.active {
-            display: block;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-
-        
-        
-        /* Project Grid */
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 -15px;
-        }
-        
-        .col-lg-4 {
-            flex: 0 0 33.333333%;
-            max-width: 33.333333%;
-            padding: 0 15px;
-            margin-bottom: 30px;
-        }
-        
-        @media (max-width: 992px) {
-            .col-lg-4 {
-                flex: 0 0 50%;
-                max-width: 50%;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .col-lg-4 {
-                flex: 0 0 100%;
-                max-width: 100%;
-            }
-        }
-        
-        /* Project Item - Modern Design */
-        .project-item {
-            background: var(--card-bg);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            transition: all 0.4s ease;
-            height: 100%;
-            position: relative;
-        }
-        
-        .project-item:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient);
-            opacity: 0;
-            transition: all 0.4s ease;
+            max-width: 800px;
+            padding: 0 20px;
             z-index: 1;
         }
         
-        .project-item:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        .parallax-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
         }
         
-        .project-item:hover:before {
-            opacity: 0.05;
+        .parallax-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
         }
         
-        .project-image {
+        /* Navigation */
+        .navbar {
+            background-color: rgba(26, 54, 93, 0.95);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Content Sections */
+        .content-section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
             position: relative;
-            overflow: hidden;
-            height: 280px;
+            margin-bottom: 50px;
+            text-align: center;
         }
         
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s ease;
-        }
-        
-        .project-item:hover .project-image img {
-            transform: scale(1.1);
-        }
-        
-        .project-image:after {
+        .section-title:after {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.2) 100%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
         }
         
-        .project-item:hover .project-image:after {
-            opacity: 1;
-        }
-        
-        .project-category-tag {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: var(--gradient);
-            color: white;
-            padding: 6px 15px;
-            border-radius: 50px;
-            font-size: 12px;
-            font-weight: 600;
-            z-index: 2;
-            box-shadow: 0 4px 10px rgba(255, 107, 53, 0.3);
-        }
-        
-        .project-body {
-            padding: 25px;
+        /* Process Steps */
+        .process-step {
             position: relative;
-            z-index: 2;
-        }
-        
-        .project-body-title {
-            margin-bottom: 15px;
-        }
-        
-        .project-body-title h3 {
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--primary-color);
-            line-height: 1.3;
-        }
-        
-        .project-content p {
-            color: #666;
-            margin-bottom: 20px;
-            font-size: 15px;
-        }
-        
-        .project-content-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .readmore-btn {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 600;
-            position: relative;
-            padding-right: 25px;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
             transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
-        .readmore-btn:after {
-            content: '→';
+        .process-step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .step-number {
             position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            transition: transform 0.3s ease;
-        }
-        
-        .readmore-btn:hover {
-            color: var(--primary-color);
-        }
-        
-        .readmore-btn:hover:after {
-            transform: translate(5px, -50%);
-        }
-        
-        .project-stats {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .project-stat {
+            top: -20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 50%;
             display: flex;
             align-items: center;
-            color: #888;
-            font-size: 14px;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5rem;
         }
         
-        .project-stat i {
-            margin-right: 5px;
-            color: var(--accent-color);
+        /* Service Cards */
+        .service-card {
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
         }
         
-        /* Animation */
-        .wow {
-            visibility: hidden;
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
         
-        .fadeInUp {
-            animation-name: fadeInUp;
+        .service-card img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
         }
         
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translate3d(0, 40px, 0);
-            }
-            to {
-                opacity: 1;
-                transform: translate3d(0, 0, 0);
-            }
+        /* Buttons */
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
         
-        /* Cursor Effect */
-        .project-image[data-cursor-text] {
+        .btn-primary:hover {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+            color: var(--dark);
+        }
+        
+        .btn-outline-primary {
+            border-color: var(--primary);
+            color: var(--primary);
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Backgrounds */
+        .bg-light-custom {
+            background-color: #f8f9fa;
+        }
+        
+        /* Stats Section */
+        .counter {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .counter-label {
+            font-size: 1rem;
+            color: var(--accent);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+        
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
             cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
         }
         
-        /* Responsive Adjustments */
-        @media (max-width: 576px) {
-            .tab-project-btn {
-                padding: 10px 20px;
-                font-size: 14px;
-                margin-bottom: 10px;
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .parallax-content h1 {
+                font-size: 2.5rem;
             }
             
-            .section-title h2 {
-                font-size: 32px;
-            }
-            
-            .project-body {
-                padding: 20px;
+            .parallax-content p {
+                font-size: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Page Project Start -->
-    <div class="page-project">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <div class="section-title">
-                <h2>Our Projects</h2>
-                <p>Explore our exceptional construction projects across different categories</p>
+            <a class="navbar-brand" href="#">
+                <h3 class="mb-0">Epicar<span class="text-warning">Construction</span></h3>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#process">Our Process</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
             </div>
-            
-            <!-- Project Tabs -->
-            <div class="tab-project">
-                <button class="tab-project-btn active" data-tab="all">All Projects</button>
-                <button class="tab-project-btn" data-tab="residential">Residential</button>
-                <button class="tab-project-btn" data-tab="commercial">Commercial</button>
-                <button class="tab-project-btn" data-tab="industrial">Industrial</button>
+        </div>
+    </nav>
+
+    <!-- Hero Parallax Section -->
+    <section id="home" class="parallax-section">
+        <div class="parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');"></div>
+        <div class="parallax-overlay"></div>
+        <div class="parallax-content">
+            <h1 class="display-3 fw-bold">Building Dreams From Empty Land</h1>
+            <p class="lead">At EpicarConstruction, we transform empty land into your perfect home through a seamless, transparent construction process.</p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="#contact" class="btn btn-primary btn-lg">Start Your Project</a>
+                <a href="#process" class="btn btn-outline-light btn-lg">Our Process</a>
             </div>
-            
-            <!-- All Projects Tab -->
-            <div class="tab-content active" id="all">
-                <div class="row">
-                    <!-- Project 1 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="project-item wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="project-image" data-cursor-text="View">
-                                <a href="#">
-                                    <figure>
-                                        <img src="https://images.unsplash.com/photo-1600585154340-6f67677b3759?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Modern Villa Construction">
-                                    </figure>
-                                </a>
-                                <div class="project-category-tag">Residential</div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="content-section bg-light-custom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0 fade-in">
+                    <h2 class="section-title">Our Story</h2>
+                    <p class="lead">Founded in 2005, EpicarConstruction has been at the forefront of residential construction, specializing in transforming empty plots into dream homes.</p>
+                    <p>We believe that building a home should be an exciting journey, not a stressful ordeal. That's why we've developed a comprehensive process that guides you from the initial land assessment to the final walkthrough of your completed home.</p>
+                    <p>Our team of architects, engineers, and construction professionals work together to ensure every detail of your vision becomes reality, while maintaining the highest standards of quality and craftsmanship.</p>
+                    <div class="row mt-4">
+                        <div class="col-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-check-circle text-primary me-2"></i>
+                                <span>15+ Years Experience</span>
                             </div>
-                            <div class="project-body">
-                                <div class="project-body-title">
-                                    <h3>Modern Villa Construction</h3>
-                                </div>
-                                <div class="project-content">
-                                    <p>A stunning modern villa with sustainable design features and luxury amenities.</p>
-                                    <div class="project-content-footer">
-                                        <a href="#" class="readmore-btn">view more</a>
-                                        <div class="project-stats">
-                                            <div class="project-stat">
-                                                <i class="fas fa-ruler-combined"></i> 3200 sq ft
-                                            </div>
-                                            <div class="project-stat">
-                                                <i class="far fa-clock"></i> 12 months
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>                       
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-check-circle text-primary me-2"></i>
+                                <span>200+ Projects Completed</span>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- Project 2 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="project-item wow fadeInUp" data-wow-delay="0.2s">
-                            <div class="project-image" data-cursor-text="View">
-                                <a href="#">
-                                    <figure>
-                                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Urban Apartment Complex">
-                                    </figure>
-                                </a>
-                                <div class="project-category-tag">Residential</div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-check-circle text-primary me-2"></i>
+                                <span>Award-Winning Designs</span>
                             </div>
-                            <div class="project-body">
-                                <div class="project-body-title">
-                                    <h3>Urban Apartment Complex</h3>
-                                </div>
-                                <div class="project-content">
-                                    <p>Multi-story apartment building with modern facilities and green spaces.</p>
-                                    <div class="project-content-footer">
-                                        <a href="#" class="readmore-btn">view more</a>
-                                        <div class="project-stats">
-                                            <div class="project-stat">
-                                                <i class="fas fa-ruler-combined"></i> 15000 sq ft
-                                            </div>
-                                            <div class="project-stat">
-                                                <i class="far fa-clock"></i> 18 months
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>                       
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 3 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="project-item wow fadeInUp" data-wow-delay="0.3s">
-                            <div class="project-image" data-cursor-text="View">
-                                <a href="#">
-                                    <figure>
-                                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Suburban Family Home">
-                                    </figure>
-                                </a>
-                                <div class="project-category-tag">Residential</div>
-                            </div>
-                            <div class="project-body">
-                                <div class="project-body-title">
-                                    <h3>Suburban Family Home</h3>
-                                </div>
-                                <div class="project-content">
-                                    <p>Spacious family home with energy-efficient design and modern amenities.</p>
-                                    <div class="project-content-footer">
-                                        <a href="#" class="readmore-btn">view more</a>
-                                        <div class="project-stats">
-                                            <div class="project-stat">
-                                                <i class="fas fa-ruler-combined"></i> 2800 sq ft
-                                            </div>
-                                            <div class="project-stat">
-                                                <i class="far fa-clock"></i> 10 months
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>                       
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 4 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="project-item wow fadeInUp" data-wow-delay="0.4s">
-                            <div class="project-image" data-cursor-text="View">
-                                <a href="#">
-                                    <figure>
-                                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Office Tower">
-                                    </figure>
-                                </a>
-                                <div class="project-category-tag">Commercial</div>
-                            </div>
-                            <div class="project-body">
-                                <div class="project-body-title">
-                                    <h3>Office Tower</h3>
-                                </div>
-                                <div class="project-content">
-                                    <p>30-story commercial office building with state-of-the-art facilities.</p>
-                                    <div class="project-content-footer">
-                                        <a href="#" class="readmore-btn">view more</a>
-                                        <div class="project-stats">
-                                            <div class="project-stat">
-                                                <i class="fas fa-ruler-combined"></i> 85000 sq ft
-                                            </div>
-                                            <div class="project-stat">
-                                                <i class="far fa-clock"></i> 24 months
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>                       
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 5 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="project-item wow fadeInUp" data-wow-delay="0.5s">
-                            <div class="project-image" data-cursor-text="View">
-                                <a href="#">
-                                    <figure>
-                                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Shopping Mall">
-                                    </figure>
-                                </a>
-                                <div class="project-category-tag">Commercial</div>
-                            </div>
-                            <div class="project-body">
-                                <div class="project-body-title">
-                                    <h3>Shopping Mall</h3>
-                                </div>
-                                <div class="project-content">
-                                    <p>Modern shopping complex with multiple retail outlets and entertainment facilities.</p>
-                                    <div class="project-content-footer">
-                                        <a href="#" class="readmore-btn">view more</a>
-                                        <div class="project-stats">
-                                            <div class="project-stat">
-                                                <i class="fas fa-ruler-combined"></i> 120000 sq ft
-                                            </div>
-                                            <div class="project-stat">
-                                                <i class="far fa-clock"></i> 30 months
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>                       
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 6 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="project-item wow fadeInUp" data-wow-delay="0.6s">
-                            <div class="project-image" data-cursor-text="View">
-                                <a href="#">
-                                    <figure>
-                                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Hotel & Resort">
-                                    </figure>
-                                </a>
-                                <div class="project-category-tag">Commercial</div>
-                            </div>
-                            <div class="project-body">
-                                <div class="project-body-title">
-                                    <h3>Hotel & Resort</h3>
-                                </div>
-                                <div class="project-content">
-                                    <p>Luxury hotel and resort with premium amenities and scenic views.</p>
-                                    <div class="project-content-footer">
-                                        <a href="#" class="readmore-btn">view more</a>
-                                        <div class="project-stats">
-                                            <div class="project-stat">
-                                                <i class="fas fa-ruler-combined"></i> 95000 sq ft
-                                            </div>
-                                            <div class="project-stat">
-                                                <i class="far fa-clock"></i> 28 months
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>                       
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-check-circle text-primary me-2"></i>
+                                <span>Sustainable Building</span>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Residential Projects Tab -->
-            <div class="tab-content" id="residential">
-                <div class="row">
-                    <!-- Project 1 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="project-item wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="project-image" data-cursor-text="View">
-                                <a href="#">
-                                    <figure>
-                                        <img src="https://images.unsplash.com/photo-1600585154340-6f67677b3759?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Modern Villa Construction">
-                                    </figure>
-                                </a>
-                                <div class="project-category-tag">Residential</div>
-                            </div>
-                            <div class="project-body">
-                                <div class="project-body-title">
-                                    <h3>Modern Villa Construction</h3>
-                                </div>
-                                <div class="project-content">
-                                    <p>A stunning modern villa with sustainable design features and luxury amenities.</p>
-                                    <div class="project-content-footer">
-                                        <a href="#" class="readmore-btn">view more</a>
-                                        <div class="project-stats">
-                                            <div class="project-stat">
-                                                <i class="fas fa-ruler-combined"></i> 3200 sq ft
-                                            </div>
-                                            <div class="project-stat">
-                                                <i class="far fa-clock"></i> 12 months
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>                       
-                            </div>
+                <div class="col-lg-6 fade-in">
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Construction Site" class="img-fluid rounded shadow">
                         </div>
-                    </div>
-                    
-                    <!-- Project 2 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="project-item wow fadeInUp" data-wow-delay="0.2s">
-                            <div class="project-image" data-cursor-text="View">
-                                <a href="#">
-                                    <figure>
-                                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Urban Apartment Complex">
-                                    </figure>
-                                </a>
-                                <div class="project-category-tag">Residential</div>
-                            </div>
-                            <div class="project-body">
-                                <div class="project-body-title">
-                                    <h3>Urban Apartment Complex</h3>
-                                </div>
-                                <div class="project-content">
-                                    <p>Multi-story apartment building with modern facilities and green spaces.</p>
-                                    <div class="project-content-footer">
-                                        <a href="#" class="readmore-btn">view more</a>
-                                        <div class="project-stats">
-                                            <div class="project-stat">
-                                                <i class="fas fa-ruler-combined"></i> 15000 sq ft
-                                            </div>
-                                            <div class="project-stat">
-                                                <i class="far fa-clock"></i> 18 months
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>                       
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 3 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="project-item wow fadeInUp" data-wow-delay="0.3s">
-                            <div class="project-image" data-cursor-text="View">
-                                <a href="#">
-                                    <figure>
-                                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Suburban Family Home">
-                                    </figure>
-                                </a>
-                                <div class="project-category-tag">Residential</div>
-                            </div>
-                            <div class="project-body">
-                                <div class="project-body-title">
-                                    <h3>Suburban Family Home</h3>
-                                </div>
-                                <div class="project-content">
-                                    <p>Spacious family home with energy-efficient design and modern amenities.</p>
-                                    <div class="project-content-footer">
-                                        <a href="#" class="readmore-btn">view more</a>
-                                        <div class="project-stats">
-                                            <div class="project-stat">
-                                                <i class="fas fa-ruler-combined"></i> 2800 sq ft
-                                            </div>
-                                            <div class="project-stat">
-                                                <i class="far fa-clock"></i> 10 months
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>                       
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Commercial Projects Tab -->
-            <div class="tab-content" id="commercial">
-                <div class="row">
-                    <!-- Project 4 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="project-item wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="project-image" data-cursor-text="View">
-                                <a href="#">
-                                    <figure>
-                                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Office Tower">
-                                    </figure>
-                                </a>
-                                <div class="project-category-tag">Commercial</div>
-                            </div>
-                            <div class="project-body">
-                                <div class="project-body-title">
-                                    <h3>Office Tower</h3>
-                                </div>
-                                <div class="project-content">
-                                    <p>30-story commercial office building with state-of-the-art facilities.</p>
-                                    <div class="project-content-footer">
-                                        <a href="#" class="readmore-btn">view more</a>
-                                        <div class="project-stats">
-                                            <div class="project-stat">
-                                                <i class="fas fa-ruler-combined"></i> 85000 sq ft
-                                            </div>
-                                            <div class="project-stat">
-                                                <i class="far fa-clock"></i> 24 months
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>                       
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 5 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="project-item wow fadeInUp" data-wow-delay="0.2s">
-                            <div class="project-image" data-cursor-text="View">
-                                <a href="#">
-                                    <figure>
-                                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Shopping Mall">
-                                    </figure>
-                                </a>
-                                <div class="project-category-tag">Commercial</div>
-                            </div>
-                            <div class="project-body">
-                                <div class="project-body-title">
-                                    <h3>Shopping Mall</h3>
-                                </div>
-                                <div class="project-content">
-                                    <p>Modern shopping complex with multiple retail outlets and entertainment facilities.</p>
-                                    <div class="project-content-footer">
-                                        <a href="#" class="readmore-btn">view more</a>
-                                        <div class="project-stats">
-                                            <div class="project-stat">
-                                                <i class="fas fa-ruler-combined"></i> 120000 sq ft
-                                            </div>
-                                            <div class="project-stat">
-                                                <i class="far fa-clock"></i> 30 months
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>                       
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 6 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="project-item wow fadeInUp" data-wow-delay="0.3s">
-                            <div class="project-image" data-cursor-text="View">
-                                <a href="#">
-                                    <figure>
-                                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Hotel & Resort">
-                                    </figure>
-                                </a>
-                                <div class="project-category-tag">Commercial</div>
-                            </div>
-                            <div class="project-body">
-                                <div class="project-body-title">
-                                    <h3>Hotel & Resort</h3>
-                                </div>
-                                <div class="project-content">
-                                    <p>Luxury hotel and resort with premium amenities and scenic views.</p>
-                                    <div class="project-content-footer">
-                                        <a href="#" class="readmore-btn">view more</a>
-                                        <div class="project-stats">
-                                            <div class="project-stat">
-                                                <i class="fas fa-ruler-combined"></i> 95000 sq ft
-                                            </div>
-                                            <div class="project-stat">
-                                                <i class="far fa-clock"></i> 28 months
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>                       
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Industrial Projects Tab -->
-            <div class="tab-content" id="industrial">
-                <div class="row">
-                    <!-- Industrial Project 1 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="project-item wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="project-image" data-cursor-text="View">
-                                <a href="#">
-                                    <figure>
-                                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Manufacturing Plant">
-                                    </figure>
-                                </a>
-                                <div class="project-category-tag">Industrial</div>
-                            </div>
-                            <div class="project-body">
-                                <div class="project-body-title">
-                                    <h3>Manufacturing Plant</h3>
-                                </div>
-                                <div class="project-content">
-                                    <p>Large-scale manufacturing facility with advanced production capabilities.</p>
-                                    <div class="project-content-footer">
-                                        <a href="#" class="readmore-btn">view more</a>
-                                        <div class="project-stats">
-                                            <div class="project-stat">
-                                                <i class="fas fa-ruler-combined"></i> 200000 sq ft
-                                            </div>
-                                            <div class="project-stat">
-                                                <i class="far fa-clock"></i> 36 months
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>                       
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Industrial Project 2 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="project-item wow fadeInUp" data-wow-delay="0.2s">
-                            <div class="project-image" data-cursor-text="View">
-                                <a href="#">
-                                    <figure>
-                                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Warehouse Complex">
-                                    </figure>
-                                </a>
-                                <div class="project-category-tag">Industrial</div>
-                            </div>
-                            <div class="project-body">
-                                <div class="project-body-title">
-                                    <h3>Warehouse Complex</h3>
-                                </div>
-                                <div class="project-content">
-                                    <p>Modern warehouse facility with efficient logistics and storage solutions.</p>
-                                    <div class="project-content-footer">
-                                        <a href="#" class="readmore-btn">view more</a>
-                                        <div class="project-stats">
-                                            <div class="project-stat">
-                                                <i class="fas fa-ruler-combined"></i> 150000 sq ft
-                                            </div>
-                                            <div class="project-stat">
-                                                <i class="far fa-clock"></i> 20 months
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>                       
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Industrial Project 3 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="project-item wow fadeInUp" data-wow-delay="0.3s">
-                            <div class="project-image" data-cursor-text="View">
-                                <a href="#">
-                                    <figure>
-                                        <img src="https://images.unsplash.com/photo-1581094794358-a5d90d97549a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Industrial Park">
-                                    </figure>
-                                </a>
-                                <div class="project-category-tag">Industrial</div>
-                            </div>
-                            <div class="project-body">
-                                <div class="project-body-title">
-                                    <h3>Industrial Park</h3>
-                                </div>
-                                <div class="project-content">
-                                    <p>Comprehensive industrial park with multiple facilities and infrastructure.</p>
-                                    <div class="project-content-footer">
-                                        <a href="#" class="readmore-btn">view more</a>
-                                        <div class="project-stats">
-                                            <div class="project-stat">
-                                                <i class="fas fa-ruler-combined"></i> 500000 sq ft
-                                            </div>
-                                            <div class="project-stat">
-                                                <i class="far fa-clock"></i> 48 months
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>                       
-                            </div>
+                        <div class="col-6">
+                            <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Modern House" class="img-fluid rounded shadow mb-3">
+                            <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="House Design" class="img-fluid rounded shadow">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Page Project End -->
+    </section>
 
-    <script>
-        // Tab switching functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const tabButtons = document.querySelectorAll('.tab-project-btn');
+    <!-- Stats Parallax Section -->
+    <section class="parallax-section">
+        <div class="parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1503387769-00ec6eccdd6e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');"></div>
+        <div class="parallax-overlay"></div>
+        <div class="parallax-content">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-3 col-6 mb-4 fade-in">
+                        <div class="counter" data-count="200">0</div>
+                        <div class="counter-label text-white">Projects Completed</div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4 fade-in">
+                        <div class="counter" data-count="15">0</div>
+                        <div class="counter-label text-white">Years Experience</div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4 fade-in">
+                        <div class="counter" data-count="50">0</div>
+                        <div class="counter-label text-white">Expert Team Members</div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4 fade-in">
+                        <div class="counter" data-count="98">0</div>
+                        <div class="counter-label text-white">Client Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="content-section">
+        <div class="container">
+            <h2 class="section-title">Our Construction Journey</h2>
+            <p class="text-center mb-5 lead">From empty land to your dream home - follow our step-by-step process</p>
             
-            tabButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    tabButtons.forEach(btn => btn.classList.remove('active'));
+            <!-- Step 1 -->
+            <div class="row align-items-center mb-5 fade-in">
+                <div class="col-lg-6">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3>Land Assessment & Planning</h3>
+                        <p>We begin by thoroughly assessing your property, considering soil conditions, topography, and local regulations. Our team works with you to understand your vision and create a preliminary design concept.</p>
+                        <ul>
+                            <li>Site analysis and evaluation</li>
+                            <li>Zoning and regulatory review</li>
+                            <li>Preliminary design concepts</li>
+                            <li>Budget and timeline estimation</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="Land Assessment" class="img-fluid rounded shadow">
+                </div>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="row align-items-center mb-5 fade-in">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3>Design & Architecture</h3>
+                        <p>Our architects transform your ideas into detailed blueprints. We focus on functionality, aesthetics, and sustainability while ensuring the design aligns with your lifestyle and budget.</p>
+                        <ul>
+                            <li>Architectural design development</li>
+                            <li>3D visualization and renderings</li>
+                            <li>Material selection and specifications</li>
+                            <li>Engineering integration</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="Design & Architecture" class="img-fluid rounded shadow">
+                </div>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="row align-items-center mb-5 fade-in">
+                <div class="col-lg-6">
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3>Foundation & Structure</h3>
+                        <p>With approvals in place, we begin site preparation and lay the foundation. Our structural engineers ensure every beam and column meets the highest safety standards for a solid, lasting home.</p>
+                        <ul>
+                            <li>Site preparation and excavation</li>
+                            <li>Foundation pouring and curing</li>
+                            <li>Structural framing and roofing</li>
+                            <li>Quality control inspections</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1541140532154-b024d705b90a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="Foundation & Structure" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Construction Parallax Section -->
+    <section class="parallax-section">
+        <div class="parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');"></div>
+        <div class="parallax-overlay"></div>
+        <div class="parallax-content">
+            <h2 class="display-4 fw-bold">Quality Craftsmanship in Every Detail</h2>
+            <p class="lead">We combine traditional techniques with modern innovation to build homes that stand the test of time.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="content-section bg-light-custom">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="text-center mb-5 lead">Comprehensive construction solutions for your dream home</p>
+            
+            <div class="row">
+                <!-- Service 1 -->
+                <div class="col-lg-4 col-md-6 mb-4 fade-in">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Custom Home Building">
+                        <div class="p-4">
+                            <h4>Custom Home Building</h4>
+                            <p>We specialize in creating unique, personalized homes that reflect your style, needs, and lifestyle from the ground up.</p>
+                            <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="col-lg-4 col-md-6 mb-4 fade-in">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Architectural Design">
+                        <div class="p-4">
+                            <h4>Architectural Design</h4>
+                            <p>Our talented architects work with you to design a home that balances aesthetics, functionality, and sustainability.</p>
+                            <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="col-lg-4 col-md-6 mb-4 fade-in">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Project Management">
+                        <div class="p-4">
+                            <h4>Project Management</h4>
+                            <p>We handle every aspect of your construction project, ensuring timelines, budgets, and quality standards are met.</p>
+                            <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Parallax Section -->
+    <section class="parallax-section">
+        <div class="parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');"></div>
+        <div class="parallax-overlay"></div>
+        <div class="parallax-content">
+            <h2 class="display-4 fw-bold">Ready to Start Your Journey?</h2>
+            <p class="lead">Let's transform your empty land into the home of your dreams.</p>
+            <a href="#contact" class="btn btn-primary btn-lg mt-3">Get Started Today</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="content-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="section-title text-center">Start Your Home Building Journey</h2>
+                    <p class="text-center mb-5 lead">Ready to transform your empty land into the home of your dreams? Contact us today for a consultation.</p>
                     
-                    // Add active class to clicked button
-                    this.classList.add('active');
-                    
-                    // Hide all tab contents
-                    document.querySelectorAll('.tab-content').forEach(tab => {
-                        tab.classList.remove('active');
-                    });
-                    
-                    // Show selected tab content
-                    const tabId = this.getAttribute('data-tab');
-                    document.getElementById(tabId).classList.add('active');
-                });
+                    <div class="contact-form fade-in">
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="name" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phone">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="property" class="form-label">Property Status</label>
+                                    <select class="form-select" id="property">
+                                        <option selected>Select one</option>
+                                        <option value="land">I have empty land</option>
+                                        <option value="planning">I'm in planning stage</option>
+                                        <option value="ready">Ready to start construction</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Your Project Details</label>
+                                <textarea class="form-control" id="message" rows="5" placeholder="Tell us about your vision for your new home..."></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">Start Your Project</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h3 class="mb-3">Epicar<span class="text-warning">Construction</span></h3>
+                    <p class="mb-4">Transforming empty land into dream homes through exceptional craftsmanship and personalized service.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <div class="footer-links">
+                        <a href="#home">Home</a><br>
+                        <a href="#about">About</a><br>
+                        <a href="#process">Our Process</a><br>
+                        <a href="#services">Services</a><br>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="mb-3">Services</h5>
+                    <div class="footer-links">
+                        <a href="#">Custom Home Building</a><br>
+                        <a href="#">Architectural Design</a><br>
+                        <a href="#">Project Management</a><br>
+                        <a href="#">Renovations</a><br>
+                        <a href="#">Consultation</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3">Contact Us</h5>
+                    <div class="footer-links">
+                        <p><i class="fas fa-map-marker-alt me-2"></i> 123 Construction Ave, Builders City</p>
+                        <p><i class="fas fa-phone me-2"></i> (555) 123-4567</p>
+                        <p><i class="fas fa-envelope me-2"></i> info@epicarconstruction.com</p>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
+            <div class="text-center py-3">
+                <p class="mb-0">&copy; 2023 EpicarConstruction. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Fade in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = function() {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', fadeInOnScroll);
+        // Initial check in case elements are already in view
+        fadeInOnScroll();
+
+        // Counter animation
+        const counters = document.querySelectorAll('.counter');
+        let started = false;
+
+        function startCounters() {
+            if (started) return;
+            
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-count');
+                const count = +counter.innerText;
+                const increment = target / 200;
+                
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(() => startCounters(), 10);
+                } else {
+                    counter.innerText = target;
+                }
             });
             
-            // Simple animation on scroll
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
+            started = true;
+        }
+
+        // Start counters when they come into view
+        const counterSection = document.querySelector('.parallax-section:nth-child(3)');
+        
+        window.addEventListener('scroll', function() {
+            const sectionTop = counterSection.getBoundingClientRect().top;
+            if (sectionTop < window.innerHeight - 100) {
+                startCounters();
+            }
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your inquiry! We will contact you soon to discuss your project.');
+            this.reset();
+        });
+
+        // Parallax effect
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallaxSections = document.querySelectorAll('.parallax-section');
             
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.visibility = 'visible';
-                        entry.target.style.animation = `fadeInUp 0.6s ease ${entry.target.dataset.wowDelay || '0s'} forwards`;
-                    }
-                });
-            }, observerOptions);
-            
-            // Observe all project items
-            document.querySelectorAll('.project-item').forEach(item => {
-                observer.observe(item);
+            parallaxSections.forEach(section => {
+                const parallaxBg = section.querySelector('.parallax-bg');
+                const rate = scrolled * 0.5;
+                parallaxBg.style.transform = `translateY(${rate}px)`;
             });
         });
     </script>
