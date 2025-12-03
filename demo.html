@@ -1,464 +1,498 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zxx">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Epicarconstruction - Vastu Plan Services</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        :root {
-            --primary: #8B4513;
-            --primary-light: #a85e2d;
-            --secondary: #2c3e50;
-            --accent: #e67e22;
-            --light: #f8f9fa;
-            --dark: #343a40;
-            --text: #495057;
-        }
-
-        .vastu-services {
-            padding: 100px 5%;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        .section-subtitle {
-            color: var(--primary);
-            font-size: 1.1rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            display: inline-block;
-            padding: 8px 20px;
-            background: rgba(139, 69, 19, 0.1);
-            border-radius: 30px;
-        }
-
-        .section-title {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--secondary);
-            margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 4px;
-            background: var(--primary);
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 2px;
-        }
-
-        .section-description {
-            max-width: 700px;
-            margin: 40px auto 0;
-            color: var(--text);
-            font-size: 1.2rem;
-            line-height: 1.7;
-        }
-
-        /* Service Items - Zigzag Layout */
-        .service-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 120px;
-            position: relative;
-        }
-
-        .service-item:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .service-content {
-            flex: 1;
-            padding: 40px;
-            z-index: 2;
-        }
-
-        .service-image {
-            flex: 1;
-            position: relative;
-            z-index: 1;
-        }
-
-        .service-image img {
-            width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            transition: all 0.5s ease;
-        }
-
-        .service-item:hover .service-image img {
-            transform: scale(1.03);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-        }
-
-        .service-number {
-            position: absolute;
-            font-size: 8rem;
-            font-weight: 900;
-            color: rgba(139, 69, 19, 0.08);
-            z-index: 0;
-        }
-
-        .service-item:nth-child(odd) .service-number {
-            right: 5%;
-            top: -40px;
-        }
-
-        .service-item:nth-child(even) .service-number {
-            left: 5%;
-            top: -40px;
-        }
-
-        .service-title {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--secondary);
-            margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .service-title::after {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 3px;
-            background: var(--primary);
-            bottom: -10px;
-            left: 0;
-            border-radius: 2px;
-        }
-
-        .service-item:nth-child(even) .service-title::after {
-            left: auto;
-            right: 0;
-        }
-
-        .service-description {
-            color: var(--text);
-            line-height: 1.7;
-            font-size: 1.1rem;
-            margin-bottom: 25px;
-        }
-
-        .service-features {
-            list-style: none;
-            margin-bottom: 30px;
-        }
-
-        .service-features li {
-            padding: 10px 0;
-            color: var(--text);
-            position: relative;
-            padding-left: 35px;
-            font-size: 1.05rem;
-        }
-
-        .service-features li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: bold;
-            width: 25px;
-            height: 25px;
-            background: rgba(139, 69, 19, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .service-btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 14px 30px;
-            background: var(--primary);
-            color: white;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 2px solid var(--primary);
-            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.2);
-        }
-
-        .service-btn i {
-            margin-left: 8px;
-            transition: transform 0.3s ease;
-        }
-
-        .service-btn:hover {
-            background: transparent;
-            color: var(--primary);
-            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
-        }
-
-        .service-btn:hover i {
-            transform: translateX(5px);
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(45deg, var(--secondary), #1a2530);
-            border-radius: 20px;
-            padding: 70px 50px;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-            margin-top: 50px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 50%;
-            top: -150px;
-            right: -150px;
-        }
-
-        .cta-section::after {
-            content: '';
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 50%;
-            bottom: -100px;
-            left: -100px;
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .cta-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .cta-description {
-            max-width: 700px;
-            margin: 0 auto 35px;
-            font-size: 1.2rem;
-            line-height: 1.7;
-            opacity: 0.9;
-        }
-
-        .cta-btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 18px 40px;
-            background: var(--accent);
-            color: white;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            border: 2px solid var(--accent);
-            box-shadow: 0 10px 20px rgba(230, 126, 34, 0.3);
-        }
-
-        .cta-btn i {
-            margin-left: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .cta-btn:hover {
-            background: transparent;
-            color: var(--accent);
-            box-shadow: 0 10px 25px rgba(230, 126, 34, 0.4);
-        }
-
-        .cta-btn:hover i {
-            transform: translateX(8px);
-        }
-
-        /* Decorative Elements */
-        .decoration {
-            position: absolute;
-            z-index: 0;
-        }
-
-        .decoration-1 {
-            width: 150px;
-            height: 150px;
-            border: 15px solid rgba(139, 69, 19, 0.1);
-            border-radius: 50%;
-            top: 10%;
-            left: 5%;
-        }
-
-        .decoration-2 {
-            width: 100px;
-            height: 100px;
-            background: rgba(44, 62, 80, 0.05);
-            border-radius: 20px;
-            bottom: 10%;
-            right: 5%;
-            transform: rotate(45deg);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1100px) {
-            .service-item, .service-item:nth-child(even) {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .service-content, .service-image {
-                width: 100%;
-            }
-            
-            .service-title::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            
-            .service-item:nth-child(even) .service-title::after {
-                left: 50%;
-                right: auto;
-                transform: translateX(-50%);
-            }
-            
-            .service-number {
-                display: none;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .section-title {
-                font-size: 2.2rem;
-            }
-            
-            .service-title {
-                font-size: 1.8rem;
-            }
-            
-            .cta-section {
-                padding: 50px 30px;
-            }
-            
-            .cta-title {
-                font-size: 2rem;
-            }
-            
-            .decoration {
-                display: none;
-            }
-        }
-    </style>
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="Awaiken">
+	<!-- Page Title -->
+	<title>Builtup - Construction HTML Template</title>
+	<!-- Favicon Icon -->
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+	<!-- Google Fonts Css-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+	<!-- Bootstrap Css -->
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<!-- SlickNav Css -->
+	<link href="css/slicknav.min.css" rel="stylesheet">
+	<!-- Swiper Css -->
+	<link rel="stylesheet" href="css/swiper-bundle.min.css">
+	<!-- Font Awesome Icon Css-->
+	<link href="css/all.css" rel="stylesheet" media="screen">
+	<!-- Animated Css -->
+	<link href="css/animate.css" rel="stylesheet">
+	<!-- Magnific Popup Core Css File -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<!-- Mouse Cursor Css File -->
+	<link rel="stylesheet" href="css/mousecursor.css">
+	<!-- Main Custom Css -->
+	<link href="css/custom.css" rel="stylesheet" media="screen">
 </head>
 <body>
-    <section class="vastu-services">
-        <div class="decoration decoration-1"></div>
-        <div class="decoration decoration-2"></div>
-        
-        <div class="section-header">
-            <p class="section-subtitle">Vastu Compliant Designs</p>
-            <h2 class="section-title">Transform Your Space with Harmony</h2>
-            <p class="section-description">We combine ancient Vastu wisdom with modern design technology to create spaces that promote positivity, prosperity, and well-being.</p>
+
+    <!-- Preloader Start -->
+	<div class="preloader">
+		<div class="loading-container">
+			<div class="loading"></div>
+			<div id="loading-icon"><img src="images/loader.svg" alt=""></div>
+		</div>
+	</div>
+	<!-- Preloader End -->
+
+    <!-- Header Start -->
+	<header class="main-header">
+		<div class="header-sticky">
+			<nav class="navbar navbar-expand-lg">
+				<div class="container-fluid">
+					<!-- Logo Start -->
+					<a class="navbar-brand" href="./">
+						<img src="images/logo.svg" alt="Logo">
+					</a>
+					<!-- Logo End -->
+
+					<!-- Main Menu Start -->
+					<div class="collapse navbar-collapse main-menu">
+                        <div class="nav-menu-wrapper">
+                            <ul class="navbar-nav mr-auto" id="menu">
+                                <li class="nav-item submenu"><a class="nav-link" href="./">Home</a>
+                                    <ul class="sub-menu">
+                                        <li class="nav-item"><a class="nav-link" href="index.html">Home - Image</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="index-2.html">Home - Slider</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="index-3.html">Home - Video</a></li>
+                                    </ul>
+                                </li>                                
+                                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                                <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+                                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                                <li class="nav-item submenu"><a class="nav-link" href="#">Pages</a>
+                                    <ul>                                        
+                                        <li class="nav-item"><a class="nav-link" href="service-single.html">Service Details</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="blog-single.html">Blog Details</a></li>                                       
+                                        <li class="nav-item"><a class="nav-link" href="project.html">Project</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="project-single.html">Project Details</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="team.html">Our Team</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="faqs.html">FAQ</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="404.html">404</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item highlighted-menu"><a class="nav-link" href="contact.html">Contact Us</a></li>                               
+                            </ul>
+                        </div>
+                        <!-- Let’s Start Button Start -->
+                        <div class="header-btn d-inline-flex">
+                            <a href="contact.html" class="btn-default">Contact Us</a>
+                        </div>
+                        <!-- Let’s Start Button End -->
+					</div>
+					<!-- Main Menu End -->
+					<div class="navbar-toggle"></div>
+				</div>
+			</nav>
+			<div class="responsive-menu"></div>
+		</div>
+	</header>
+	<!-- Header End -->
+
+    <!-- Page Header Start -->
+	<div class="page-header parallaxie">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<!-- Page Header Box Start -->
+					<div class="page-header-box">
+						<h1 class="text-anime-style-3" data-cursor="-opaque">Our Blog</h1>
+						<nav class="wow fadeInUp">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="./">home</a></li>
+								<li class="breadcrumb-item active" aria-current="page">blog</li>
+							</ol>
+						</nav>
+					</div>
+					<!-- Page Header Box End -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Page Header End -->
+
+    <!-- Page Blog Start -->
+    <div class="page-blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <!-- Blog Item Start -->
+                    <div class="blog-item wow fadeInUp">
+                        <!-- Post Featured Image Start-->
+                        <div class="post-featured-image" data-cursor-text="View">
+                            <figure>
+                                <a href="#" class="image-anime">
+                                    <img src="images/post-1.jpg" alt="">
+                                </a>
+                            </figure>
+                        </div>
+                        <!-- Post Featured Image End -->
+
+                        <!-- post Item Content Start -->
+                        <div class="post-item-content">
+                            <!-- post Item Body Start -->
+                            <div class="post-item-body">
+                                <h2><a href="#">10 Essential Tips for Choosing the Right Builder</a></h2>
+                            </div>
+                            <!-- Post Item Body End-->
+
+                            <!-- Post Item Footer Start-->
+                            <div class="post-item-footer">
+                                <a href="#" class="readmore-btn">read more</a>
+                            </div>
+                            <!-- Post Item Footer End-->
+                        </div>
+                        <!-- post Item Content End -->
+                    </div>
+                    <!-- Blog Item End -->
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <!-- Blog Item Start -->
+                    <div class="blog-item wow fadeInUp" data-wow-delay="0.25s">
+                        <!-- Post Featured Image Start-->
+                        <div class="post-featured-image" data-cursor-text="View">
+                            <figure>
+                                <a href="#" class="image-anime">
+                                    <img src="images/post-2.jpg" alt="">
+                                </a>
+                            </figure>
+                        </div>
+                        <!-- Post Featured Image End -->
+
+                        <!-- post Item Content Start -->
+                        <div class="post-item-content">
+                            <!-- post Item Body Start -->
+                            <div class="post-item-body">
+                                <h2><a href="#">The Future of Sustainable Construction Innovations</a></h2>
+                            </div>
+                            <!-- Post Item Body End-->
+
+                            <!-- Post Item Footer Start-->
+                            <div class="post-item-footer">
+                                <a href="#" class="readmore-btn">read more</a>
+                            </div>
+                            <!-- Post Item Footer End-->
+                        </div>
+                        <!-- post Item Content End -->
+                    </div>
+                    <!-- Blog Item End -->
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <!-- Blog Item Start -->
+                    <div class="blog-item wow fadeInUp" data-wow-delay="0.5s">
+                        <!-- Post Featured Image Start-->
+                        <div class="post-featured-image" data-cursor-text="View">
+                            <figure>
+                                <a href="#" class="image-anime">
+                                    <img src="images/post-3.jpg" alt="">
+                                </a>
+                            </figure>
+                        </div>
+                        <!-- Post Featured Image End -->
+
+                        <!-- post Item Content Start -->
+                        <div class="post-item-content">
+                            <!-- post Item Body Start -->
+                            <div class="post-item-body">
+                                <h2><a href="#">How to Design Your Dream Home: A Step-by-Step Guide</a></h2>
+                            </div>
+                            <!-- Post Item Body End-->
+
+                            <!-- Post Item Footer Start-->
+                            <div class="post-item-footer">
+                                <a href="#" class="readmore-btn">read more</a>
+                            </div>
+                            <!-- Post Item Footer End-->
+                        </div>
+                        <!-- post Item Content End -->
+                    </div>
+                    <!-- Blog Item End -->
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <!-- Blog Item Start -->
+                    <div class="blog-item wow fadeInUp" data-wow-delay="0.75s">
+                        <!-- Post Featured Image Start-->
+                        <div class="post-featured-image" data-cursor-text="View">
+                            <figure>
+                                <a href="#" class="image-anime">
+                                    <img src="images/post-4.jpg" alt="">
+                                </a>
+                            </figure>
+                        </div>
+                        <!-- Post Featured Image End -->
+
+                        <!-- post Item Content Start -->
+                        <div class="post-item-content">
+                            <!-- post Item Body Start -->
+                            <div class="post-item-body">
+                                <h2><a href="#">Renovation vs. New Construction</a></h2>
+                            </div>
+                            <!-- Post Item Body End-->
+
+                            <!-- Post Item Footer Start-->
+                            <div class="post-item-footer">
+                                <a href="#" class="readmore-btn">read more</a>
+                            </div>
+                            <!-- Post Item Footer End-->
+                        </div>
+                        <!-- post Item Content End -->
+                    </div>
+                    <!-- Blog Item End -->
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <!-- Blog Item Start -->
+                    <div class="blog-item wow fadeInUp" data-wow-delay="1s">
+                        <!-- Post Featured Image Start-->
+                        <div class="post-featured-image" data-cursor-text="View">
+                            <figure>
+                                <a href="#" class="image-anime">
+                                    <img src="images/post-5.jpg" alt="">
+                                </a>
+                            </figure>
+                        </div>
+                        <!-- Post Featured Image End -->
+
+                        <!-- post Item Content Start -->
+                        <div class="post-item-content">
+                            <!-- post Item Body Start -->
+                            <div class="post-item-body">
+                                <h2><a href="#">Top 5 Modern Home Design Trends for 2024</a></h2>
+                            </div>
+                            <!-- Post Item Body End-->
+
+                            <!-- Post Item Footer Start-->
+                            <div class="post-item-footer">
+                                <a href="#" class="readmore-btn">read more</a>
+                            </div>
+                            <!-- Post Item Footer End-->
+                        </div>
+                        <!-- post Item Content End -->
+                    </div>
+                    <!-- Blog Item End -->
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <!-- Blog Item Start -->
+                    <div class="blog-item wow fadeInUp" data-wow-delay="1.25s">
+                        <!-- Post Featured Image Start-->
+                        <div class="post-featured-image" data-cursor-text="View">
+                            <figure>
+                                <a href="#" class="image-anime">
+                                    <img src="images/post-6.jpg" alt="">
+                                </a>
+                            </figure>
+                        </div>
+                        <!-- Post Featured Image End -->
+
+                        <!-- post Item Content Start -->
+                        <div class="post-item-content">
+                            <!-- post Item Body Start -->
+                            <div class="post-item-body">
+                                <h2><a href="#">The Role of Technology in Modern Construction</a></h2>
+                            </div>
+                            <!-- Post Item Body End-->
+
+                            <!-- Post Item Footer Start-->
+                            <div class="post-item-footer">
+                                <a href="#" class="readmore-btn">read more</a>
+                            </div>
+                            <!-- Post Item Footer End-->
+                        </div>
+                        <!-- post Item Content End -->
+                    </div>
+                    <!-- Blog Item End -->
+                </div>
+            </div>
+
+            <div class="row">
+				<div class="col-md-12">
+					<!-- Post Pagination Start -->
+					<div class="post-pagination wow fadeInUp" data-wow-delay="0.75s">
+						<ul class="pagination">
+							<li><a href="#"><i class="fa-solid fa-arrow-left-long"></i></a></li>
+							<li class="active"><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#"><i class="fa-solid fa-arrow-right-long"></i></a></li>
+						</ul>
+					</div>
+					<!-- Post Pagination End -->
+				</div>
+			</div>
         </div>
-        
-        <div class="services-container">
-            <!-- Service 1 -->
-            <div class="service-item">
-                <div class="service-content">
-                    <span class="service-number">01</span>
-                    <h3 class="service-title">3D Vastu Plans</h3>
-                    <p class="service-description">Experience your future space in immersive 3D with Vastu-compliant designs that balance aesthetics and positive energy flow. Our detailed 3D models help you visualize the perfect harmony between design and spiritual well-being.</p>
-                    <ul class="service-features">
-                        <li>Immersive 3D visualization</li>
-                        <li>Vastu-compliant room placement</li>
-                        <li>Energy flow optimization</li>
-                        <li>Material & color suggestions</li>
-                        <li>Virtual walkthrough experience</li>
-                    </ul>
-                    <a href="#" class="service-btn">View 3D Samples <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <!-- Page Blog End -->
+
+    <!-- Footer Start -->
+	<footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-12">
+                    <!-- About Footer Start -->
+                    <div class="about-footer">
+                        <!-- Footer Logo Start -->
+                        <div class="footer-logo">
+                            <figure>
+                                <img src="images/footer-logo.svg" alt="">
+                            </figure>
+                        </div>
+                        <!-- Footer Logo End -->
+
+                        <!-- Footer Content Start -->
+                        <div class="footer-content">
+                            <p>Our post-construction services gives you peace of mind knowing that we are still here for you even after.</p>
+                        </div>
+                        <!-- Footer Content End -->
+                    </div>
+
+                    <!-- About Footer End -->
                 </div>
-                <div class="service-image">
-                    <img src="https://images.unsplash.com/photo-1548611635-b6e7827d7d4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="3D Vastu Plan">
+
+                <div class="col-lg-3 col-md-4 col-12">
+                    <!-- Footer Quick Links Start -->
+                    <div class="footer-links">
+                        <h3>our services</h3>
+                        <ul>                            
+                            <li><a href="#">building construction</a></li>
+                            <li><a href="#">architecture design</a></li>
+                            <li><a href="#">building renovation</a></li>
+                            <li><a href="#">flooring & roofing</a></li>
+                            <li><a href="#">building maintenance</a></li>
+                        </ul>
+                    </div>
+                    <!-- Footer Quick Links End -->
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-12">
+                    <!-- Footer Links Start -->
+                    <div class="footer-links">
+                        <h3>company</h3>
+                        <ul>
+                            <li><a href="#">about us</a></li>
+                            <li><a href="#">services</a></li>
+                            <li><a href="#">blog</a></li>
+                            <li><a href="#">faqs</a></li>
+                            <li><a href="#">contact us</a></li>
+                        </ul>
+                    </div>
+                    <!-- Footer Links End -->
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-12">
+                    <!-- Footer Contact Info Box Start -->
+                    <div class="footer-links footer-contact-box">
+                        <h3>contact us</h3>
+                        <!-- Info Box Start -->
+                        <div class="footer-info-box">
+                            <!-- Icon Box Start -->
+                            <div class="icon-box">
+                                <img src="images/icon-phone.svg" alt="">
+                            </div>
+                            <!-- Icon Box End -->
+                            <p>+1 809 120 6705</p>
+                        </div>
+                        <!-- Info Box End -->
+
+                        <!-- Info Box Start -->
+                        <div class="footer-info-box">
+                            <!-- Icon Box Start -->
+                            <div class="icon-box">
+                                <img src="images/icon-mail.svg" alt="">
+                            </div>
+                            <!-- Icon Box End -->
+                            <p>info@domain.com</p>
+                        </div>
+                        <!-- Info Box End -->
+
+                        <!-- Info Box Start -->
+                        <div class="footer-info-box">
+                            <!-- Icon Box Start -->
+                            <div class="icon-box">
+                                <img src="images/icon-location.svg" alt="">
+                            </div>
+                            <!-- Icon Box End -->
+                            <p>37 San Juan Lane Graaf Florisstraat 22A,3021 CH</p>
+                        </div>
+                        <!-- Info Box End -->
+                    </div>
+                    <!-- Footer Contact Info Box End -->
                 </div>
             </div>
-            
-            <!-- Service 2 -->
-            <div class="service-item">
-                <div class="service-content">
-                    <span class="service-number">02</span>
-                    <h3 class="service-title">2D Vastu Plans</h3>
-                    <p class="service-description">Detailed 2D floor plans incorporating Vastu principles for optimal space utilization and positive energy distribution. Our precision-engineered blueprints ensure every element aligns with Vastu guidelines for prosperity.</p>
-                    <ul class="service-features">
-                        <li>Detailed floor plans with measurements</li>
-                        <li>Vastu direction analysis</li>
-                        <li>Furniture placement guidance</li>
-                        <li>Construction-ready blueprints</li>
-                        <li>Custom modifications available</li>
-                    </ul>
-                    <a href="#" class="service-btn">View 2D Samples <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-image">
-                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1158&q=80" alt="2D Vastu Plan">
-                </div>
-            </div>
-            
-            <!-- Service 3 -->
-            <div class="service-item">
-                <div class="service-content">
-                    <span class="service-number">03</span>
-                    <h3 class="service-title">Vastu Consultation</h3>
-                    <p class="service-description">Expert Vastu consultation for existing or planned spaces to enhance positivity and correct energy imbalances. Our certified Vastu experts provide personalized solutions tailored to your specific needs.</p>
-                    <ul class="service-features">
-                        <li>Site evaluation & energy analysis</li>
-                        <li>Personalized remedial solutions</li>
-                        <li>Follow-up support & guidance</li>
-                        <li>Both residential & commercial spaces</li>
-                        <li>Online & in-person consultations</li>
-                    </ul>
-                    <a href="#" class="service-btn">Book Consultation <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-image">
-                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1100&q=80" alt="Vastu Consultation">
+
+            <!-- Footer Copyright Section Start -->
+            <div class="footer-copyright">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-7">
+                        <!-- Footer Copyright Start -->
+                        <div class="footer-copyright-text">
+                            <p>Copyright © 2024 BuiltUp. All Rights Reserved.</p>
+                        </div>
+                        <!-- Footer Copyright End -->
+                    </div>
+
+                    <div class="col-lg-6 col-md-5">
+                        <!-- Footer Social Link Start -->
+                        <div class="footer-social-links">
+                            <ul>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                        <!-- Footer Social Link End -->
+                    </div>
                 </div>
             </div>
+            <!-- Footer Copyright Section End -->
         </div>
-        
-        <div class="cta-section">
-            <div class="cta-content">
-                <h3 class="cta-title">Ready to Transform Your Space?</h3>
-                <p class="cta-description">Let us help you create a harmonious living or working environment that promotes health, wealth, and happiness through scientifically applied Vastu principles.</p>
-                <a href="#" class="cta-btn">Get Your Custom Vastu Plan <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </section>
+	</footer>
+	<!-- Footer End -->
+
+    <!-- Jquery Library File -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap js file -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Validator js file -->
+    <script src="js/validator.min.js"></script>
+    <!-- SlickNav js file -->
+    <script src="js/jquery.slicknav.js"></script>
+    <!-- Swiper js file -->
+    <script src="js/swiper-bundle.min.js"></script>
+    <!-- Counter js file -->
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <!-- Magnific js file -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <!-- SmoothScroll -->
+    <script src="js/SmoothScroll.js"></script>
+    <!-- Parallax js -->
+    <script src="js/parallaxie.js"></script>
+    <!-- MagicCursor js file -->
+    <script src="js/gsap.min.js"></script>
+    <script src="js/magiccursor.js"></script>
+    <!-- Text Effect js file -->
+    <script src="js/SplitText.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <!-- Wow js file -->
+    <script src="js/wow.js"></script>
+    <!-- Main Custom js file -->
+    <script src="js/function.js"></script>
+	<script src="https://demo.awaikenthemes.com/assets/js/theme-panel.js"></script>
 </body>
 </html>
