@@ -6158,3 +6158,48 @@ header.main-header .header-sticky.active {
     }
 
 }
+
+
+@media (min-width: 320px) and (max-width: 475px) {
+
+.navbar{
+	margin: 0;
+    padding: 10px 0px;
+}
+.navbar-brand img{
+	width: 130px;
+}
+
+    .section-title h1 {
+        font-size: 30px;
+    }
+    .hero-content .section-title p {
+        font-size: 16px;
+    }
+	.btn-default{
+		padding: 16px 20px 16px 20px;
+	}
+
+	.about-image{
+		margin-top: 30px;
+	}
+	.company-experience{
+		border-radius: 10px;
+	}
+
+	.responsive-menu{
+		top: 30px;
+	}
+	.slicknav_nav .slicknav_row, .slicknav_nav li a{
+		color: var(--dark-color);
+	}
+
+	.filter-header{
+		margin-bottom: 5px;
+	}
+	.filter-header h3{
+		font-size: 19px;
+	}
+
+
+}
