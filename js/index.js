@@ -351,3 +351,116 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+
+        // Initialize animations
+        new WOW().init();
+        
+        // Add interactive features for smart home
+        document.addEventListener('DOMContentLoaded', function() {
+            // Feature cards animation on hover
+            const featureCards = document.querySelectorAll('.feature-card');
+            featureCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Tech badges click effect
+            const techBadges = document.querySelectorAll('.tech-badge');
+            techBadges.forEach(badge => {
+                badge.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                });
+            });
+        });
+
+
+// Mobile Mega Menu Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileTrigger = document.querySelector('a[data-mobile-trigger="true"]');
+    const mobileMegaMenu = document.getElementById('mobileMegaMenu');
+    const closeMobileMenu = document.getElementById('closeMobileMenu');
+    const categoryHeaders = document.querySelectorAll('.category-header');
+    
+    // Check screen size
+    function isMobileScreen() {
+        return window.innerWidth <= 1040 && window.innerWidth >= 320;
+    }
+    
+    // Toggle mobile mega menu
+    if (mobileTrigger) {
+        mobileTrigger.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (isMobileScreen()) {
+                mobileMegaMenu.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            }
+        });
+    }
+    
+    // Close mobile mega menu
+    if (closeMobileMenu) {
+        closeMobileMenu.addEventListener('click', function() {
+            mobileMegaMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    }
+    
+    // Close when clicking outside the menu
+    mobileMegaMenu.addEventListener('click', function(e) {
+        if (e.target === mobileMegaMenu) {
+            mobileMegaMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+    
+    // Toggle category content
+    categoryHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            const targetId = this.getAttribute('data-toggle');
+            const content = document.getElementById(targetId);
+            const icon = this.querySelector('i');
+            
+            // Toggle current category
+            content.classList.toggle('active');
+            icon.classList.toggle('fa-chevron-down');
+            icon.classList.toggle('fa-chevron-up');
+            
+            // Close other categories (optional - for accordion effect)
+            categoryHeaders.forEach(otherHeader => {
+                if (otherHeader !== header) {
+                    const otherId = otherHeader.getAttribute('data-toggle');
+                    const otherContent = document.getElementById(otherId);
+                    const otherIcon = otherHeader.querySelector('i');
+                    
+                    otherContent.classList.remove('active');
+                    otherIcon.classList.remove('fa-chevron-up');
+                    otherIcon.classList.add('fa-chevron-down');
+                }
+            });
+        });
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        if (!isMobileScreen()) {
+            mobileMegaMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+    
+    // Close with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileMegaMenu.classList.contains('active')) {
+            mobileMegaMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+});

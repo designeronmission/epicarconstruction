@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zxx">
-
 <head>
     <!-- Meta -->
     <meta charset="utf-8">
@@ -35,6 +34,7 @@
     <link rel="stylesheet" href="css/mousecursor.css">
     <!-- Main Custom Css -->
     <link href="css/custom.css" rel="stylesheet" media="screen">
+
 </head>
 
 <body>
@@ -246,6 +246,121 @@
         </div>
     </header>
     <!-- Header End -->
+
+
+
+    <!-- Mobile Mega Menu for 320px to 1040px -->
+<div class="mobile-mega-menu" id="mobileMegaMenu">
+    <div class="mobile-menu-container">
+        <div class="mobile-menu-header">
+            <h3>Our Services</h3>
+            <button class="close-mobile-menu" id="closeMobileMenu">
+                <i class="fa-solid fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="mobile-menu-content">
+            <!-- Residential Construction -->
+            <div class="mobile-service-category">
+                <div class="category-header" data-toggle="residential">
+                    <h6>Residential Construction</h6>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="category-content" id="residential">
+                    <p><a class="link-service" href="house.html"><i class="fa-solid fa-hand-point-right me-2"></i>New House Construction</a></p>
+                    <p><i class="fa-solid fa-hand-point-right me-2"></i>Villas & Independent Homes</p>
+                    <p><i class="fa-solid fa-hand-point-right me-2"></i>Renovation & Remodeling</p>
+                    <p><i class="fa-solid fa-hand-point-right me-2"></i>Interior Works</p>
+                </div>
+            </div>
+
+            <!-- Commercial Construction -->
+            <div class="mobile-service-category">
+                <div class="category-header" data-toggle="commercial">
+                    <h6>Commercial Construction</h6>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="category-content" id="commercial">
+                    <p><i class="fa-solid fa-hand-point-right me-2"></i>Office Buildings</p>
+                    <p><i class="fa-solid fa-hand-point-right me-2"></i>Shops & Showrooms</p>
+                    <p><i class="fa-solid fa-hand-point-right me-2"></i>Industrial Sheds</p>
+                    <p><i class="fa-solid fa-hand-point-right me-2"></i>Retail and Warehouse Spaces</p>
+                </div>
+            </div>
+
+            <!-- Industrial Construction -->
+            <div class="mobile-service-category">
+                <div class="category-header" data-toggle="industrial">
+                    <h6>Industrial Construction</h6>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="category-content" id="industrial">
+                    <p><i class="fa-solid fa-hand-point-right me-2"></i>Construct Industrial Sheds</p>
+                    <p><i class="fa-solid fa-hand-point-right me-2"></i>Warehouses & Godowns</p>
+                    <p><i class="fa-solid fa-hand-point-right me-2"></i>Factories</p>
+                    <p><i class="fa-solid fa-hand-point-right me-2"></i>Steel Structural Buildings</p>
+                </div>
+            </div>
+
+            <!-- Architectural Design -->
+            <div class="mobile-service-category">
+                <div class="category-header" data-toggle="architectural">
+                    <h6>Architectural Design</h6>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="category-content" id="architectural">
+                    <p><i class="fa-solid fa-hand-point-right me-2"></i>2D/3D Vastu planning</p>
+                    <p><i class="fa-solid fa-hand-point-right me-2"></i>3d Elevation Design</p>
+                    <p><i class="fa-solid fa-hand-point-right me-2"></i>Approval Drawings</p>
+                    <p><i class="fa-solid fa-hand-point-right me-2"></i>Electric & Plumbing Drawings</p>
+                </div>
+            </div>
+
+            <!-- Interior & Exterior Works -->
+            <div class="mobile-service-category">
+                <div class="category-header" data-toggle="interior">
+                    <h6>Interior & Exterior Works</h6>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="category-content" id="interior">
+                    <p><i class="fa-solid fa-hand-point-right me-2"></i>Modular Kitchen</p>
+                    <p><i class="fa-solid fa-hand-point-right me-2"></i>False Ceiling</p>
+                    <p><i class="fa-solid fa-hand-point-right me-2"></i>Wardrobes</p>
+                    <p><i class="fa-solid fa-hand-point-right me-2"></i>Wall Decor</p>
+                    <p><i class="fa-solid fa-hand-point-right me-2"></i>Exterior Elevation</p>
+                </div>
+            </div>
+
+            <!-- Fabrication Works -->
+            <div class="mobile-service-category">
+                <div class="category-header" data-toggle="fabrication">
+                    <h6>Fabrication Works</h6>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="category-content" id="fabrication">
+                    <p><i class="fa-solid fa-hand-point-right me-2"></i>Steel / Iron framing</p>
+                    <p><i class="fa-solid fa-hand-point-right me-2"></i>Shed Construction & Roofing</p>
+                    <p><i class="fa-solid fa-hand-point-right me-2"></i>Steel Doors, Windows, Grills</p>
+                    <p><i class="fa-solid fa-hand-point-right me-2"></i>Metal Staircases & Railings</p>
+                    <p><i class="fa-solid fa-hand-point-right me-2"></i>Industrial Structural Fabrication</p>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="mobile-cta-section">
+                <h4>Building Your Dreams<br>With <em>Precision & Quality.</em></h4>
+                <p>We provide comprehensive construction solutions with 7+ years of expertise in residential and commercial projects.</p>
+                <button onclick="location.href = 'contact.html';">Get Free Consultation</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Update your Services menu item to trigger mobile version -->
+<li class="nav-item services-trigger dropdown" id="servicesNavItem">
+    <a class="nav-link dropdown-toggle" href="#" role="button" id="servicesTrigger" data-mobile-trigger="true">Services</a>
+</li>
+
 
     <!-- Hero Section Start -->
     <div class="hero bg-section parallaxie ">
@@ -1155,8 +1270,6 @@
 
     <!-- Main Custom js file -->
     <script src="js/index.js"></script>
-
-
 
 
 </body>
