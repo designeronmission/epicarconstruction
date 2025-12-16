@@ -6192,9 +6192,6 @@ header.main-header .header-sticky.active {
 
 }
 
-
-
-
   .smart-features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -6286,7 +6283,7 @@ header.main-header .header-sticky.active {
 
 
 
-		        /* Project Specifications Enhanced Design */
+		/* Project Specifications Enhanced Design */
         .specs-section {
             position: relative;
             padding: 80px 0;
@@ -6681,13 +6678,17 @@ header.main-header .header-sticky.active {
 
 	}
 
-		@media (min-width:320px) and (max-width:720px){
+	@media (min-width:320px) and (max-width:720px){
 
 
 	.right-cont {
     position: relative;
     right: 0px;
     margin-top: 57px;
+}
+
+.thumbnails-container{
+	display: none !important;
 }
 		}
 
