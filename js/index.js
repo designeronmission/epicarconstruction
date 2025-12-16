@@ -448,7 +448,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Handle window resize
+    // Handle window resize 
     window.addEventListener('resize', function() {
         if (!isMobileScreen()) {
             mobileMegaMenu.classList.remove('active');
