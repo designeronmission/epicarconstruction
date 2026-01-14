@@ -464,3 +464,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+
+// Add this script before the closing </body> tag or in a separate JS file
+document.addEventListener('DOMContentLoaded', function() {
+    function updateExperienceYears() {
+        const experienceElement = document.getElementById('yearsOfExperience');
+        const startYear = parseInt(experienceElement.getAttribute('data-start-year'));
+        const currentYear = new Date().getFullYear();
+        const yearsOfExperience = currentYear - startYear;
+        
+        experienceElement.textContent = yearsOfExperience;
+    }
+    
+    // Initialize when page loads
+    updateExperienceYears();
+});
