@@ -6737,3 +6737,13 @@ header.main-header .header-sticky.active {
     background: white;
     border-radius: 10px;
 }
+
+
+
+.image-404{
+	width: 60%;
+}
+
+.common-404{
+	display: contents;
+}
