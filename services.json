@@ -1,0 +1,75 @@
+{
+  "services": [
+    {
+      "slug": "new-house-construction",
+      "title": "New House Construction",
+      "breadcrumb": "Residential Construction",
+      "heroTitle": "Building Your Dream Home with Epicar Construction",
+      "intro": "At Epicar Construction, we specialize in creating custom-designed homes that reflect your personality, lifestyle, and aspirations.",
+      "features": ["Custom Home Design & Planning", "Quality Materials & Construction", "Timely Project Completion", "Transparent Pricing & Process"],
+      "content": "Our new house construction service is designed to transform your vision into a beautiful, functional, and durable home.",
+      "whyChoose": ["Custom Home Designs", "Transparent pricing with no hidden costs", "Vastu-compliant planning and layouts", "Experienced Team", "High-quality construction materials", "Timely project completion"],
+      "gallery": ["assets/images/works/projects/Contemporary Home.jpg", "assets/images/works/projects/Traditional Style Independent House.jpg", "assets/images/works/projects/Eco-Friendly Smart Home.jpg", "assets/images/works/projects/Duplex Modern Villa.jpg"],
+      "image": "assets/images/home/about-us-img.png",
+      "processImage": "assets/images/works/demo-1.jpg",
+      "loanImage": "assets/images/home/home-loan-2.png"
+    },
+    {
+      "slug": "villas-independent-homes",
+      "title": "Villas & Independent Homes",
+      "breadcrumb": "Residential Construction",
+      "heroTitle": "Premium Villas & Independent Homes",
+      "intro": "We design and build luxury villas and independent homes with modern architecture and premium finishes.",
+      "features": ["Luxury Design & Architecture", "Premium Materials & Finishes", "Custom Layouts & Floor Plans", "Modern Elevations & Facades"],
+      "content": "Our villas and independent homes are built with attention to detail, durability, and aesthetic excellence.",
+      "whyChoose": ["Premium finishing with imported materials", "Customized floor plans and layouts", "Energy efficient and sustainable designs", "On-time delivery with zero compromise on quality"],
+      "gallery": ["assets/images/services/villa1.jpg", "assets/images/services/villa2.jpg", "assets/images/services/villa3.jpg", "assets/images/services/villa4.jpg"],
+      "image": "assets/images/services/villas.jpg",
+      "processImage": "assets/images/works/demo-1.jpg",
+      "loanImage": "assets/images/home/home-loan-2.png"
+    },
+    {
+      "slug": "renovation-remodeling",
+      "title": "Renovation & Remodeling",
+      "breadcrumb": "Residential Construction",
+      "heroTitle": "Transform Your Space with Expert Renovation",
+      "intro": "Breathe new life into your existing home with our professional renovation and remodeling services.",
+      "features": ["Complete Home Renovation", "Structural Modifications", "Modern Kitchen & Bathroom Upgrades", "Space Optimization"],
+      "content": "Our renovation services focus on enhancing your home's functionality, aesthetics, and value.",
+      "whyChoose": ["Minimal disruption to daily routine", "Cost-effective solutions", "Modern materials and techniques", "Experienced renovation specialists"],
+      "gallery": ["assets/images/services/renovation1.jpg", "assets/images/services/renovation2.jpg", "assets/images/services/renovation3.jpg", "assets/images/services/renovation4.jpg"],
+      "image": "assets/images/services/renovation.jpg",
+      "processImage": "assets/images/works/demo-1.jpg",
+      "loanImage": "assets/images/home/home-loan-2.png"
+    },
+    {
+      "slug": "interior-works",
+      "title": "Interior Works",
+      "breadcrumb": "Residential Construction",
+      "heroTitle": "Complete Interior Solutions for Modern Living",
+      "intro": "Transform your interiors with our comprehensive interior design and execution services.",
+      "features": ["Space Planning & Design", "Material Selection & Sourcing", "Custom Furniture & Carpentry", "Finishing & Detailing"],
+      "content": "We create interiors that are both beautiful and functional, tailored to your lifestyle.",
+      "whyChoose": ["Custom interior designs", "Quality materials and finishes", "Timely project completion", "Transparent costing"],
+      "gallery": ["assets/images/services/interior1.jpg", "assets/images/services/interior2.jpg", "assets/images/services/interior3.jpg", "assets/images/services/interior4.jpg"],
+      "image": "assets/images/services/interior.jpg",
+      "processImage": "assets/images/works/demo-1.jpg",
+      "loanImage": "assets/images/home/home-loan-2.png"
+    },
+
+    {
+      "slug": "office-buildings",
+      "title": "Office Buildings",
+      "breadcrumb": "Commercial Construction",
+      "heroTitle": "Modern Office Spaces for Business Success",
+      "intro": "We design and construct office buildings that promote productivity, collaboration, and professional growth.",
+      "features": ["Modern Office Design", "Energy Efficient Systems", "Smart Building Solutions", "Custom Office Layouts"],
+      "content": "Our office buildings are designed to support modern work environments and business needs.",
+      "whyChoose": ["Professional workspace design", "Advanced infrastructure", "Timely project delivery", "Cost-effective solutions"],
+      "gallery": ["assets/images/services/office1.jpg", "assets/images/services/office2.jpg", "assets/images/services/office3.jpg", "assets/images/services/office4.jpg"],
+      "image": "assets/images/services/office.jpg",
+      "processImage": "assets/images/works/demo-1.jpg",
+      "loanImage": "assets/images/home/home-loan-2.png"
+    }
+  ]
+}

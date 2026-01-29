@@ -1688,10 +1688,30 @@ header.main-header .header-sticky.active {
 }
 
 .contact-form .form-control::placeholder {
-	color: var(--primary-color);
+	color: #667282 !important;
 	opacity: 20%;
 	text-transform: capitalize;
 }
+
+
+/* Target the contact form placeholders specifically */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #667282; /* Even darker gray */
+    opacity: 1;
+}
+
+/* Or target each input individually */
+#name::placeholder,
+#email::placeholder,
+#location::placeholder,
+#message::placeholder,
+.phone-input::placeholder {
+    color: #667282; 
+    opacity: 1;
+}
+
+
 
 .india-flag {
 	width: 30px;
@@ -1791,7 +1811,7 @@ header.main-header .header-sticky.active {
 
 .main-footer {
 	background: var(--primary-color);
-	padding: 100px 0;
+	padding: 100px 30px;
 }
 
 .footer-logo {
@@ -3923,7 +3943,7 @@ header.main-header .header-sticky.active {
 	}
 
 	.main-footer {
-		padding: 50px 0;
+		padding: 50px 30px;
 	}
 
 	.about-footer {
@@ -6746,4 +6766,35 @@ header.main-header .header-sticky.active {
 
 .common-404{
 	display: contents;
+}
+
+
+.card-contact{
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+
+
+
+
+@media (min-width: 320px) and (max-width: 1430px) {
+
+.thumbnails-container{
+	display: none;
+}
+
+}
+
+
+@media (min-width: 320px) and (max-width: 800px) {
+
+.right-cont{
+	right: 0;
+	padding-top: 20px;
+}
+
+.right-conts{
+padding-top: 20px;
+}
 }

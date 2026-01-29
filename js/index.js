@@ -481,3 +481,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize when page loads
     updateExperienceYears();
 });
+
+
+
+document.getElementById("year").textContent = new Date().getFullYear();
