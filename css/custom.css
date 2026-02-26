@@ -6854,6 +6854,7 @@ padding-top: 20px;
   position: relative;
   width: 100%;
   height: 700px;
+    left: 100px;
   max-width: 550px;
   border-radius: 20px;
   overflow: hidden;
