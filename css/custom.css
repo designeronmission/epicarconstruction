@@ -730,6 +730,8 @@ header.main-header .header-sticky.active {
 	margin-top: -103px;
 }
 
+
+
 .hero.bg-section:before {
 	content: '';
 	display: block;
@@ -739,10 +741,22 @@ header.main-header .header-sticky.active {
 	right: 0;
 	bottom: 0;
 	background: var(--overlay-color);
-
-
 	z-index: 1;
 }
+
+
+.hero-slider:before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: var(--overlay-color);
+	z-index: 1;
+}
+
 
 .hero.bg-section.hero-slider {
 	text-align: center;
@@ -767,7 +781,7 @@ header.main-header .header-sticky.active {
 .hero-slider-layout .hero-slide::before {
 	content: '';
 	position: absolute;
-	background: linear-gradient(180deg, rgba(14, 13, 27, 0) 0%, rgba(14, 13, 27, 0.55) 40.5%);
+	background: var(--overlay-color);
 	background-repeat: no-repeat;
 	background-position: center center;
 	top: 0;
@@ -1162,6 +1176,13 @@ header.main-header .header-sticky.active {
 /************************************/
 /***     08. Our Projects css     ***/
 /************************************/
+
+.projects{
+background-position: left bottom;
+	background-size: auto;
+	padding: 100px 0;
+}
+
 
 .our-projects {
 	background: var(--secondary-color) url("../images/our-projects-bg.png") no-repeat;
@@ -5924,9 +5945,9 @@ header.main-header .header-sticky.active {
     background: white;
     border-radius: 15px;
     padding: 40px 30px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
     position: relative;
     height: 100%;
+    border: 2px solid #ededed;
     min-height: 450px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -5934,15 +5955,7 @@ header.main-header .header-sticky.active {
     transform: translateY(-5px);
     box-shadow: 0 20px 50px rgba(0,0,0,0.15);
 }
-.mission-primary {
-    border-top: 5px solid #12223b;
-}
-.mission-secondary {
-    border-top: 5px solid #12223b;
-}
-.mission-tertiary {
-    border-top: 5px solid #12223b;
-}
+
 .mission-number {
     position: absolute;
     top: 20px;
@@ -6306,7 +6319,6 @@ header.main-header .header-sticky.active {
         .specs-section {
             position: relative;
             padding: 80px 0;
-            background: linear-gradient(135deg, #f8fafc 0%, #e9f2f9 100%);
             border-radius: 25px;
             margin: 60px 0;
             overflow: hidden;
@@ -6319,7 +6331,6 @@ header.main-header .header-sticky.active {
             left: 0;
             right: 0;
             height: 5px;
-            background:linear-gradient(90deg, #205874, #4ECDC4, #478b8c, #96CEB4, #5ec491);
         }
         
         .spec-card {
@@ -6796,4 +6807,109 @@ header.main-header .header-sticky.active {
 .right-conts{
 padding-top: 20px;
 }
+}
+
+
+
+
+/* Local Testing Styles */
+.local-test-notice {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: center;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(102, 126, 234, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(102, 126, 234, 0); }
+}
+
+/* Loading animation */
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+
+
+/* frame */
+
+
+/* Frame Container */
+.frame{
+  position: relative;
+  width: 100%;
+  height: 700px;
+  max-width: 550px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #000;
+}
+
+/* Image */
+.frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* STEP RECTANGLES */
+.step{
+  position:absolute;
+  right:0;
+  background:#ffffff;
+}
+
+/* Step 1 */
+.step1{
+  top:0;
+  width:65%;
+  height:20%;
+  border-bottom-left-radius:40px;
+}
+
+/* Step 2 */
+.step2{
+  top:20%;
+  width:50%;
+  height:20%;
+  border-bottom-left-radius:40px;
+}
+
+/* Step 3 */
+.step3{
+  top:40%;
+  width:32%;
+  height:20%;
+  border-bottom-left-radius:40px;
+}
+
+/* Step 4 */
+.step4{
+  top:60%;
+  width:17%;
+  height:20%;
+}
+
+/* Responsive Fix */
+@media(max-width:992px){
+  .frame{
+    height:500px;
+    margin:auto;
+  }
 }

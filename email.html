@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epicarc Construction - Enquiry Confirmation</title>
+    <style>
+        /* CSS Variables from Epicarc Construction website */
+        :root {
+            --primary-color: #12223B;
+            --secondary-color: #E9F7FE;
+            --text-color: #667282;
+            --accent-color: #8EE6B8;
+            --white-color: #FFFFFF;
+            --dark-color: #161515;
+            --divider-color: #12223B30;
+            --dark-divider-color: #FFFFFF20;
+            --overlay-color: #00000066;
+            --error-color: rgb(230, 87, 87);
+            --card-shadow: 0 4px 20px rgba(18, 34, 59, 0.08);
+            --card-hover-shadow: 0 8px 30px rgba(18, 34, 59, 0.12);
+        }
+        
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f8fafc;
+            padding: 20px 0;
+        }
+        
+        /* Main container */
+        .email-container {
+            max-width: 680px;
+            margin: 0 auto;
+            background-color: var(--white-color);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(18, 34, 59, 0.1);
+        }
+        
+        /* Header section */
+        .header {
+            background: var(--primary-color);
+            color: var(--white-color);
+            padding: 40px 40px 30px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .logo-container {
+            margin-bottom: 25px;
+        }
+        
+        .logo-img {
+            max-width: 200px;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            margin-top: 15px;
+            font-weight: 600;
+            color: var(--white-color);
+            letter-spacing: 0.3px;
+        }
+        
+        .header p {
+            font-size: 16px;
+            margin-top: 10px;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+        
+        /* Main content */
+        .content-section {
+            padding: 40px;
+        }
+        
+        /* Status Card - Inspired by reference */
+        .status-card {
+            background: var(--white-color);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(18, 34, 59, 0.08);
+        }
+        
+        .status-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent-color) 0%, #6dd4a3 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--white-color);
+            font-size: 36px;
+            box-shadow: 0 6px 20px rgba(142, 230, 184, 0.3);
+        }
+        
+        .status-title {
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        .status-subtitle {
+            font-size: 18px;
+            color: var(--text-color);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        
+        .status-date {
+            background: rgba(142, 230, 184, 0.1);
+            border: 2px solid var(--accent-color);
+            border-radius: 10px;
+            padding: 20px;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+        
+        .date-label {
+            font-size: 14px;
+            color: var(--text-color);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .date-value {
+            font-size: 24px;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .status-description {
+            color: var(--text-color);
+            font-size: 16px;
+            line-height: 1.7;
+            max-width: 530px;
+            margin: 0 auto 25px;
+        }
+        
+        .learn-more {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px dashed var(--accent-color);
+            transition: all 0.3s ease;
+        }
+        
+        .learn-more:hover {
+            color: var(--accent-color);
+            border-bottom-color: var(--primary-color);
+        }
+        
+        /* Enquiry Details Card */
+        .details-card {
+            background: var(--white-color);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(18, 34, 59, 0.08);
+        }
+        
+        .card-title {
+            font-size: 22px;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-weight: 600;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(142, 230, 184, 0.3);
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+        
+        .detail-item {
+            padding: 20px;
+            background: rgba(233, 247, 254, 0.3);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .detail-item:hover {
+            background: rgba(142, 230, 184, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        .detail-label {
+            font-size: 14px;
+            color: var(--text-color);
+            margin-bottom: 8px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        .detail-value {
+            font-size: 18px;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        /* Next Steps Card */
+        .next-steps-card {
+            background: var(--white-color);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(18, 34, 59, 0.08);
+        }
+        
+        .steps-timeline {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 25px;
+            position: relative;
+        }
+        
+        .steps-timeline:before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 50px;
+            right: 50px;
+            height: 2px;
+            background: linear-gradient(to right, var(--accent-color), rgba(142, 230, 184, 0.3));
+            z-index: 1;
+        }
+        
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .step-circle {
+            width: 60px;
+            height: 60px;
+            background: var(--white-color);
+            border: 3px solid var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 22px;
+            color: var(--primary-color);
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(142, 230, 184, 0.3);
+        }
+        
+        .step-title {
+            font-size: 15px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .step-description {
+            font-size: 14px;
+            color: var(--text-color);
+            line-height: 1.5;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--primary-color);
+            color: var(--white-color);
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-link {
+            color: var(--white-color);
+            text-decoration: none;
+            margin: 0 20px 10px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .footer-link:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Reach Us Section */
+        .reach-us-section {
+            margin: 30px 0 25px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            text-align: left;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .reach-us-title {
+            font-size: 18px;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+
+        
+        .contact-info-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-info-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        .contact-icon-small {
+            font-size: 20px;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+        
+        .contact-detail {
+            font-size: 14px;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .contact-detail a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-detail a:hover {
+            color: var(--accent-color);
+        }
+        
+        .footer-text {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 30px auto 0;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .help-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .help-link:hover {
+            text-decoration: underline;
+        }
+        
+        .signature {
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .company-name {
+            font-size: 20px;
+            color: var(--white-color);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .company-tagline {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .header, .content-section, .footer {
+                padding: 30px 25px;
+            }
+            
+            .status-card, .details-card, .next-steps-card, .contact-card {
+                padding: 30px;
+            }
+            
+            .details-grid, .contact-methods, .contact-info-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .steps-timeline {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .steps-timeline:before {
+                display: none;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .footer-link {
+                margin: 8px 0;
+            }
+            
+            .reach-us-section {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 24px;
+            }
+            
+            .status-title {
+                font-size: 24px;
+            }
+            
+            .card-title, .contact-title {
+                font-size: 20px;
+            }
+            
+            .cta-button {
+                padding: 16px 30px;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header with logo -->
+        <div class="header">
+            <div class="logo-container">
+                <img src="assets/images/logo/logo-final.png" alt="Epicarc Construction" class="logo-img"> 
+            </div>
+            <h1>Thank You, Gururl</h1>
+            <p>We have received your enquiry and will contact you shortly</p>
+        </div>
+        
+        <!-- Main content -->
+        <div class="content-section">
+            <!-- Status Card -->
+            <div class="status-card">
+                <div class="status-icon">✓</div>
+                <h2 class="status-title">Enquiry Confirmed</h2>
+                <p class="status-subtitle">Your enquiry has been successfully submitted</p>
+                
+                <div class="status-date">
+                    <div class="date-label">Reference Number</div>
+                    <div class="date-value">ENQ20260209141600137</div>
+                </div>
+                
+                <p class="status-description">
+                    We appreciate your interest in Epicarc Construction. Our team is reviewing your enquiry and will contact you soon. 
+                     If you need to update any details or have additional information, feel free to contact us directly.
+                </p>
+                
+            </div>
+            
+            <!-- Enquiry Details Card -->
+            <div class="details-card">
+                <h3 class="card-title">Your Enquiry Details</h3>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <div class="detail-label">Full Name</div>
+                        <div class="detail-value">Gururl</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">Email Address</div>
+                        <div class="detail-value">gururl@example.com</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">Phone Number</div>
+                        <div class="detail-value">+91 9876543210</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">Project Location</div>
+                        <div class="detail-value">[Location Provided]</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">Contact Method</div>
+                        <div class="detail-value">[Preferred Method]</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">Preferred Time</div>
+                        <div class="detail-value">[Preferred Time]</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Next Steps Card -->
+            <div class="next-steps-card">
+                <h3 class="card-title">What Happens Next</h3>
+                <div class="steps-timeline">
+                    <div class="step">
+                        <div class="step-circle">1</div>
+                        <div class="step-title">Analysis</div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-circle">2</div>
+                        <div class="step-title">Initial Contact</div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-circle">3</div>
+                        <div class="step-title">Site Assessment</div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-circle">4</div>
+                        <div class="step-title"> Quotation</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-links">
+                <a href="https://epicarconstruction.com/" class="footer-link">Website</a>
+                <a href="https://epicarconstruction.com/services" class="footer-link">Services</a>
+                <a href="https://epicarconstruction.com/projects" class="footer-link">Projects</a>
+                <a href="https://epicarconstruction.com/about" class="footer-link">About Us</a>
+                <a href="https://epicarconstruction.com/contact" class="footer-link">Contact</a>
+            </div>
+      
+            <div class="footer-text">
+                <p>This is an automated email. Please do not reply to this message.</p>
+                <p>For immediate assistance, please call +91 636 991 1989 or visit our <a href="https://epicarconstruction.com/contact.html" target="_blank" class="help-link">https://epicarconstruction.com/contact</a></p>
+            </div>
+            
+            <div class="signature">
+                <div class="company-name">Epicarc Construction</div>
+                <div class="company-tagline">Where Vision Meets Structure</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

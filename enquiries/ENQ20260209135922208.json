@@ -1,0 +1,14 @@
+{
+    "timestamp": "2026-02-09 13:59:32",
+    "ref_id": "ENQ20260209135922208",
+    "name": "Gururl",
+    "email": "gururl@aparajayah.com",
+    "phone": "9876555525",
+    "location": "Madurai",
+    "message": "Hi this message is for testing purpose and just ignore it",
+    "contact_method": "whatsapp",
+    "contact_time": "morning",
+    "admin_email_sent": true,
+    "customer_email_sent": true,
+    "ip_address": "::1"
+}

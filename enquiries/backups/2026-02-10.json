@@ -1,0 +1,36 @@
+[
+    {
+        "ref_id": "ENQ-20260210-FB9B6F",
+        "timestamp": "2026-02-10 13:51:58",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "This message is to enquiry the Building structures",
+        "contact_method": "whatsapp",
+        "contact_time": "morning",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/144.0.0.0 Safari\/537.36"
+    },
+    {
+        "ref_id": "ENQ-20260210-FB9D07",
+        "timestamp": "2026-02-10 13:51:59",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "This message is to enquiry the Building structures",
+        "contact_method": "whatsapp",
+        "contact_time": "morning",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/144.0.0.0 Safari\/537.36"
+    }
+]

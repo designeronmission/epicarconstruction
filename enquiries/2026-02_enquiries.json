@@ -1,0 +1,562 @@
+[
+    {
+        "ref_id": "ENQ20260210083724479",
+        "timestamp": "2026-02-10 08:37:34",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "This is a testing message from myside",
+        "contact_method": "whatsapp",
+        "contact_time": "morning",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1"
+    },
+    {
+        "ref_id": "ENQ20260210085323722",
+        "timestamp": "2026-02-10 08:53:47",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "This message for testing purpose just ignore it",
+        "contact_method": "whatsapp",
+        "contact_time": "morning",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1"
+    },
+    {
+        "ref_id": "ENQ20260210090302847",
+        "timestamp": "2026-02-10 09:03:12",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "THIS IS FOR TESTING PURPOSE",
+        "contact_method": "whatsapp",
+        "contact_time": "morning",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1"
+    },
+    {
+        "ref_id": "ENQ20260210090528424",
+        "timestamp": "2026-02-10 09:05:38",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "Testing purpose email",
+        "contact_method": "email",
+        "contact_time": "morning",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1"
+    },
+    {
+        "ref_id": "ENQ20260210091223317",
+        "timestamp": "2026-02-10 09:12:33",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "Testing purpose",
+        "contact_method": "whatsapp",
+        "contact_time": "morning",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1"
+    },
+    {
+        "ref_id": "ENQ20260210091741389",
+        "timestamp": "2026-02-10 09:17:51",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "Testing email",
+        "contact_method": "whatsapp",
+        "contact_time": "morning",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1"
+    },
+    {
+        "ref_id": "ENQ20260210092233510",
+        "timestamp": "2026-02-10 09:22:43",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "Testing email",
+        "contact_method": "whatsapp",
+        "contact_time": "morning",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1"
+    },
+    {
+        "ref_id": "ENQ20260210093120359",
+        "timestamp": "2026-02-10 09:31:38",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "Testing purpose email",
+        "contact_method": "whatsapp",
+        "contact_time": "morning",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1"
+    },
+    {
+        "ref_id": "ENQ20260210093754136",
+        "timestamp": "2026-02-10 09:38:04",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "This for demo purpose",
+        "contact_method": "whatsapp",
+        "contact_time": "afternoon",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1"
+    },
+    {
+        "ref_id": "ENQ20260210094342810",
+        "timestamp": "2026-02-10 09:43:52",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "This is for demo purpose testing",
+        "contact_method": "whatsapp",
+        "contact_time": "morning",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1"
+    },
+    {
+        "ref_id": "ENQ20260210095133902",
+        "timestamp": "2026-02-10 09:51:52",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "this is for testing purpose",
+        "contact_method": "whatsapp",
+        "contact_time": "morning",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1"
+    },
+    {
+        "ref_id": "ENQ20260210095733520",
+        "timestamp": "2026-02-10 09:57:42",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "Testing purpose",
+        "contact_method": "whatsapp",
+        "contact_time": "afternoon",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1"
+    },
+    {
+        "ref_id": "ENQ20260210100113205",
+        "timestamp": "2026-02-10 10:01:30",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "This is for testing purpose",
+        "contact_method": "whatsapp",
+        "contact_time": "morning",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1"
+    },
+    {
+        "ref_id": "ENQ20260210100716735",
+        "timestamp": "2026-02-10 10:07:27",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "This is for the testing purpose",
+        "contact_method": "whatsapp",
+        "contact_time": "morning",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1"
+    },
+    {
+        "ref_id": "ENQ20260210102643515",
+        "timestamp": "2026-02-10 10:26:53",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "Hi i need a quotes for build a Parking space",
+        "contact_method": "whatsapp",
+        "contact_time": "morning",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1"
+    },
+    {
+        "ref_id": "ENQ20260210102955203",
+        "timestamp": "2026-02-10 10:30:05",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "This is demo message",
+        "contact_method": "phone",
+        "contact_time": "morning",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1"
+    },
+    {
+        "ref_id": "ENQ20260210103338440",
+        "timestamp": "2026-02-10 10:33:48",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "Dummy message",
+        "contact_method": "phone",
+        "contact_time": "anytime",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1"
+    },
+    {
+        "ref_id": "ENQ20260210105458686",
+        "timestamp": "2026-02-10 10:55:09",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "demo project",
+        "contact_method": "whatsapp",
+        "contact_time": "morning",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1"
+    },
+    {
+        "ref_id": "ENQ-20260210-05A293",
+        "timestamp": "2026-02-10 13:19:55",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "Demo purpose",
+        "contact_method": "whatsapp",
+        "contact_time": "morning",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/144.0.0.0 Safari\/537.36"
+    },
+    {
+        "ref_id": "ENQ-20260210-05A293",
+        "timestamp": "2026-02-10 13:19:56",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "Demo purpose",
+        "contact_method": "whatsapp",
+        "contact_time": "morning",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/144.0.0.0 Safari\/537.36"
+    },
+    {
+        "ref_id": "ENQ-20260210-C4AD0C",
+        "timestamp": "2026-02-10 13:29:42",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "This project is for demo purpose",
+        "contact_method": "whatsapp",
+        "contact_time": "morning",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/144.0.0.0 Safari\/537.36"
+    },
+    {
+        "ref_id": "ENQ-20260210-C4AD32",
+        "timestamp": "2026-02-10 13:29:42",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "This project is for demo purpose",
+        "contact_method": "whatsapp",
+        "contact_time": "morning",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/144.0.0.0 Safari\/537.36"
+    },
+    {
+        "ref_id": "ENQ-20260210-9082A2",
+        "timestamp": "2026-02-10 13:34:43",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "I need a enquiry for construction",
+        "contact_method": "phone",
+        "contact_time": "morning",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/144.0.0.0 Safari\/537.36"
+    },
+    {
+        "ref_id": "ENQ-20260210-9082A2",
+        "timestamp": "2026-02-10 13:34:43",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "I need a enquiry for construction",
+        "contact_method": "phone",
+        "contact_time": "morning",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/144.0.0.0 Safari\/537.36"
+    },
+    {
+        "ref_id": "ENQ-20260210-FB9B6F",
+        "timestamp": "2026-02-10 13:51:58",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "This message is to enquiry the Building structures",
+        "contact_method": "whatsapp",
+        "contact_time": "morning",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/144.0.0.0 Safari\/537.36"
+    },
+    {
+        "ref_id": "ENQ-20260210-FB9D07",
+        "timestamp": "2026-02-10 13:51:59",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "This message is to enquiry the Building structures",
+        "contact_method": "whatsapp",
+        "contact_time": "morning",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/144.0.0.0 Safari\/537.36"
+    },
+    {
+        "ref_id": "ENQ-20260210-9A658E",
+        "timestamp": "2026-02-10 13:53:08",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "Some testing purpose",
+        "contact_method": "phone",
+        "contact_time": "morning",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/144.0.0.0 Safari\/537.36"
+    },
+    {
+        "ref_id": "ENQ-20260210-9A6569",
+        "timestamp": "2026-02-10 13:53:08",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "Some testing purpose",
+        "contact_method": "phone",
+        "contact_time": "morning",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/144.0.0.0 Safari\/537.36"
+    },
+    {
+        "ref_id": "ENQ-20260210-2F192E",
+        "timestamp": "2026-02-10 14:14:07",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "Testing purpose",
+        "contact_method": "whatsapp",
+        "contact_time": "morning",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/144.0.0.0 Safari\/537.36"
+    },
+    {
+        "ref_id": "ENQ-20260210-304976",
+        "timestamp": "2026-02-10 14:14:08",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "Testing purpose",
+        "contact_method": "whatsapp",
+        "contact_time": "morning",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/144.0.0.0 Safari\/537.36"
+    },
+    {
+        "ref_id": "ENQ-20260210-A01084",
+        "timestamp": "2026-02-10 14:21:41",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "Just for Testing",
+        "contact_method": "phone",
+        "contact_time": "morning",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/144.0.0.0 Safari\/537.36"
+    },
+    {
+        "ref_id": "ENQ-20260210-A01099",
+        "timestamp": "2026-02-10 14:21:42",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "Just for Testing",
+        "contact_method": "phone",
+        "contact_time": "morning",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/144.0.0.0 Safari\/537.36"
+    },
+    {
+        "ref_id": "ENQ-20260211-49A95B",
+        "timestamp": "2026-02-11 10:49:34",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "This message for Testing Purpose",
+        "contact_method": "whatsapp",
+        "contact_time": "afternoon",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/144.0.0.0 Safari\/537.36"
+    },
+    {
+        "ref_id": "ENQ-20260211-49AEBE",
+        "timestamp": "2026-02-11 10:49:35",
+        "name": "Gurusheth R",
+        "email": "gururl@aparajayah.com",
+        "phone": "9629900493",
+        "location": "Madurai",
+        "message": "This message for Testing Purpose",
+        "contact_method": "whatsapp",
+        "contact_time": "afternoon",
+        "email_results": {
+            "admin": true,
+            "customer": true
+        },
+        "ip_address": "::1",
+        "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/144.0.0.0 Safari\/537.36"
+    }
+]

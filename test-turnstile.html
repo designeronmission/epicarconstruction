@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Turnstile</title>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+<body>
+    <h1>Test Cloudflare Turnstile</h1>
+    
+    <div class="cf-turnstile" 
+         data-sitekey="0x4AAAAAACaE16agGJbbWoW2" 
+         data-callback="onTestSuccess">
+    </div>
+    
+    <script>
+    function onTestSuccess(token) {
+        console.log('Test token:', token);
+        alert('Turnstile Success! Token: ' + token.substring(0, 20) + '...');
+    }
+    </script>
+</body>
+</html>

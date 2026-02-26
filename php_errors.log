@@ -1,0 +1,30 @@
+[09-Feb-2026 12:34:08 Europe/Berlin] === Script started ===
+[09-Feb-2026 12:34:08 Europe/Berlin] Request Method: POST
+[09-Feb-2026 12:34:08 Europe/Berlin] POST Data: Array
+(
+    [name] => Gurusheth R
+    [phone] => (962) 990-0493
+    [email] => gururl@aparajayah.com
+    [location] => Madurai
+    [message] => I need to Buid a house
+    [contactMethod] => whatsapp
+    [contactTime] => afternoon
+    [terms] => on
+)
+
+[09-Feb-2026 12:34:08 Europe/Berlin] Processing POST request
+[09-Feb-2026 12:34:08 Europe/Berlin] Checking PHPMailer files...
+[09-Feb-2026 12:34:08 Europe/Berlin] File exists: PHPMailer/src/Exception.php
+[09-Feb-2026 12:34:08 Europe/Berlin] File exists: PHPMailer/src/PHPMailer.php
+[09-Feb-2026 12:34:08 Europe/Berlin] File exists: PHPMailer/src/SMTP.php
+[09-Feb-2026 12:34:08 Europe/Berlin] Collecting form data...
+[09-Feb-2026 12:34:08 Europe/Berlin] Received - Name: Gurusheth R, Email: gururl@aparajayah.com, Phone: 9629900493
+[09-Feb-2026 12:34:08 Europe/Berlin] Validating data...
+[09-Feb-2026 12:34:08 Europe/Berlin] Validation passed
+[09-Feb-2026 12:34:08 Europe/Berlin] Saving data for local testing...
+[09-Feb-2026 12:34:08 Europe/Berlin] Data saved successfully
+[09-Feb-2026 12:34:08 Europe/Berlin] Response prepared: {"success":true,"message":"\u2705 LOCAL TEST SUCCESSFUL!<br><br><strong>Submitted Data:<\/strong><br>\ud83d\udc64 <strong>Name:<\/strong> Gurusheth R<br>\ud83d\udce7 <strong>Email:<\/strong> gururl@aparajayah.com<br>\ud83d\udcf1 <strong>Phone:<\/strong> +91 9629900493<br>\ud83d\udccd <strong>Location:<\/strong> Madurai<br>\ud83d\udcde <strong>Contact Method:<\/strong> Whatsapp<br>\u23f0 <strong>Preferred Time:<\/strong> Afternoon<br>\ud83d\udcac <strong>Message:<\/strong> I need to Buid a house<br><br><div style=\"background:#e3f2fd;padding:10px;border-radius:5px;margin:10px 0;\">\ud83d\udcdd <strong>Files Created:<\/strong><br>\u2022 enquiry_data.json (JSON format)<br>\u2022 enquiries.log (Text log)<br>\u2022 debug.log (Debug information)<\/div>","data":{"timestamp":"2026-02-09 12:34:08","name":"Gurusheth R","email":"gururl@aparajayah.com","phone":"9629900493","location":"Madurai","message":"I need to Buid a house","contact_method":"whatsapp","contact_time":"afternoon","ip":"::1"}}
+[09-Feb-2026 12:34:08 Europe/Berlin] Sending JSON response
+[09-Feb-2026 12:34:08 Europe/Berlin] Output sent: {"success":true,"message":"\u2705 LOCAL TEST SUCCESSFUL!<br><br><strong>Submitted Data:<\/strong><br>\ud83d\udc64 <strong>Name:<\/strong> Gurusheth R<br>\ud83d\udce7 <strong>Email:<\/strong> gururl@aparajayah.com<br>\ud83d\udcf1 <strong>Phone:<\/strong> +91 9629900493<br>\ud83d\udccd <strong>Location:<\/strong> Madurai<br>\ud83d\udcde <strong>Contact Method:<\/strong> Whatsapp<br>\u23f0 <strong>Preferred Time:<\/strong> Afternoon<br>\ud83d\udcac <strong>Message:<\/strong> I need to Buid a house<
+[09-Feb-2026 12:34:08 Europe/Berlin] === Script ended ===
+

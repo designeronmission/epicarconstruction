@@ -1,0 +1,55 @@
+[2026-02-09 12:34:08] === Script started ===
+[2026-02-09 12:34:08] Request Method: POST
+[2026-02-09 12:34:08] POST Data: Array
+(
+    [name] => Gurusheth R
+    [phone] => (962) 990-0493
+    [email] => gururl@aparajayah.com
+    [location] => Madurai
+    [message] => I need to Buid a house
+    [contactMethod] => whatsapp
+    [contactTime] => afternoon
+    [terms] => on
+)
+
+[2026-02-09 12:34:08] Processing POST request
+[2026-02-09 12:34:08] Checking PHPMailer files...
+[2026-02-09 12:34:08] File exists: PHPMailer/src/Exception.php
+[2026-02-09 12:34:08] File exists: PHPMailer/src/PHPMailer.php
+[2026-02-09 12:34:08] File exists: PHPMailer/src/SMTP.php
+[2026-02-09 12:34:08] Collecting form data...
+[2026-02-09 12:34:08] Received - Name: Gurusheth R, Email: gururl@aparajayah.com, Phone: 9629900493
+[2026-02-09 12:34:08] Validating data...
+[2026-02-09 12:34:08] Validation passed
+[2026-02-09 12:34:08] Saving data for local testing...
+[2026-02-09 12:34:08] Data saved successfully
+[2026-02-09 12:34:08] Response prepared: {"success":true,"message":"\u2705 LOCAL TEST SUCCESSFUL!<br><br><strong>Submitted Data:<\/strong><br>\ud83d\udc64 <strong>Name:<\/strong> Gurusheth R<br>\ud83d\udce7 <strong>Email:<\/strong> gururl@aparajayah.com<br>\ud83d\udcf1 <strong>Phone:<\/strong> +91 9629900493<br>\ud83d\udccd <strong>Location:<\/strong> Madurai<br>\ud83d\udcde <strong>Contact Method:<\/strong> Whatsapp<br>\u23f0 <strong>Preferred Time:<\/strong> Afternoon<br>\ud83d\udcac <strong>Message:<\/strong> I need to Buid a house<br><br><div style=\"background:#e3f2fd;padding:10px;border-radius:5px;margin:10px 0;\">\ud83d\udcdd <strong>Files Created:<\/strong><br>\u2022 enquiry_data.json (JSON format)<br>\u2022 enquiries.log (Text log)<br>\u2022 debug.log (Debug information)<\/div>","data":{"timestamp":"2026-02-09 12:34:08","name":"Gurusheth R","email":"gururl@aparajayah.com","phone":"9629900493","location":"Madurai","message":"I need to Buid a house","contact_method":"whatsapp","contact_time":"afternoon","ip":"::1"}}
+[2026-02-09 12:34:08] Sending JSON response
+[2026-02-09 12:34:08] Output sent: {"success":true,"message":"\u2705 LOCAL TEST SUCCESSFUL!<br><br><strong>Submitted Data:<\/strong><br>\ud83d\udc64 <strong>Name:<\/strong> Gurusheth R<br>\ud83d\udce7 <strong>Email:<\/strong> gururl@aparajayah.com<br>\ud83d\udcf1 <strong>Phone:<\/strong> +91 9629900493<br>\ud83d\udccd <strong>Location:<\/strong> Madurai<br>\ud83d\udcde <strong>Contact Method:<\/strong> Whatsapp<br>\u23f0 <strong>Preferred Time:<\/strong> Afternoon<br>\ud83d\udcac <strong>Message:<\/strong> I need to Buid a house<
+[2026-02-09 12:34:08] === Script ended ===
+
+2026-02-10 13:07:10 - Request received
+POST data: Array
+(
+    [name] => Gurusheth R
+    [phone] => 9629900493
+    [email] => gururl@aparajayah.com
+    [location] => Madurai
+    [message] => Just for testing purpose
+    [contactMethod] => whatsapp
+    [contactTime] => morning
+    [cf-turnstile-response] => 0.K-AT2BDNkDYKDijx7el1deD1IbN0bDQVHDc1KIzFAglTEnqsUs6Z0J9i5ohZiShA-18dfZ2hlzX8KqhuyinTiJ52_S6T2WaqoBaLWBE3Nfd62zHB5nu1zcdo_8VWytTDy2lrNRbPRo-HdzfZyLCMGCVV-r4rgd3lcbAAhINHwvYV0AEsyQRZzLDzgXIu5e9gqTu7IdoH1YHVu8fX8lyK49pYpSt1xeo3zZXZphw2TbvaKhyYjv35y-RQp-P_g2iornV6TGq0YWgp2FdD5IVP_Y4Hqt_e4sBQAFthKnidLB83m9x6IfYMihc8uP2D8eZzc62E-DfJyxdz4Uzq5OY87Q2sd-XaP23N47Q7MQwqGlXVYDFgnUvZS-DS_MLKZBkvNpcc7uDOb8tcUgo1--gEvjqFKXFz-7ZVzaSNkCv2-4zAZwxq4C61HUBfM2ho94fQ2TYQilcEpVYtfBb4ChmAlMVl8AGBt9la5lJXZyQv23LooHv68c7cOy8HJ8tdJ6r-hyUTTRnk-hyBQ1HR3vfdzv5r13zlnyBCJMq73mbWW34Z7NaZJnpWY3GuzOwcw8RAtsWdLmS_GhDP89sAH5np2Js_yPky0os-UgOT8C5aAck5fpaBE_rzLwNnizORwiRBxuw0uJWJy1wTOSlTeEd8nwDbjSpDbVtACLUHstjhYsXB-rkaLkCYmXs820hZw2KX1QYelJlkniwEKQlLJyuAwvaEhSvjlBTbRIwicQ11tm4OWtMR9geAqVMZLYzMgWY9Q7vaFo872yvT75xheqzQPwtxxfIoJisUpXzaX8r60zOxVfRmHk0vYLaDzEIMeqqKWCO8UPZcx6PERwkrhKumQNJYpqpZeATakT7Apv3pugpomBwK1aBioA-AfxZTqPWZIoozPfD3JI4YnVoRK2sGE6uEAltsitoTcZYtVKRT8BI.Bbeqq3QuWqa0SnfY7eYXoQ.243546344841a9bd6ea531f5bd1598e54868b92a974d8df714033945d4dae867
+)
+
+POST data: Array
+(
+    [name] => Gurusheth R
+    [phone] => 9629900493
+    [email] => gururl@aparajayah.com
+    [location] => Madurai
+    [message] => Just for testing purpose
+    [contactMethod] => whatsapp
+    [contactTime] => morning
+    [cf-turnstile-response] => 0.K-AT2BDNkDYKDijx7el1deD1IbN0bDQVHDc1KIzFAglTEnqsUs6Z0J9i5ohZiShA-18dfZ2hlzX8KqhuyinTiJ52_S6T2WaqoBaLWBE3Nfd62zHB5nu1zcdo_8VWytTDy2lrNRbPRo-HdzfZyLCMGCVV-r4rgd3lcbAAhINHwvYV0AEsyQRZzLDzgXIu5e9gqTu7IdoH1YHVu8fX8lyK49pYpSt1xeo3zZXZphw2TbvaKhyYjv35y-RQp-P_g2iornV6TGq0YWgp2FdD5IVP_Y4Hqt_e4sBQAFthKnidLB83m9x6IfYMihc8uP2D8eZzc62E-DfJyxdz4Uzq5OY87Q2sd-XaP23N47Q7MQwqGlXVYDFgnUvZS-DS_MLKZBkvNpcc7uDOb8tcUgo1--gEvjqFKXFz-7ZVzaSNkCv2-4zAZwxq4C61HUBfM2ho94fQ2TYQilcEpVYtfBb4ChmAlMVl8AGBt9la5lJXZyQv23LooHv68c7cOy8HJ8tdJ6r-hyUTTRnk-hyBQ1HR3vfdzv5r13zlnyBCJMq73mbWW34Z7NaZJnpWY3GuzOwcw8RAtsWdLmS_GhDP89sAH5np2Js_yPky0os-UgOT8C5aAck5fpaBE_rzLwNnizORwiRBxuw0uJWJy1wTOSlTeEd8nwDbjSpDbVtACLUHstjhYsXB-rkaLkCYmXs820hZw2KX1QYelJlkniwEKQlLJyuAwvaEhSvjlBTbRIwicQ11tm4OWtMR9geAqVMZLYzMgWY9Q7vaFo872yvT75xheqzQPwtxxfIoJisUpXzaX8r60zOxVfRmHk0vYLaDzEIMeqqKWCO8UPZcx6PERwkrhKumQNJYpqpZeATakT7Apv3pugpomBwK1aBioA-AfxZTqPWZIoozPfD3JI4YnVoRK2sGE6uEAltsitoTcZYtVKRT8BI.Bbeqq3QuWqa0SnfY7eYXoQ.243546344841a9bd6ea531f5bd1598e54868b92a974d8df714033945d4dae867
+)
+
